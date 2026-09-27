@@ -173,7 +173,7 @@
       flex-wrap: wrap;
       gap: 8px;
       background: var(--bg-subcard);
-      padding: 8px;
+      padding: 10px;
       border-radius: 12px;
       border: 1px solid var(--border-color);
       margin-bottom: 24px;
@@ -182,31 +182,46 @@
       flex: 1 1 calc(25% - 8px);
       min-width: 190px;
       text-align: center;
-      background: transparent;
-      border: 1px solid transparent;
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       color: var(--text-muted);
-      padding: 10px 14px;
-      font-size: 13px;
-      font-weight: 700;
-      border-radius: 8px;
+      padding: 10px 12px;
+      border-radius: 9px;
       cursor: pointer;
-      transition: all 0.2s;
-      white-space: normal;
+      transition: all 0.2s ease;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 3px;
     }
     .tab-btn:hover {
       color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--accent-cyan);
+      transform: translateY(-1px);
     }
     .tab-btn.active {
-      background: var(--accent-blue);
+      background: linear-gradient(135deg, #0284C7, #0369A1);
       color: #FFFFFF;
       border-color: var(--accent-cyan);
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.45);
+    }
+    .tab-title {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    .tab-cta {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      opacity: 0.92;
+      letter-spacing: 0.2px;
+    }
+    .tab-btn.active .tab-cta {
+      color: #BAE6FD;
+      font-weight: 700;
     }
 
     /* TAB CONTENT PANELS */
@@ -638,15 +653,36 @@
 
     <!-- CỤM II: ĐỌC DỮ LIỆU -->
     <div class="section-title-bar"><span>📊</span> II. ĐỌC DỮ LIỆU & ĐỐI SOÁT CHI TIẾT (3 CẤP ĐỘ)</div>
-    <!-- NAVIGATION TABS -->
+    <!-- NAVIGATION TABS (7 TABS 2 DÒNG CÂN ĐỐI) -->
     <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab(event, 'tab-quarter')">🏢 Cấp Độ 1: Theo Quý (Q1-Q3)</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-month')">📅 Cấp Độ 2: Theo Tháng (T1-T9)</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-week')">📈 Cấp Độ 3: Theo Tuần (39 Tuần)</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-yoy')">📊 Đối Soát Cùng Kỳ 9 Tháng (YoY 2025 vs 2026)</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-reporters')">👤 Đánh Giá 22 Phóng Viên (Tháng & Quý)</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-overview')">🌐 Toàn Cảnh 3 Cấp Độ</button>
-      <button class="tab-btn" onclick="switchTab(event, 'tab-matrix')">📋 Ma Trận Tổng Hợp</button>
+      <button class="tab-btn active" onclick="switchTab(event, 'tab-quarter')">
+        <span class="tab-title">🏢 Cấp Độ 1: Theo Quý (Q1-Q3)</span>
+        <span class="tab-cta">▼ Click xem chi tiết</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-month')">
+        <span class="tab-title">📅 Cấp Độ 2: Theo Tháng (T1-T9)</span>
+        <span class="tab-cta">▼ Click xem chi tiết</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-week')">
+        <span class="tab-title">📈 Cấp Độ 3: Theo Tuần (39 Tuần)</span>
+        <span class="tab-cta">▼ Click xem chi tiết</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-yoy')">
+        <span class="tab-title">📊 Đối Soát Cùng Kỳ (YoY)</span>
+        <span class="tab-cta">▼ Click xem chi tiết</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-reporters')">
+        <span class="tab-title">👤 Đánh Giá 22 Phóng Viên</span>
+        <span class="tab-cta">▼ Click xem chi tiết</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-overview')">
+        <span class="tab-title">🌐 Toàn Cảnh 3 Cấp Độ</span>
+        <span class="tab-cta">▼ Click xem chi tiết</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-matrix')">
+        <span class="tab-title">📋 Ma Trận Tổng Hợp</span>
+        <span class="tab-cta">▼ Click xem chi tiết</span>
+      </button>
     </div>
 
     <!-- TAB 1: CẤP ĐỘ QUÝ (DEFAULT ACTIVE) -->
