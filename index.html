@@ -2619,18 +2619,6 @@
       initQuarterChart();
     }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', safeInitCharts);
-    } else {
-      safeInitCharts();
-    }
-    
-    
-    }
-
-    startTeamSlideshow();
-
-    
     // ==========================================
     // SLIDESHOW HOẠT ĐỘNG VÀ QUYẾT TÂM VPHCM (5 SLIDES)
     // ==========================================
@@ -2696,7 +2684,22 @@
       startTeamSlideshow();
     }
 
-    startTeamSlideshow();
+    // SAFE CHART & SLIDESHOW INITIALIZATION
+    function safeInitCharts() {
+      if (typeof Chart === 'undefined') {
+        setTimeout(safeInitCharts, 50);
+        return;
+      }
+      initRankingHeroChart();
+      initQuarterChart();
+      startTeamSlideshow();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', safeInitCharts);
+    } else {
+      safeInitCharts();
+    }
 
     window.addEventListener('load', safeInitCharts);
 
