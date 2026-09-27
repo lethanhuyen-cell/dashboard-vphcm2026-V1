@@ -252,6 +252,18 @@
       color: #BAE6FD;
       font-weight: 700;
     }
+    /* ANIMATIONS & HIỆU ỨNG ĐÀN ONG BAY VỀ TỔ MẬT NGỌT */
+    @keyframes dashMove {
+      to { stroke-dashoffset: -28; }
+    }
+    @keyframes honeyPulse {
+      0% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6)); }
+      100% { transform: scale(1.06); filter: drop-shadow(0 0 18px rgba(245, 158, 11, 1)); }
+    }
+    @keyframes beeWiggle {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(2px, -3px) rotate(8deg); }
+    }
 
     /* TAB CONTENT PANELS */
     .tab-content {
@@ -1390,7 +1402,7 @@
               </div>
 
               <!-- THẺ 5: BƯỚC NGOẶT ĐỈNH LƯU & DỰ PHÓNG VỀ ĐÍCH -->
-              <div class="insights-card-full" style="background: linear-gradient(135deg, rgba(147, 51, 234, 0.12), rgba(30, 41, 59, 0.9)); border: 1.5px solid rgba(168, 85, 247, 0.55); border-radius: 14px; padding: 20px 22px; grid-column: span 2; box-shadow: 0 8px 25px rgba(147, 51, 234, 0.2);">
+              <div class="insights-card-full" style="background: linear-gradient(135deg, rgba(147, 51, 234, 0.12), rgba(30, 41, 59, 0.9)); border: 1.5px solid rgba(168, 85, 247, 0.55); border-radius: 14px; padding: 20px 22px; grid-column: span 2; box-shadow: 0 8px 25px rgba(147, 51, 234, 0.2); position: relative;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
                   <div style="display: flex; align-items: center; gap: 10px;">
                     <span style="font-size: 24px;">🔥</span>
@@ -1399,9 +1411,14 @@
                       <div style="font-size: 16px; font-weight: 800; color: #FFFFFF; letter-spacing: 0.3px;">Tháng 8 & Tháng 9 Xác Lập Mặt Bằng ~500.000 Lượt Xem/Ngày</div>
                     </div>
                   </div>
-                  <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: #FDE68A; border: 1px solid rgba(245, 158, 11, 0.45); font-size: 11px; font-weight: 800; padding: 4px 10px;">
-                    ⚡ QUÁN TÍNH THỰC CHỨNG 61 NGÀY
-                  </span>
+                  <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span class="badge" style="background: rgba(239, 68, 68, 0.25); color: #FCA5A5; border: 1px solid rgba(239, 68, 68, 0.5); font-size: 11px; font-weight: 800; padding: 4px 10px; display: inline-flex; align-items: center; gap: 4px;">
+                      <span>🐝</span> 📍 ĐIỂM XUẤT PHÁT CỦA ĐÀN ONG
+                    </span>
+                    <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: #FDE68A; border: 1px solid rgba(245, 158, 11, 0.45); font-size: 11px; font-weight: 800; padding: 4px 10px;">
+                      ⚡ QUÁN TÍNH THỰC CHỨNG 61 NGÀY
+                    </span>
+                  </div>
                 </div>
 
                 <!-- LƯỚI 4 THÔNG SỐ TRỌNG YẾU -->
@@ -1437,6 +1454,64 @@
 
           </div>
 
+          <!-- KHỐI DẪN DẮT CHIẾN LƯỢC: ĐÀN ONG CẦN MẪN BAY VỀ LÀM TỔ TẠI PHƯƠNG ÁN 3 -->
+          <div style="position: relative; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)); border: 1.5px solid rgba(239, 68, 68, 0.45); border-radius: 14px; padding: 18px 24px; margin-top: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <!-- SVG ĐÀN ONG BAY THEO ĐƯỜNG NÉT ĐỨT ĐỎ -->
+            <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;" viewBox="0 0 1000 110" preserveAspectRatio="none">
+              <defs>
+                <path id="beeFlightPathMain" d="M 50 55 C 220 15, 380 95, 520 55 C 660 15, 820 95, 950 55" />
+              </defs>
+              <!-- ĐƯỜNG BAY NÉT ĐỨT ĐỎ -->
+              <path d="M 50 55 C 220 15, 380 95, 520 55 C 660 15, 820 95, 950 55" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="8, 6" stroke-linecap="round" style="filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.9)); animation: dashMove 1.2s linear infinite;" />
+              <!-- MŨI TÊN ĐỎ CHỈ VÀO TỔ -->
+              <polygon points="956,55 944,49 944,61" fill="#EF4444" />
+              <!-- ĐÀN ONG 7 CHÚ BAY NỐI ĐUÔI DẪN ĐƯỜNG -->
+              <g><animateMotion dur="4.2s" repeatCount="indefinite" rotate="auto"><mpath href="#beeFlightPathMain"/></animateMotion><text font-size="20" x="-10" y="6" filter="drop-shadow(0 0 6px #F59E0B)">🐝</text></g>
+              <g><animateMotion dur="4.2s" begin="-0.6s" repeatCount="indefinite" rotate="auto"><mpath href="#beeFlightPathMain"/></animateMotion><text font-size="18" x="-9" y="5" filter="drop-shadow(0 0 5px #F59E0B)">🐝</text></g>
+              <g><animateMotion dur="4.2s" begin="-1.2s" repeatCount="indefinite" rotate="auto"><mpath href="#beeFlightPathMain"/></animateMotion><text font-size="16" x="-8" y="5" filter="drop-shadow(0 0 5px #F59E0B)">🐝</text></g>
+              <g><animateMotion dur="4.2s" begin="-1.8s" repeatCount="indefinite" rotate="auto"><mpath href="#beeFlightPathMain"/></animateMotion><text font-size="15" x="-7" y="4" filter="drop-shadow(0 0 5px #F59E0B)">🐝</text></g>
+              <g><animateMotion dur="4.2s" begin="-2.4s" repeatCount="indefinite" rotate="auto"><mpath href="#beeFlightPathMain"/></animateMotion><text font-size="14" x="-7" y="4" filter="drop-shadow(0 0 4px #F59E0B)">🐝</text></g>
+              <g><animateMotion dur="4.2s" begin="-3.0s" repeatCount="indefinite" rotate="auto"><mpath href="#beeFlightPathMain"/></animateMotion><text font-size="13" x="-6" y="4" filter="drop-shadow(0 0 4px #F59E0B)">🐝</text></g>
+              <g><animateMotion dur="4.2s" begin="-3.6s" repeatCount="indefinite" rotate="auto"><mpath href="#beeFlightPathMain"/></animateMotion><text font-size="12" x="-6" y="3" filter="drop-shadow(0 0 4px #F59E0B)">🐝</text></g>
+            </svg>
+
+            <div style="position: relative; z-index: 2;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                <div style="font-size: 11.5px; font-weight: 800; color: #EF4444; text-transform: uppercase; letter-spacing: 0.6px; display: flex; align-items: center; gap: 6px;">
+                  <span>🐝</span> TUYẾN DẪN DẮT CHIẾN LƯỢC: TỪ MẶT BẰNG THỰC CHỨNG ĐẾN ĐÍCH ĐẾN TỔ MẬT NGỌT
+                </div>
+                <span style="background: rgba(245, 158, 11, 0.2); color: #FDE68A; border: 1px solid rgba(245, 158, 11, 0.45); font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 999px;">
+                  🍯 ĐÍCH ĐẾN: 153.03M (106.8%)
+                </span>
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+                <!-- Bước 1 -->
+                <div style="background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.4); border-radius: 10px; padding: 10px 14px;">
+                  <div style="font-size: 10px; font-weight: 800; color: #E9D5FF; text-transform: uppercase; margin-bottom: 2px;">📍 BƯỚC 1: PHÁT HIỆN 5</div>
+                  <div style="font-size: 12.5px; font-weight: 800; color: #FFFFFF;">Mặt bằng ~500.000 view/ngày</div>
+                  <div style="font-size: 11px; color: #CBD5E1; margin-top: 2px;">Quán tính thực chứng 61 ngày (T8–T9)</div>
+                </div>
+
+                <!-- Bước 2 -->
+                <div style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.45); border-radius: 10px; padding: 10px 14px;">
+                  <div style="font-size: 10px; font-weight: 800; color: #FDE68A; text-transform: uppercase; margin-bottom: 2px;">⚡ BƯỚC 2: ĐÒN BẨY ĐỊNH LƯỢNG</div>
+                  <div style="font-size: 12.5px; font-weight: 800; color: #38BDF8;">84 ngày &times; 500K = 42.00M Q4</div>
+                  <div style="font-size: 11px; color: #CBD5E1; margin-top: 2px;">Chỉ cần giữ vững nhịp độ 12 tuần</div>
+                </div>
+
+                <!-- Bước 3 -->
+                <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(16, 185, 129, 0.2)); border: 1.5px solid #F59E0B; border-radius: 10px; padding: 10px 14px; box-shadow: 0 0 16px rgba(245, 158, 11, 0.3);">
+                  <div style="font-size: 10px; font-weight: 900; color: #FACC15; text-transform: uppercase; margin-bottom: 2px; display: flex; align-items: center; gap: 4px;">
+                    <span>🍯</span> BƯỚC 3: TỔ MẬT PHƯƠNG ÁN 3
+                  </div>
+                  <div style="font-size: 13px; font-weight: 900; color: #4ADE80;">153.03M Views (106.8% Năm)</div>
+                  <div style="font-size: 11px; color: #FEF08A; margin-top: 2px;">Hoàn thành xuất sắc chỉ tiêu Tòa soạn</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- MỤC 5: CHIẾN LƯỢC TÁC CHIẾN & 3 KỊCH BẢN VỀ ĐÍCH QUÝ 4/2026 -->
           <div id="sec-q4-scenarios" style="background: rgba(30, 41, 59, 0.65); border: 1px solid rgba(56, 189, 248, 0.45); border-radius: 14px; padding: 22px 24px; margin-top: 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); scroll-margin-top: 24px;">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px;">
@@ -1459,6 +1534,9 @@
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap;">
                   <span class="badge" style="background: #F59E0B; color: #0F172A; font-weight: 900; font-size: 11px; padding: 3px 9px; border-radius: 5px; text-transform: uppercase; letter-spacing: 0.5px;">
                     🔥 ĐÒN BẨY ĐỊNH LƯỢNG THỰC TIỄN
+                  </span>
+                  <span class="badge" style="background: rgba(239, 68, 68, 0.25); color: #FCA5A5; border: 1px solid rgba(239, 68, 68, 0.5); font-size: 10.5px; font-weight: 800; padding: 3px 8px;">
+                    ⚡ TRẠM TIẾP NĂNG LƯỢNG CỦA ĐÀN ONG 🐝
                   </span>
                   <strong style="color: #FACC15; font-size: 14.5px; text-transform: uppercase; letter-spacing: 0.3px;">Căn cứ thực tiễn từ mặt bằng 500.000 view/ngày (T8–T9)</strong>
                 </div>
@@ -1532,17 +1610,29 @@
                 </div>
               </div>
 
-              <!-- PHƯƠNG ÁN 3: 106.8% NĂM -->
-              <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.45); border-radius: 12px; padding: 18px; position: relative;">
+              <!-- PHƯƠNG ÁN 3: 106.8% NĂM (TỔ MẬT NGỌT HOÀN MỸ CỦA ĐÀN ONG) -->
+              <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(15, 23, 42, 0.95)); border: 2.5px solid #F59E0B; border-radius: 12px; padding: 18px; position: relative; box-shadow: 0 0 30px rgba(245, 158, 11, 0.35);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                  <span class="badge" style="background: rgba(245, 158, 11, 0.25); color: #F59E0B; font-weight: 800; font-size: 11px; border: 1px solid rgba(245, 158, 11, 0.5);">
-                    🟡 PHƯƠNG ÁN 3
+                  <span class="badge" style="background: #F59E0B; color: #0F172A; font-weight: 900; font-size: 11px; padding: 3px 8px; border-radius: 5px;">
+                    🍯 TỔ MẬT NGỌT: PHƯƠNG ÁN 3
                   </span>
-                  <span style="font-size: 11px; font-weight: 700; color: #FDE68A;">106.8% CẢ NĂM</span>
+                  <span style="font-size: 11.5px; font-weight: 800; color: #FDE68A; display: flex; align-items: center; gap: 4px;">
+                    <span>🐝</span> 106.8% CẢ NĂM
+                  </span>
                 </div>
                 <div style="font-size: 15px; font-weight: 800; color: #FFFFFF; line-height: 1.3; margin-bottom: 6px;">
                   Mục Tiêu: 153,03 Triệu Views Cả Năm
                 </div>
+                
+                <!-- KHUNG TỔ ONG VỀ ĐÍCH -->
+                <div style="background: rgba(245, 158, 11, 0.2); border: 1.5px solid #F59E0B; border-radius: 8px; padding: 8px 10px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 26px; animation: honeyPulse 2s infinite alternate; flex-shrink: 0;">🍯</span>
+                  <div>
+                    <div style="font-size: 11.5px; font-weight: 900; color: #FACC15; text-transform: uppercase;">Đích Đến Làm Tổ Mật Ngọt Của Đàn Ong</div>
+                    <div style="font-size: 11px; color: #FEF08A; line-height: 1.35;">Duy trì nhịp 500K/ngày để kết tinh quả ngọt <b>153.03M views (106.8%)</b>.</div>
+                  </div>
+                </div>
+
                 <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 10px; margin-bottom: 10px;">
                   <div style="display: flex; justify-content: space-between; align-items: baseline;">
                     <span style="font-size: 11px; color: var(--text-muted);">Tổng View Q4 (13 tuần):</span>
