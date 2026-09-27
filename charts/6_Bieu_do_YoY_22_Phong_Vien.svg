@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 820" width="100%" height="100%" style="background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <!-- Header -->
+  <rect x="0" y="0" width="920" height="70" fill="#0F172A"/>
+  <text x="30" y="42" fill="#FFFFFF" font-size="18" font-weight="bold">SO SÁNH LƯỢT XEM 22 PHÓNG VIÊN (YoY 9 THÁNG 2025 VS 2026)</text>
+  <text x="30" y="60" fill="#94A3B8" font-size="11">VPĐD BÁO LAO ĐỘNG TẠI TP.HCM | ĐỐI SOÁT CHI TIẾT TỪNG CÁ NHÂN</text>
+
+  <!-- Legend -->
+  <rect x="620" y="25" width="12" height="12" fill="#94A3B8" rx="2"/>
+  <text x="638" y="35" fill="#F8FAFC" font-size="11">9T/2025</text>
+  <rect x="710" y="25" width="12" height="12" fill="#0284C7" rx="2"/>
+  <text x="728" y="35" fill="#F8FAFC" font-size="11">9T/2026</text>
+  <text x="860" y="35" fill="#38BDF8" font-size="11" font-weight="bold" text-anchor="end">Tăng Trưởng %</text>
+
+  <!-- Grid Header -->
+  <text x="210" y="92" fill="#64748B" font-size="10.5" font-weight="bold" text-anchor="end">Họ Và Tên</text>
+  <text x="230" y="92" fill="#64748B" font-size="10.5" font-weight="bold">Quy Mô Lượt Xem (2025 vs 2026)</text>
+  <text x="860" y="92" fill="#64748B" font-size="10.5" font-weight="bold" text-anchor="end">YoY (%)</text>
+  <line x1="40" y1="98" x2="880" y2="98" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Rows -->
+  
+          <text x="210" y="119" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Lý Thanh Vũ</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="105" width="202.4" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="116" width="357.3" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="592.327642" y="120" fill="#475569" font-size="9.5">9.40M vs 5.33M</text>
+          <text x="860" y="119" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+76.5%</text>
+        
+          <text x="210" y="149" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Nguyễn Đăng Văn</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="135" width="154.0" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="146" width="299.9" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="534.898432" y="150" fill="#475569" font-size="9.5">7.89M vs 4.05M</text>
+          <text x="860" y="149" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+94.7%</text>
+        
+          <text x="210" y="179" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Nguyễn Thị Minh Tâm</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="165" width="184.4" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="176" width="297.9" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="532.89777" y="180" fill="#475569" font-size="9.5">7.84M vs 4.85M</text>
+          <text x="860" y="179" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+61.6%</text>
+        
+          <text x="210" y="209" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Đào Thị Ngọc Lê</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="195" width="278.0" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="206" width="286.1" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="521.069472" y="210" fill="#475569" font-size="9.5">7.53M vs 7.31M</text>
+          <text x="860" y="209" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+2.9%</text>
+        
+          <text x="210" y="239" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Nguyễn Chân Phúc</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="225" width="166.1" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="236" width="258.7" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="493.69640000000004" y="240" fill="#475569" font-size="9.5">6.81M vs 4.37M</text>
+          <text x="860" y="239" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+55.7%</text>
+        
+          <text x="210" y="269" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Trịnh Văn Quân</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="255" width="256.6" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="266" width="248.4" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="491.56023" y="270" fill="#475569" font-size="9.5">6.54M vs 6.75M</text>
+          <text x="860" y="269" fill="#DC2626" font-size="10.5" font-weight="bold" text-anchor="end">-3.2%</text>
+        
+          <text x="210" y="299" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Đặng Ngọc Thanh Chân</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="285" width="171.9" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="296" width="248.2" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="483.174884" y="300" fill="#475569" font-size="9.5">6.53M vs 4.52M</text>
+          <text x="860" y="299" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+44.4%</text>
+        
+          <text x="210" y="329" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Nguyễn Thị Ly</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="315" width="190.2" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="326" width="244.6" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="479.576626" y="330" fill="#475569" font-size="9.5">6.44M vs 5.00M</text>
+          <text x="860" y="329" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+28.6%</text>
+        
+          <text x="210" y="359" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Lê Ngọc Dủ</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="345" width="262.6" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="356" width="244.2" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="497.582128" y="360" fill="#475569" font-size="9.5">6.43M vs 6.91M</text>
+          <text x="860" y="359" fill="#DC2626" font-size="10.5" font-weight="bold" text-anchor="end">-7.0%</text>
+        
+          <text x="210" y="389" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Hà Anh Chiến</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="375" width="156.4" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="386" width="232.5" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="467.541076" y="390" fill="#475569" font-size="9.5">6.12M vs 4.12M</text>
+          <text x="860" y="389" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+48.7%</text>
+        
+          <text x="210" y="419" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Nguyễn Phúc Bảo Chương</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="405" width="167.8" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="416" width="227.4" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="462.421374" y="420" fill="#475569" font-size="9.5">5.98M vs 4.42M</text>
+          <text x="860" y="419" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+35.5%</text>
+        
+          <text x="210" y="449" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Nguyễn Trí Độ</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="435" width="176.9" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="446" width="204.3" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="439.349522" y="450" fill="#475569" font-size="9.5">5.38M vs 4.66M</text>
+          <text x="860" y="449" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+15.5%</text>
+        
+          <text x="210" y="479" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Đinh Văn Trọng</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="465" width="154.4" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="476" width="202.5" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="437.48231599999997" y="480" fill="#475569" font-size="9.5">5.33M vs 4.06M</text>
+          <text x="860" y="479" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+31.2%</text>
+        
+          <text x="210" y="509" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Hồ Anh Tú</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="495" width="140.9" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="506" width="192.5" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="427.535854" y="510" fill="#475569" font-size="9.5">5.07M vs 3.71M</text>
+          <text x="860" y="509" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+36.6%</text>
+        
+          <text x="210" y="539" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Lê Thanh Phong</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="525" width="112.6" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="536" width="152.7" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="387.687496" y="540" fill="#475569" font-size="9.5">4.02M vs 2.96M</text>
+          <text x="860" y="539" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+35.6%</text>
+        
+          <text x="210" y="569" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Trần Nam Dương</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="555" width="129.4" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="566" width="145.6" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="380.60004000000004" y="570" fill="#475569" font-size="9.5">3.83M vs 3.40M</text>
+          <text x="860" y="569" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+12.6%</text>
+        
+          <text x="210" y="599" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Lê Thanh Ngọc Ánh</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="585" width="95.9" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="596" width="105.8" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="340.845846" y="600" fill="#475569" font-size="9.5">2.79M vs 2.52M</text>
+          <text x="860" y="599" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+10.4%</text>
+        
+          <text x="210" y="629" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Nguyễn Như Quỳnh</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="615" width="95.9" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="626" width="93.3" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="330.850326" y="630" fill="#475569" font-size="9.5">2.45M vs 2.52M</text>
+          <text x="860" y="629" fill="#DC2626" font-size="10.5" font-weight="bold" text-anchor="end">-2.7%</text>
+        
+          <text x="210" y="659" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Nguyễn Thái Bảo</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="645" width="11.4" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="656" width="69.3" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="304.287148" y="660" fill="#475569" font-size="9.5">1.82M vs 0.30M</text>
+          <text x="860" y="659" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+507.5%</text>
+        
+          <text x="210" y="689" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Nguyễn Thị Phương Thảo</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="675" width="40.6" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="686" width="45.3" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="280.25439" y="690" fill="#475569" font-size="9.5">1.19M vs 1.07M</text>
+          <text x="860" y="689" fill="#16A34A" font-size="10.5" font-weight="bold" text-anchor="end">+11.4%</text>
+        
+          <text x="210" y="719" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Nguyễn Lê Mai Anh</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="705" width="2.0" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="716" width="27.3" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="262.336554" y="720" fill="#475569" font-size="9.5">0.72M vs 0.00M</text>
+          <text x="860" y="719" fill="#DC2626" font-size="10.5" font-weight="bold" text-anchor="end">N/A</text>
+        
+          <text x="210" y="749" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="end">Huỳnh Ngọc Du</text>
+          
+          <!-- Bar 2025 -->
+          <rect x="230" y="735" width="2.0" height="9" fill="#94A3B8" rx="2"/>
+          <!-- Bar 2026 -->
+          <rect x="230" y="746" width="16.3" height="9" fill="#0284C7" rx="2"/>
+          
+          <text x="251.25716" y="750" fill="#475569" font-size="9.5">0.43M vs 0.00M</text>
+          <text x="860" y="749" fill="#DC2626" font-size="10.5" font-weight="bold" text-anchor="end">N/A</text>
+        
+
+  <!-- Footer -->
+  <line x1="40" y1="780" x2="880" y2="780" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="460" y="802" fill="#334155" font-size="11" font-weight="bold" text-anchor="middle">
+    Bình quân toàn VP 9T/2026 đạt 5,024,015 views/PV (Tăng +33.41% YoY so với 3,765,924 views/PV năm 2025).
+  </text>
+</svg>

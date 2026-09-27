@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="100%" height="100%" style="background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <!-- Header -->
+  <rect x="0" y="0" width="900" height="70" fill="#0F172A"/>
+  <text x="30" y="42" fill="#FFFFFF" font-size="18" font-weight="bold">ĐỐI SOÁT CÙNG KỲ THEO QUÝ (YoY Q1, Q2, Q3 - 2025 VS 2026)</text>
+  <text x="30" y="60" fill="#94A3B8" font-size="11">VPĐD BÁO LAO ĐỘNG TẠI TP.HCM | TĂNG TRƯỞNG LƯỢT XEM VÀ HIỆU SUẤT TỪNG QUÝ</text>
+
+  <!-- Legend -->
+  <rect x="560" y="25" width="14" height="14" fill="#94A3B8" rx="3"/>
+  <text x="580" y="37" fill="#F8FAFC" font-size="12">Năm 2025</text>
+  <rect x="680" y="25" width="14" height="14" fill="#0284C7" rx="3"/>
+  <text x="700" y="37" fill="#F8FAFC" font-size="12">Năm 2026</text>
+
+  <!-- Grid -->
+  <line x1="80" y1="120" x2="820" y2="120" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="70" y="124" fill="#64748B" font-size="10" text-anchor="end">45M</text>
+  <line x1="80" y1="190" x2="820" y2="190" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="70" y="194" fill="#64748B" font-size="10" text-anchor="end">30M</text>
+  <line x1="80" y1="260" x2="820" y2="260" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="70" y="264" fill="#64748B" font-size="10" text-anchor="end">15M</text>
+  <line x1="80" y1="330" x2="820" y2="330" stroke="#334155" stroke-width="1.5"/>
+  <text x="70" y="334" fill="#64748B" font-size="10" text-anchor="end">0M</text>
+
+  <!-- Quarters Bars -->
+  <!-- Q1: 2025=21.46M (100px, y=230), 2026=34.62M (161.5px, y=168.5) -->
+  <rect x="150" y="230" width="55" height="100" fill="#94A3B8" rx="4"/>
+  <text x="177" y="222" fill="#64748B" font-size="11" font-weight="bold" text-anchor="middle">21.46M</text>
+  <rect x="215" y="168" width="55" height="162" fill="#0284C7" rx="4"/>
+  <text x="242" y="160" fill="#0369A1" font-size="12" font-weight="bold" text-anchor="middle">34.62M</text>
+  <text x="210" y="358" fill="#0F172A" font-size="13" font-weight="bold" text-anchor="middle">QUÝ 1</text>
+  <rect x="160" y="370" width="100" height="24" fill="#DCFCE7" rx="12"/>
+  <text x="210" y="386" fill="#15803D" font-size="11" font-weight="bold" text-anchor="middle">+61.32% YoY</text>
+
+  <!-- Q2: 2025=29.38M (137.1px, y=192.9), 2026=36.63M (170.9px, y=159.1) -->
+  <rect x="380" y="193" width="55" height="137" fill="#94A3B8" rx="4"/>
+  <text x="407" y="185" fill="#64748B" font-size="11" font-weight="bold" text-anchor="middle">29.38M</text>
+  <rect x="445" y="159" width="55" height="171" fill="#0284C7" rx="4"/>
+  <text x="472" y="151" fill="#0369A1" font-size="12" font-weight="bold" text-anchor="middle">36.63M</text>
+  <text x="440" y="358" fill="#0F172A" font-size="13" font-weight="bold" text-anchor="middle">QUÝ 2</text>
+  <rect x="390" y="370" width="100" height="24" fill="#DCFCE7" rx="12"/>
+  <text x="440" y="386" fill="#15803D" font-size="11" font-weight="bold" text-anchor="middle">+24.66% YoY</text>
+
+  <!-- Q3: 2025=32.01M (149.3px, y=180.7), 2026=39.28M (183.3px, y=146.7) -->
+  <rect x="610" y="181" width="55" height="149" fill="#94A3B8" rx="4"/>
+  <text x="637" y="173" fill="#64748B" font-size="11" font-weight="bold" text-anchor="middle">32.01M</text>
+  <rect x="675" y="147" width="55" height="183" fill="#16A34A" rx="4"/>
+  <text x="702" y="139" fill="#15803D" font-size="12" font-weight="bold" text-anchor="middle">39.28M</text>
+  <text x="670" y="358" fill="#0F172A" font-size="13" font-weight="bold" text-anchor="middle">QUÝ 3 (QĐ)</text>
+  <rect x="620" y="370" width="100" height="24" fill="#DCFCE7" rx="12"/>
+  <text x="670" y="386" fill="#15803D" font-size="11" font-weight="bold" text-anchor="middle">+22.72% YoY</text>
+
+  <!-- Summary Footer -->
+  <rect x="50" y="440" width="800" height="50" fill="#F8FAFC" stroke="#E2E8F0" rx="8"/>
+  <text x="450" y="470" fill="#0F172A" font-size="12" font-weight="bold" text-anchor="middle">
+    Cả 3 Quý năm 2026 đều tăng trưởng vượt bậc so với cùng kỳ 2025 (Q1 tăng +61.32%, Q2 tăng +24.66%, Q3 tăng +22.72%).
+  </text>
+</svg>

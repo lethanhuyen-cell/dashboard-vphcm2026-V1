@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="100%" height="100%" style="background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="70" fill="#0F172A"/>
+  <text x="30" y="42" fill="#FFFFFF" font-size="18" font-weight="bold">BIỂU ĐỒ DIỄN BIẾN 39 TUẦN LIÊN TỤC NĂM 2026 (W1 ĐẾN W39)</text>
+  <text x="30" y="60" fill="#94A3B8" font-size="11">VPĐD BÁO LAO ĐỘNG TẠI TP.HCM | NHỊP ĐỘ SẢN XUẤT VÀ TĂNG TRƯỞNG LƯỢT XEM HÀNG TUẦN</text>
+
+  <!-- Legend -->
+  <rect x="750" y="25" width="14" height="14" fill="#94A3B8" rx="3"/>
+  <text x="770" y="37" fill="#F8FAFC" font-size="11">Quý 1 (W1-W13)</text>
+  <rect x="880" y="25" width="14" height="14" fill="#38BDF8" rx="3"/>
+  <text x="900" y="37" fill="#F8FAFC" font-size="11">Quý 2 (W14-W26)</text>
+  <rect x="1010" y="25" width="14" height="14" fill="#15803D" rx="3"/>
+  <text x="1030" y="37" fill="#F8FAFC" font-size="11">Quý 3 (W27-W39)</text>
+
+  <!-- Grid lines -->
+  <line x1="60" y1="120" x2="1160" y2="120" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="50" y="124" fill="#64748B" font-size="10" text-anchor="end">4.0M</text>
+  <line x1="60" y1="185" x2="1160" y2="185" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="50" y="189" fill="#64748B" font-size="10" text-anchor="end">3.0M</text>
+  <line x1="60" y1="250" x2="1160" y2="250" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="50" y="254" fill="#64748B" font-size="10" text-anchor="end">2.0M</text>
+  <line x1="60" y1="315" x2="1160" y2="315" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="50" y="319" fill="#64748B" font-size="10" text-anchor="end">1.0M</text>
+  <line x1="60" y1="380" x2="1160" y2="380" stroke="#334155" stroke-width="1.5"/>
+  <text x="50" y="384" fill="#64748B" font-size="10" text-anchor="end">0M</text>
+
+  <!-- Bars -->
+  <rect x="72.0" y="209.8" width="16" height="170.2" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="99.9" y="206.7" width="16" height="173.3" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="127.8" y="207.9" width="16" height="172.1" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="155.7" y="216.0" width="16" height="164.0" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="183.6" y="225.2" width="16" height="154.8" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="211.5" y="250.0" width="16" height="130.0" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="239.4" y="240.7" width="16" height="139.3" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="267.3" y="219.0" width="16" height="161.0" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="295.2" y="216.0" width="16" height="164.0" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="323.1" y="211.6" width="16" height="168.4" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="350.9" y="207.9" width="16" height="172.1" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="378.8" y="203.6" width="16" height="176.4" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="406.7" y="182.5" width="16" height="197.5" fill="#94A3B8" rx="2" opacity="0.85"/><rect x="434.6" y="199.2" width="16" height="180.8" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="462.5" y="197.4" width="16" height="182.6" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="490.4" y="193.0" width="16" height="187.0" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="518.3" y="195.5" width="16" height="184.5" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="546.2" y="191.2" width="16" height="188.8" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="574.1" y="200.5" width="16" height="179.5" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="602.0" y="197.4" width="16" height="182.6" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="629.9" y="199.2" width="16" height="180.8" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="657.8" y="206.7" width="16" height="173.3" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="685.7" y="230.2" width="16" height="149.8" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="713.6" y="224.6" width="16" height="155.4" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="741.5" y="214.1" width="16" height="165.9" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="769.4" y="196.1" width="16" height="183.9" fill="#38BDF8" rx="2" opacity="0.85"/><rect x="797.3" y="223.4" width="16" height="156.6" fill="#22C55E" rx="2" opacity="0.85"/><rect x="825.2" y="216.0" width="16" height="164.0" fill="#22C55E" rx="2" opacity="0.85"/><rect x="853.1" y="205.4" width="16" height="174.6" fill="#22C55E" rx="2" opacity="0.85"/><rect x="880.9" y="193.7" width="16" height="186.3" fill="#22C55E" rx="2" opacity="0.85"/><rect x="908.8" y="166.4" width="16" height="213.6" fill="#15803D" rx="2" opacity="0.85"/><rect x="936.7" y="174.5" width="16" height="205.5" fill="#15803D" rx="2" opacity="0.85"/><rect x="964.6" y="158.4" width="16" height="221.6" fill="#15803D" rx="2" opacity="0.85"/><rect x="992.5" y="167.0" width="16" height="213.0" fill="#15803D" rx="2" opacity="0.85"/><rect x="1020.4" y="150.3" width="16" height="229.7" fill="#15803D" rx="2" opacity="0.85"/><rect x="1048.3" y="170.1" width="16" height="209.9" fill="#15803D" rx="2" opacity="0.85"/><rect x="1076.2" y="154.0" width="16" height="226.0" fill="#15803D" rx="2" opacity="0.85"/><rect x="1104.1" y="169.5" width="16" height="210.5" fill="#15803D" rx="2" opacity="0.85"/><rect x="1132.0" y="165.8" width="16" height="214.2" fill="#15803D" rx="2" opacity="0.85"/>
+
+  <!-- Trend Polyline -->
+  <polyline fill="none" stroke="#0F172A" stroke-width="2.5" points="80.0,209.8 107.9,206.7 135.8,207.9 163.7,216.0 191.6,225.2 219.5,250.0 247.4,240.7 275.3,219.0 303.2,216.0 331.1,211.6 358.9,207.9 386.8,203.6 414.7,182.5 442.6,199.2 470.5,197.4 498.4,193.0 526.3,195.5 554.2,191.2 582.1,200.5 610.0,197.4 637.9,199.2 665.8,206.7 693.7,230.2 721.6,224.6 749.5,214.1 777.4,196.1 805.3,223.4 833.2,216.0 861.1,205.4 888.9,193.7 916.8,166.4 944.7,174.5 972.6,158.4 1000.5,167.0 1028.4,150.3 1056.3,170.1 1084.2,154.0 1112.1,169.5 1140.0,165.8"/>
+
+  <!-- Labels -->
+  <text x="80.0" y="400" fill="#475569" font-size="9" text-anchor="middle">W01</text><text x="80.0" y="203.8" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">2.75M</text><text x="163.7" y="400" fill="#475569" font-size="9" text-anchor="middle">W04</text><text x="163.7" y="210.0" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">2.65M</text><text x="247.4" y="400" fill="#475569" font-size="9" text-anchor="middle">W07</text><text x="247.4" y="234.7" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">2.25M</text><text x="331.1" y="400" fill="#475569" font-size="9" text-anchor="middle">W10</text><text x="331.1" y="205.6" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">2.72M</text><text x="414.7" y="400" fill="#475569" font-size="9" text-anchor="middle">W13</text><text x="414.7" y="176.5" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">3.19M</text><text x="498.4" y="400" fill="#475569" font-size="9" text-anchor="middle">W16</text><text x="498.4" y="187.0" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">3.02M</text><text x="582.1" y="400" fill="#475569" font-size="9" text-anchor="middle">W19</text><text x="582.1" y="194.5" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">2.9M</text><text x="665.8" y="400" fill="#475569" font-size="9" text-anchor="middle">W22</text><text x="665.8" y="200.7" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">2.8M</text><text x="749.5" y="400" fill="#475569" font-size="9" text-anchor="middle">W25</text><text x="749.5" y="208.1" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">2.68M</text><text x="833.2" y="400" fill="#475569" font-size="9" text-anchor="middle">W28</text><text x="833.2" y="210.0" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">2.65M</text><text x="916.8" y="400" fill="#475569" font-size="9" text-anchor="middle">W31</text><text x="916.8" y="160.4" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">3.45M</text><text x="1000.5" y="400" fill="#475569" font-size="9" text-anchor="middle">W34</text><text x="1000.5" y="161.0" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">3.44M</text><text x="1084.2" y="400" fill="#475569" font-size="9" text-anchor="middle">W37</text><text x="1084.2" y="148.0" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">3.65M</text><text x="1140.0" y="400" fill="#475569" font-size="9" text-anchor="middle">W39</text><text x="1140.0" y="159.8" fill="#0F172A" font-size="8.5" font-weight="bold" text-anchor="middle">3.46M</text>
+
+  <!-- Quarter Segments Underneath -->
+  <line x1="80" y1="425" x2="415" y2="425" stroke="#94A3B8" stroke-width="3"/>
+  <text x="247" y="443" fill="#475569" font-size="11" font-weight="bold" text-anchor="middle">QUÝ 1 (13 Tuần: TB 2.66M view/tuần)</text>
+
+  <line x1="443" y1="425" x2="777" y2="425" stroke="#0284C7" stroke-width="3"/>
+  <text x="610" y="443" fill="#0369A1" font-size="11" font-weight="bold" text-anchor="middle">QUÝ 2 (13 Tuần: TB 2.82M view/tuần)</text>
+
+  <line x1="805" y1="425" x2="1140" y2="425" stroke="#16A34A" stroke-width="3"/>
+  <text x="972" y="443" fill="#15803D" font-size="11" font-weight="bold" text-anchor="middle">QUÝ 3 (13 Tuần: TB 3.02M view/tuần - Đỉnh W35 3.71M)</text>
+
+  <!-- Key Highlights footer -->
+  <rect x="50" y="465" width="1100" height="40" fill="#F8FAFC" stroke="#E2E8F0" rx="6"/>
+  <text x="600" y="490" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">
+    39 Tuần Liên Tục: Lượt xem tuần thấp nhất vào kỳ nghỉ Tết (W06: 2.10M views) -> Tăng dần qua Q2 -> Bứt phá mạnh mẽ ở Q3 với đỉnh cao Tuần 35 (3.71M views).
+  </text>
+</svg>

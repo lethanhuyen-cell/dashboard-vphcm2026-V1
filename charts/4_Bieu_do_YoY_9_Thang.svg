@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 540" width="100%" height="100%" style="background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <!-- Header -->
+  <rect x="0" y="0" width="1050" height="70" fill="#0F172A"/>
+  <text x="30" y="42" fill="#FFFFFF" font-size="18" font-weight="bold">ĐỐI SOÁT LƯỢT XEM CÙNG KỲ 9 THÁNG (YoY 2025 VS 2026)</text>
+  <text x="30" y="60" fill="#94A3B8" font-size="11">VPĐD BÁO LAO ĐỘNG TẠI TP.HCM | ĐỐI SOÁT 22 PHÓNG VIÊN CHÍNH THỨC QUA TỪNG THÁNG</text>
+
+  <!-- Legend -->
+  <rect x="700" y="25" width="14" height="14" fill="#94A3B8" rx="3"/>
+  <text x="720" y="37" fill="#F8FAFC" font-size="12">Năm 2025</text>
+  <rect x="830" y="25" width="14" height="14" fill="#0284C7" rx="3"/>
+  <text x="850" y="37" fill="#F8FAFC" font-size="12">Năm 2026</text>
+
+  <!-- Grid lines -->
+  <line x1="60" y1="110" x2="980" y2="110" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="50" y="114" fill="#64748B" font-size="10" text-anchor="end">16M</text>
+  <line x1="60" y1="180" x2="980" y2="180" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="50" y="184" fill="#64748B" font-size="10" text-anchor="end">12M</text>
+  <line x1="60" y1="250" x2="980" y2="250" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="50" y="254" fill="#64748B" font-size="10" text-anchor="end">8M</text>
+  <line x1="60" y1="320" x2="980" y2="320" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="50" y="324" fill="#64748B" font-size="10" text-anchor="end">4M</text>
+  <line x1="60" y1="390" x2="980" y2="390" stroke="#334155" stroke-width="1.5"/>
+  <text x="50" y="394" fill="#64748B" font-size="10" text-anchor="end">0M</text>
+
+  <!-- Bars -->
+  
+          <!-- Tháng 1 -->
+          <rect x="82" y="266.4" width="25" height="123.6" fill="#94A3B8" rx="3"/>
+          <text x="95" y="260.4" fill="#64748B" font-size="9.5" font-weight="bold" text-anchor="middle">7.06M</text>
+          
+          <rect x="113" y="174.1" width="25" height="215.9" fill="#0284C7" rx="3"/>
+          <text x="126" y="168.1" fill="#0369A1" font-size="9.5" font-weight="bold" text-anchor="middle">12.34M</text>
+          
+          <text x="110" y="415" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 1</text>
+          <text x="110" y="432" fill="#16A34A" font-size="10" font-weight="bold" text-anchor="middle">+74.7%</text>
+        
+          <!-- Tháng 2 -->
+          <rect x="177" y="266.4" width="25" height="123.6" fill="#94A3B8" rx="3"/>
+          <text x="190" y="260.4" fill="#64748B" font-size="9.5" font-weight="bold" text-anchor="middle">7.07M</text>
+          
+          <rect x="208" y="213.2" width="25" height="176.8" fill="#0284C7" rx="3"/>
+          <text x="221" y="207.2" fill="#0369A1" font-size="9.5" font-weight="bold" text-anchor="middle">10.10M</text>
+          
+          <text x="205" y="415" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 2</text>
+          <text x="205" y="432" fill="#16A34A" font-size="10" font-weight="bold" text-anchor="middle">+43.0%</text>
+        
+          <!-- Tháng 3 -->
+          <rect x="272" y="261.7" width="25" height="128.3" fill="#94A3B8" rx="3"/>
+          <text x="285" y="255.7" fill="#64748B" font-size="9.5" font-weight="bold" text-anchor="middle">7.33M</text>
+          
+          <rect x="303" y="176.9" width="25" height="213.1" fill="#0284C7" rx="3"/>
+          <text x="316" y="170.9" fill="#0369A1" font-size="9.5" font-weight="bold" text-anchor="middle">12.18M</text>
+          
+          <text x="300" y="415" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 3</text>
+          <text x="300" y="432" fill="#16A34A" font-size="10" font-weight="bold" text-anchor="middle">+66.1%</text>
+        
+          <!-- Tháng 4 -->
+          <rect x="367" y="226.3" width="25" height="163.7" fill="#94A3B8" rx="3"/>
+          <text x="380" y="220.3" fill="#64748B" font-size="9.5" font-weight="bold" text-anchor="middle">9.35M</text>
+          
+          <rect x="398" y="161.2" width="25" height="228.8" fill="#0284C7" rx="3"/>
+          <text x="411" y="155.2" fill="#0369A1" font-size="9.5" font-weight="bold" text-anchor="middle">13.07M</text>
+          
+          <text x="395" y="415" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 4</text>
+          <text x="395" y="432" fill="#16A34A" font-size="10" font-weight="bold" text-anchor="middle">+39.8%</text>
+        
+          <!-- Tháng 5 -->
+          <rect x="462" y="221.6" width="25" height="168.4" fill="#94A3B8" rx="3"/>
+          <text x="475" y="215.6" fill="#64748B" font-size="9.5" font-weight="bold" text-anchor="middle">9.63M</text>
+          
+          <rect x="493" y="163.0" width="25" height="227.0" fill="#0284C7" rx="3"/>
+          <text x="506" y="157.0" fill="#0369A1" font-size="9.5" font-weight="bold" text-anchor="middle">12.97M</text>
+          
+          <text x="490" y="415" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 5</text>
+          <text x="490" y="432" fill="#16A34A" font-size="10" font-weight="bold" text-anchor="middle">+34.8%</text>
+        
+          <!-- Tháng 6 -->
+          <rect x="557" y="207.9" width="25" height="182.1" fill="#94A3B8" rx="3"/>
+          <text x="570" y="201.9" fill="#64748B" font-size="9.5" font-weight="bold" text-anchor="middle">10.40M</text>
+          
+          <rect x="588" y="204.8" width="25" height="185.2" fill="#0284C7" rx="3"/>
+          <text x="601" y="198.8" fill="#0369A1" font-size="9.5" font-weight="bold" text-anchor="middle">10.58M</text>
+          
+          <text x="585" y="415" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 6</text>
+          <text x="585" y="432" fill="#16A34A" font-size="10" font-weight="bold" text-anchor="middle">+1.7%</text>
+        
+          <!-- Tháng 7 -->
+          <rect x="652" y="195.4" width="25" height="194.6" fill="#94A3B8" rx="3"/>
+          <text x="665" y="189.4" fill="#64748B" font-size="9.5" font-weight="bold" text-anchor="middle">11.12M</text>
+          
+          <rect x="683" y="192.7" width="25" height="197.3" fill="#0284C7" rx="3"/>
+          <text x="696" y="186.7" fill="#0369A1" font-size="9.5" font-weight="bold" text-anchor="middle">11.27M</text>
+          
+          <text x="680" y="415" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 7</text>
+          <text x="680" y="432" fill="#16A34A" font-size="10" font-weight="bold" text-anchor="middle">+1.4%</text>
+        
+          <!-- Tháng 8 -->
+          <rect x="747" y="211.1" width="25" height="178.9" fill="#94A3B8" rx="3"/>
+          <text x="760" y="205.1" fill="#64748B" font-size="9.5" font-weight="bold" text-anchor="middle">10.22M</text>
+          
+          <rect x="778" y="152.1" width="25" height="237.9" fill="#0284C7" rx="3"/>
+          <text x="791" y="146.1" fill="#0369A1" font-size="9.5" font-weight="bold" text-anchor="middle">13.59M</text>
+          
+          <text x="775" y="415" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 8</text>
+          <text x="775" y="432" fill="#16A34A" font-size="10" font-weight="bold" text-anchor="middle">+33.0%</text>
+        
+          <!-- Tháng 9 -->
+          <rect x="842" y="203.3" width="25" height="186.7" fill="#94A3B8" rx="3"/>
+          <text x="855" y="197.3" fill="#64748B" font-size="9.5" font-weight="bold" text-anchor="middle">10.67M</text>
+          
+          <rect x="873" y="137.7" width="25" height="252.3" fill="#0284C7" rx="3"/>
+          <text x="886" y="131.7" fill="#0369A1" font-size="9.5" font-weight="bold" text-anchor="middle">14.41M</text>
+          
+          <text x="870" y="415" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 9</text>
+          <text x="870" y="432" fill="#16A34A" font-size="10" font-weight="bold" text-anchor="middle">+35.1%</text>
+        
+
+  <!-- Summary box -->
+  <rect x="50" y="465" width="950" height="50" fill="#F8FAFC" stroke="#E2E8F0" rx="8"/>
+  <text x="70" y="495" fill="#0F172A" font-size="12" font-weight="bold">TĂNG TRƯỞNG TOÀN DIỆN 9 THÁNG:</text>
+  <text x="320" y="495" fill="#64748B" font-size="12">2025: 82.85M views</text>
+  <text x="470" y="495" fill="#0284C7" font-size="12" font-weight="bold">➔ 2026: 110.53M views</text>
+  <text x="660" y="495" fill="#16A34A" font-size="12" font-weight="bold">(+33.41% YoY | +27.68 Triệu views)</text>
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="100%" height="100%" style="background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <!-- Header -->
+  <rect x="0" y="0" width="900" height="70" fill="#0F172A"/>
+  <text x="30" y="42" fill="#FFFFFF" font-size="18" font-weight="bold">DIỄN BIẾN TOÀN CẢNH NĂM 2026 THEO QUÝ (Q1 - Q2 - Q3)</text>
+  <text x="30" y="60" fill="#94A3B8" font-size="11">VPĐD BÁO LAO ĐỘNG TẠI TP.HCM | TỔNG 22 PHÓNG VIÊN CHÍNH THỨC</text>
+
+  <!-- Legend -->
+  <rect x="520" y="25" width="14" height="14" fill="#0284C7" rx="3"/>
+  <text x="540" y="37" fill="#F8FAFC" font-size="12">Lượt xem (Triệu views)</text>
+  <rect x="700" y="25" width="14" height="14" fill="#EA580C" rx="3"/>
+  <text x="720" y="37" fill="#F8FAFC" font-size="12">Số bài viết (Bài)</text>
+
+  <!-- Plot Area: x=80..820 (width 740), y=110..420 (height 310) -->
+  <!-- Grid lines -->
+  <line x1="80" y1="110" x2="820" y2="110" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="70" y="114" fill="#64748B" font-size="11" text-anchor="end">45M</text>
+  <text x="830" y="114" fill="#EA580C" font-size="11">9,000</text>
+
+  <line x1="80" y1="187" x2="820" y2="187" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="70" y="191" fill="#64748B" font-size="11" text-anchor="end">30M</text>
+  <text x="830" y="191" fill="#EA580C" font-size="11">6,000</text>
+
+  <line x1="80" y1="265" x2="820" y2="265" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="70" y="269" fill="#64748B" font-size="11" text-anchor="end">15M</text>
+  <text x="830" y="269" fill="#EA580C" font-size="11">3,000</text>
+
+  <line x1="80" y1="342" x2="820" y2="342" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="70" y="346" fill="#64748B" font-size="11" text-anchor="end">0M</text>
+  <text x="830" y="346" fill="#EA580C" font-size="11">0</text>
+
+  <line x1="80" y1="342" x2="820" y2="342" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Bars: Q1 (cx=220), Q2 (cx=450), Q3 (cx=680) -->
+  <!-- Max view 45M = 232px -> y = 342 - (v / 45e6 * 232) -->
+  
+  <!-- Q1 -->
+  <!-- Views: 34.62M -> h = 178.4px, y = 163.6 -->
+  <rect x="160" y="163" width="70" height="179" fill="#94A3B8" rx="4"/>
+  <text x="195" y="153" fill="#0F172A" font-size="13" font-weight="bold" text-anchor="middle">34.62M</text>
+  <!-- Posts: 6,482 -> h = 167px, y = 175 -->
+  <rect x="235" y="175" width="45" height="167" fill="#FDBA74" rx="4"/>
+  <text x="257" y="167" fill="#C2410C" font-size="11" font-weight="bold" text-anchor="middle">6,482</text>
+  <text x="220" y="368" fill="#0F172A" font-size="13" font-weight="bold" text-anchor="middle">QUÝ 1/2026</text>
+  <text x="220" y="388" fill="#64748B" font-size="11" text-anchor="middle">TB 11.54M/tháng</text>
+  <rect x="175" y="398" width="90" height="22" fill="#F1F5F9" rx="11"/>
+  <text x="220" y="413" fill="#334155" font-size="11" font-weight="bold" text-anchor="middle">5,341 view/bài</text>
+
+  <!-- Q2 -->
+  <!-- Views: 36.63M -> h = 188.8px, y = 153.2 -->
+  <rect x="390" y="153" width="70" height="189" fill="#0284C7" rx="4"/>
+  <text x="425" y="143" fill="#0369A1" font-size="13" font-weight="bold" text-anchor="middle">36.63M</text>
+  <text x="425" y="125" fill="#0284C7" font-size="11" font-weight="bold" text-anchor="middle">(+5.81%)</text>
+  <!-- Posts: 7,425 -> h = 191.2px, y = 150.8 -->
+  <rect x="465" y="151" width="45" height="191" fill="#FB923C" rx="4"/>
+  <text x="487" y="143" fill="#C2410C" font-size="11" font-weight="bold" text-anchor="middle">7,425</text>
+  <text x="450" y="368" fill="#0F172A" font-size="13" font-weight="bold" text-anchor="middle">QUÝ 2/2026</text>
+  <text x="450" y="388" fill="#64748B" font-size="11" text-anchor="middle">TB 12.21M/tháng</text>
+  <rect x="405" y="398" width="90" height="22" fill="#E0F2FE" rx="11"/>
+  <text x="450" y="413" fill="#0369A1" font-size="11" font-weight="bold" text-anchor="middle">4,933 view/bài</text>
+
+  <!-- Q3 -->
+  <!-- Views: 39.28M -> h = 202.5px, y = 139.5 -->
+  <rect x="620" y="140" width="70" height="202" fill="#16A34A" rx="4"/>
+  <text x="655" y="130" fill="#15803D" font-size="13" font-weight="bold" text-anchor="middle">39.28M</text>
+  <text x="655" y="112" fill="#16A34A" font-size="11" font-weight="bold" text-anchor="middle">(+7.24%)</text>
+  <!-- Posts: 7,978 -> h = 205.4px, y = 136.6 -->
+  <rect x="695" y="137" width="45" height="205" fill="#EA580C" rx="4"/>
+  <text x="717" y="129" fill="#9A3412" font-size="11" font-weight="bold" text-anchor="middle">7,978</text>
+  <text x="680" y="368" fill="#0F172A" font-size="13" font-weight="bold" text-anchor="middle">QUÝ 3/2026 (QĐ)</text>
+  <text x="680" y="388" fill="#64748B" font-size="11" text-anchor="middle">TB 13.09M/tháng</text>
+  <rect x="635" y="398" width="90" height="22" fill="#DCFCE7" rx="11"/>
+  <text x="680" y="413" fill="#15803D" font-size="11" font-weight="bold" text-anchor="middle">4,924 view/bài</text>
+
+  <!-- Summary banner at bottom -->
+  <rect x="50" y="450" width="800" height="50" fill="#F8FAFC" stroke="#E2E8F0" rx="8"/>
+  <text x="70" y="480" fill="#0F172A" font-size="12" font-weight="bold">TỔNG 9 THÁNG 2026:</text>
+  <text x="210" y="480" fill="#0284C7" font-size="12" font-weight="bold">110,528,337 Lượt xem</text>
+  <text x="390" y="480" fill="#64748B" font-size="12">|</text>
+  <text x="410" y="480" fill="#EA580C" font-size="12" font-weight="bold">21,885 Bài viết</text>
+  <text x="540" y="480" fill="#64748B" font-size="12">|</text>
+  <text x="560" y="480" fill="#16A34A" font-size="12" font-weight="bold">Hiệu suất TB: 5,050 view/bài</text>
+  <text x="750" y="480" fill="#475569" font-size="11">Tăng trưởng liên tục qua 3 Quý</text>
+</svg>

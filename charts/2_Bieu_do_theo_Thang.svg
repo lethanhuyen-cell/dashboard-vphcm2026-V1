@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550" width="100%" height="100%" style="background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <!-- Header -->
+  <rect x="0" y="0" width="1000" height="70" fill="#0F172A"/>
+  <text x="30" y="42" fill="#FFFFFF" font-size="18" font-weight="bold">DIỄN BIẾN 9 THÁNG NĂM 2026 (THÁNG 1 ĐẾN THÁNG 9/2026)</text>
+  <text x="30" y="60" fill="#94A3B8" font-size="11">VPĐD BÁO LAO ĐỘNG TẠI TP.HCM | ĐỐI SOÁT LƯỢT XEM, SỐ LƯỢNG BÀI VÀ HIỆU SUẤT VIEW/BÀI</text>
+
+  <!-- Legend -->
+  <rect x="580" y="25" width="14" height="14" fill="#0284C7" rx="3"/>
+  <text x="600" y="37" fill="#F8FAFC" font-size="11">Lượt xem (Triệu)</text>
+  <rect x="710" y="25" width="14" height="14" fill="#FB923C" rx="3"/>
+  <text x="730" y="37" fill="#F8FAFC" font-size="11">Số bài (Bài)</text>
+  <line x1="800" y1="32" x2="825" y2="32" stroke="#16A34A" stroke-width="3"/>
+  <circle cx="812" cy="32" r="4" fill="#16A34A"/>
+  <text x="835" y="37" fill="#F8FAFC" font-size="11">View/Bài</text>
+
+  <!-- Grid: x=80..920 (width 840), y=110..420 (height 310) -->
+  <line x1="80" y1="110" x2="920" y2="110" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="70" y="114" fill="#64748B" font-size="11" text-anchor="end">16M</text>
+  <text x="930" y="114" fill="#EA580C" font-size="11">3,200</text>
+
+  <line x1="80" y1="187" x2="920" y2="187" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="70" y="191" fill="#64748B" font-size="11" text-anchor="end">12M</text>
+  <text x="930" y="191" fill="#EA580C" font-size="11">2,400</text>
+
+  <line x1="80" y1="265" x2="920" y2="265" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="70" y="269" fill="#64748B" font-size="11" text-anchor="end">8M</text>
+  <text x="930" y="269" fill="#EA580C" font-size="11">1,600</text>
+
+  <line x1="80" y1="342" x2="920" y2="342" stroke="#E2E8F0" stroke-dasharray="4"/>
+  <text x="70" y="346" fill="#64748B" font-size="11" text-anchor="end">4M</text>
+  <text x="930" y="346" fill="#EA580C" font-size="11">800</text>
+
+  <line x1="80" y1="420" x2="920" y2="420" stroke="#334155" stroke-width="1.5"/>
+  <text x="70" y="424" fill="#64748B" font-size="11" text-anchor="end">0</text>
+  <text x="930" y="424" fill="#EA580C" font-size="11">0</text>
+
+  <!-- 9 Months Columns. Step = 840/9 = 93.3px. Centers: 126, 220, 313, 406, 500, 593, 686, 780, 873 -->
+  <!-- Max 16M = 310px -> 1M = 19.375px. Max 3200 bài = 310px -> 1 bài = 0.096875px -->
+  
+  <!-- T1: 12.34M (239px, y=181), 2257 bài (219px, y=201), Eff 5467 -->
+  <rect x="98" y="181" width="32" height="239" fill="#64748B" rx="3"/>
+  <rect x="133" y="201" width="22" height="219" fill="#CBD5E1" rx="3"/>
+  <text x="114" y="173" fill="#0F172A" font-size="10" font-weight="bold" text-anchor="middle">12.34M</text>
+  <text x="144" y="195" fill="#475569" font-size="9" text-anchor="middle">2,257</text>
+  <text x="126" y="440" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 1</text>
+  <text x="126" y="456" fill="#64748B" font-size="10" text-anchor="middle">5,467 v/b</text>
+
+  <!-- T2: 10.10M (196px, y=224), 1949 bài (189px, y=231), Eff 5183 -->
+  <rect x="192" y="224" width="32" height="196" fill="#94A3B8" rx="3"/>
+  <rect x="227" y="231" width="22" height="189" fill="#CBD5E1" rx="3"/>
+  <text x="208" y="216" fill="#0F172A" font-size="10" font-weight="bold" text-anchor="middle">10.10M</text>
+  <text x="238" y="225" fill="#475569" font-size="9" text-anchor="middle">1,949</text>
+  <text x="220" y="440" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 2</text>
+  <text x="220" y="456" fill="#EA580C" font-size="10" text-anchor="middle">(Tết) 5,183</text>
+
+  <!-- T3: 12.18M (236px, y=184), 2276 bài (221px, y=199), Eff 5350 -->
+  <rect x="285" y="184" width="32" height="236" fill="#64748B" rx="3"/>
+  <rect x="320" y="199" width="22" height="221" fill="#CBD5E1" rx="3"/>
+  <text x="301" y="176" fill="#0F172A" font-size="10" font-weight="bold" text-anchor="middle">12.18M</text>
+  <text x="331" y="193" fill="#475569" font-size="9" text-anchor="middle">2,276</text>
+  <text x="313" y="440" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 3</text>
+  <text x="313" y="456" fill="#64748B" font-size="10" text-anchor="middle">5,350 v/b</text>
+
+  <!-- T4: 13.07M (253px, y=167), 2426 bài (235px, y=185), Eff 5389 -->
+  <rect x="378" y="167" width="32" height="253" fill="#0284C7" rx="3"/>
+  <rect x="413" y="185" width="22" height="235" fill="#93C5FD" rx="3"/>
+  <text x="394" y="159" fill="#0369A1" font-size="10" font-weight="bold" text-anchor="middle">13.07M</text>
+  <text x="424" y="179" fill="#1E40AF" font-size="9" text-anchor="middle">2,426</text>
+  <text x="406" y="440" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 4</text>
+  <text x="406" y="456" fill="#64748B" font-size="10" text-anchor="middle">5,389 v/b</text>
+
+  <!-- T5: 12.97M (251px, y=169), 2622 bài (254px, y=166), Eff 4947 -->
+  <rect x="472" y="169" width="32" height="251" fill="#0284C7" rx="3"/>
+  <rect x="507" y="166" width="22" height="254" fill="#93C5FD" rx="3"/>
+  <text x="488" y="161" fill="#0369A1" font-size="10" font-weight="bold" text-anchor="middle">12.97M</text>
+  <text x="518" y="158" fill="#1E40AF" font-size="9" text-anchor="middle">2,622</text>
+  <text x="500" y="440" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 5</text>
+  <text x="500" y="456" fill="#64748B" font-size="10" text-anchor="middle">4,947 v/b</text>
+
+  <!-- T6: 10.58M (205px, y=215), 2377 bài (230px, y=190), Eff 4452 -->
+  <rect x="565" y="215" width="32" height="205" fill="#38BDF8" rx="3"/>
+  <rect x="600" y="190" width="22" height="230" fill="#BAE6FD" rx="3"/>
+  <text x="581" y="207" fill="#0284C7" font-size="10" font-weight="bold" text-anchor="middle">10.58M</text>
+  <text x="611" y="184" fill="#0369A1" font-size="9" text-anchor="middle">2,377</text>
+  <text x="593" y="440" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 6</text>
+  <text x="593" y="456" fill="#64748B" font-size="10" text-anchor="middle">4,452 v/b</text>
+
+  <!-- T7: 11.27M (218px, y=202), 2557 bài (248px, y=172), Eff 4409 -->
+  <rect x="658" y="202" width="32" height="218" fill="#38BDF8" rx="3"/>
+  <rect x="693" y="172" width="22" height="248" fill="#BAE6FD" rx="3"/>
+  <text x="674" y="194" fill="#0284C7" font-size="10" font-weight="bold" text-anchor="middle">11.27M</text>
+  <text x="704" y="166" fill="#0369A1" font-size="9" text-anchor="middle">2,557</text>
+  <text x="686" y="440" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 7</text>
+  <text x="686" y="456" fill="#64748B" font-size="10" text-anchor="middle">4,409 v/b</text>
+
+  <!-- T8: 13.59M (263px, y=157), 2719 bài (263px, y=157), Eff 5000 -->
+  <rect x="752" y="157" width="32" height="263" fill="#16A34A" rx="3"/>
+  <rect x="787" y="157" width="22" height="263" fill="#86EFAC" rx="3"/>
+  <text x="768" y="149" fill="#15803D" font-size="10" font-weight="bold" text-anchor="middle">13.59M</text>
+  <text x="798" y="151" fill="#166534" font-size="9" text-anchor="middle">2,719</text>
+  <text x="780" y="440" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 8</text>
+  <text x="780" y="456" fill="#16A34A" font-size="10" font-weight="bold" text-anchor="middle">5,000 v/b</text>
+
+  <!-- T9: 14.41M (279px, y=141), 2702 bài (262px, y=158), Eff 5335 -->
+  <rect x="845" y="141" width="32" height="279" fill="#15803D" rx="3"/>
+  <rect x="880" y="158" width="22" height="262" fill="#86EFAC" rx="3"/>
+  <text x="861" y="133" fill="#14532D" font-size="10" font-weight="bold" text-anchor="middle">14.41M</text>
+  <text x="891" y="152" fill="#166534" font-size="9" text-anchor="middle">2,702</text>
+  <text x="873" y="440" fill="#0F172A" font-size="11" font-weight="bold" text-anchor="middle">Tháng 9 (QĐ)</text>
+  <text x="873" y="456" fill="#15803D" font-size="10" font-weight="bold" text-anchor="middle">5,335 v/b</text>
+
+  <!-- Quarter brackets at bottom -->
+  <line x1="98" y1="475" x2="342" y2="475" stroke="#94A3B8" stroke-width="2"/>
+  <text x="220" y="492" fill="#475569" font-size="11" font-weight="bold" text-anchor="middle">QUÝ 1 (34.62M)</text>
+
+  <line x1="378" y1="475" x2="622" y2="475" stroke="#0284C7" stroke-width="2"/>
+  <text x="500" y="492" fill="#0369A1" font-size="11" font-weight="bold" text-anchor="middle">QUÝ 2 (36.63M)</text>
+
+  <line x1="658" y1="475" x2="902" y2="475" stroke="#16A34A" stroke-width="2"/>
+  <text x="780" y="492" fill="#15803D" font-size="11" font-weight="bold" text-anchor="middle">QUÝ 3 (39.28M)</text>
+
+  <!-- Summary footer -->
+  <rect x="50" y="505" width="900" height="35" fill="#F8FAFC" rx="6"/>
+  <text x="500" y="527" fill="#334155" font-size="11" font-weight="bold" text-anchor="middle">Đỉnh cao lượt xem: Tháng 9/2026 (14.41M views) | Đỉnh cao sản lượng: Tháng 8/2026 (2,719 bài) | Hiệu suất cao nhất: Tháng 1/2026 (5,467 v/b)</text>
+</svg>
