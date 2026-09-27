@@ -166,6 +166,18 @@
       .grid-3 { grid-template-columns: 1fr; }
     }
 
+    /* GRID 2 COLUMNS (5 INSIGHTS CÂN ĐỐI 2x2 + 1) */
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 0;
+    }
+    @media (max-width: 850px) {
+      .insights-grid { grid-template-columns: 1fr; }
+      .insights-card-full { grid-column: span 1 !important; }
+    }
+
     /* SECTION TITLE BAR (3 CỤM LỚN) */
     .section-title-bar {
       display: flex;
@@ -509,7 +521,7 @@
             <span>🎯</span> 3 Kịch Bản Quý 4 ➔
           </button>
           <button onclick="goToReporterTab()" type="button" class="badge-official" style="font-size: 11.5px; padding: 6px 14px; cursor: pointer; border: 1.5px solid rgba(16, 185, 129, 0.6); background: rgba(16, 185, 129, 0.15); color: #4ADE80; font-weight: 800; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25); transition: all 0.2s ease;" onmouseover="this.style.background='rgba(16, 185, 129, 0.3)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='rgba(16, 185, 129, 0.15)'; this.style.transform='none';">
-            <span>👥</span> 22 PHÓNG VIÊN CHÍNH THỨC ➔
+            <span>👥</span> 22 PHÓNG VIÊN & CTV ➔
           </button>
           <button class="btn btn-primary" onclick="window.print()" style="padding: 6px 14px; font-size: 12px;">🖨️ In / Xuất PDF</button>
         </div>
@@ -586,7 +598,7 @@
           </div>
         </div>
         <button onclick="goToReporterTab()" type="button" style="background: rgba(245, 158, 11, 0.15); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 6px; padding: 7px 16px; font-size: 12.5px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;">
-          <span>👥</span> Xem Toàn Bộ 22 Phóng Viên →
+          <span>👥</span> Xem Toàn Bộ 22 Phóng Viên & CTV →
         </button>
       </div>
 
@@ -841,7 +853,7 @@
         <span class="tab-cta">▼ Click xem chi tiết</span>
       </button>
       <button class="tab-btn" onclick="switchTab(event, 'tab-reporters')">
-        <span class="tab-title">👤 Đánh Giá 22 Phóng Viên</span>
+        <span class="tab-title">👤 22 Phóng Viên & CTV</span>
         <span class="tab-cta">▼ Click xem chi tiết</span>
       </button>
       <button class="tab-btn" onclick="switchTab(event, 'tab-overview')">
@@ -1246,10 +1258,10 @@
             </p>
           </div>
 
-          <!-- MỤC 3: 22 PHÓNG VIÊN -->
+          <!-- MỤC 3: 22 PHÓNG VIÊN & CTV -->
           <div style="background: rgba(30, 41, 59, 0.55); border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 12px; padding: 18px 22px;">
             <h3 style="font-size: 15.5px; font-weight: 700; color: #4ADE80; margin: 0 0 14px 0; display: flex; align-items: center; gap: 8px;">
-              <span>👥</span> 3. Chuyển động từ đội ngũ 22 phóng viên: Sự chia sẻ nhịp độ giữa các thế hệ
+              <span>👥</span> 3. Chuyển động từ đội ngũ 22 Phóng viên & CTV: Sự chia sẻ nhịp độ giữa các thế hệ
             </h3>
             
             <div style="margin-bottom: 14px;">
@@ -1263,10 +1275,10 @@
 
             <div style="margin-bottom: 14px;">
               <div style="font-weight: 700; color: #A7F3D0; font-size: 14px; margin-bottom: 4px;">
-                • Lực lượng tầm trung và phóng viên trẻ có sự tiếp sức đồng đều hơn:
+                • Đội ngũ Cộng tác viên và phóng viên trẻ có sự tiếp sức mạnh mẽ:
               </div>
               <p style="margin: 0; padding-left: 14px; color: #CBD5E1; font-size: 13.5px;">
-                Một số phóng viên trẻ và tầm trung có những bước tiến rõ rệt về sản lượng và sự hòa nhập (Lê Thanh Ngọc Ánh, Trần Nam Dương, Nguyễn Như Quỳnh, Nguyễn Lê Mai Anh, Huỳnh Ngọc Du), góp phần san sẻ bớt áp lực chỉ tiêu và thu hẹp khoảng cách giữa các cá nhân trong tập thể.
+                Đội ngũ Cộng tác viên (Lê Thanh Ngọc Ánh, Nguyễn Như Quỳnh, Nguyễn Thái Bảo, Nguyễn Lê Mai Anh, Huỳnh Ngọc Du) cùng các phóng viên trẻ, tầm trung (Trần Nam Dương,...) có những bước tiến rõ rệt về sản lượng và sự hòa nhập, góp phần san sẻ bớt áp lực chỉ tiêu và mở rộng biên độ tiếp cận bạn đọc.
               </p>
             </div>
 
@@ -1296,8 +1308,8 @@
               <strong>• Đọc vị số liệu 39 tuần:</strong> Phân tích sâu chuỗi dữ liệu 9 tháng (2026), đối soát cùng kỳ YoY (2025 vs 2026) và chỉ số từng cá nhân cho thấy <strong>5 quy luật ngầm mang tính bản lề</strong> cho công tác chỉ đạo, điều hành của Văn phòng:
             </p>
 
-            <!-- 5 THẺ INSIGHT GLASSMORPHISM (LƯỚI 2 & 3 CỘT) -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; margin-bottom: 0;">
+            <!-- 5 THẺ INSIGHT GLASSMORPHISM (LƯỚI 2 CỘT CÂN ĐỐI 2x2 + 1) -->
+            <div class="insights-grid">
               
               <!-- THẺ 1: BÙNG NỔ VIEW TỪ HIỆU SUẤT -->
               <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.4); border-radius: 12px; padding: 16px;">
@@ -1364,21 +1376,21 @@
                   <span style="font-size: 20px;">🌱</span>
                   <div>
                     <span class="badge badge-orange" style="font-size: 10px; padding: 2px 7px; margin-bottom: 2px;">PHÁT HIỆN 4: LỰC LƯỢNG KẾ THỪA</span>
-                    <div style="font-size: 14.5px; font-weight: 800; color: #FFFFFF;">CTV Trẻ Là "Tấm Lưới Đỡ An Toàn" Q3</div>
+                    <div style="font-size: 14.5px; font-weight: 800; color: #FFFFFF;">5 CTV Là "Tấm Lưới Đỡ An Toàn" Q3</div>
                   </div>
                 </div>
                 <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; font-size: 12px; color: #FDE68A;">
-                  • <b>Nguyễn Thái Bảo:</b> Tăng <strong style="color: #4ADE80;">+507.5% YoY</strong> (1.82M views, 415 bài)<br>
-                  • <b>Lê Thanh Ngọc Ánh:</b> Q3 bứt phá <b>1.24M views</b> (+81.7% vs Q1)<br>
-                  • <b>Nguyễn Như Quỳnh:</b> Tăng <strong style="color: #4ADE80;">+85.6% YoY</strong> (3.59M views, 696 bài)
+                  • <b>Thái Bảo & Ngọc Ánh:</b> Bảo (+507.5% YoY, 1.82M), Ánh (2.79M, Q3: 1.24M)<br>
+                  • <b>Như Quỳnh, Mai Anh, Huỳnh Du:</b> Quỳnh (2.45M), Mai Anh (Q3: 482K, +813% vs Q1), Du (Q3: 428K, 4.4K v/b)<br>
+                  • <b>Tổng 5 CTV:</b> Đóng góp gần <strong style="color: #4ADE80;">9.4 Triệu views</strong> (Q3 gánh 4.45M)
                 </div>
                 <div style="font-size: 12px; color: #CBD5E1; line-height: 1.5;">
-                  👉 <i>Ý nghĩa quản trị:</i> Nhóm trẻ san sẻ gần <b>8.2M views</b> trong 9 tháng, giảm tải áp lực cho trụ cột và ngăn ngừa tụt hạng khi trũng tin tức.
+                  👉 <i>Ý nghĩa quản trị:</i> 5 CTV chia sẻ áp lực lớn cho đội ngũ cơ hữu, vừa giữ vững chân hàng vừa ươm mầm thế hệ kế cận chất lượng cho Văn phòng.
                 </div>
               </div>
 
               <!-- THẺ 5: VÙNG PHONG ĐỘ KỶ LỤC T8 & T9 -->
-              <div style="background: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.4); border-radius: 12px; padding: 16px; grid-column: 1 / -1;">
+              <div class="insights-card-full" style="background: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.4); border-radius: 12px; padding: 16px; grid-column: span 2;">
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
                   <span style="font-size: 20px;">🔥</span>
                   <div>
@@ -1647,10 +1659,15 @@
           ? `<img src="${repAvatarMap[r.name]}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-cyan); box-shadow: 0 0 6px rgba(14,165,233,0.4); flex-shrink: 0;">` 
           : `<div style="width: 32px; height: 32px; border-radius: 50%; background: #334155; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #94A3B8; flex-shrink: 0;">${r.name.charAt(0)}</div>`;
 
+        const ctvList = ['Lê Thanh Ngọc Ánh', 'Nguyễn Như Quỳnh', 'Nguyễn Thái Bảo', 'Nguyễn Lê Mai Anh', 'Huỳnh Ngọc Du'];
+        const ctvBadgeHtml = ctvList.includes(r.name) 
+          ? `<span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.4); font-size: 9.5px; padding: 1px 5px; border-radius: 4px; font-weight: 700;">CTV</span>` 
+          : '';
+
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td><strong>${idx + 1}</strong></td>
-          <td><div style="display: flex; align-items: center; gap: 10px;">${avSmall}<strong>${r.name}</strong></div></td>
+          <td><div style="display: flex; align-items: center; gap: 8px;">${avSmall}<strong>${r.name}</strong>${ctvBadgeHtml}</div></td>
           <td class="num"><strong>${r.tot_views.toLocaleString()}</strong></td>
           <td class="num">${r.share_9m}%</td>
           <td class="num">${r.tot_posts.toLocaleString()}</td>
@@ -1695,7 +1712,10 @@
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
             ${avBig}
             <div>
-              <div class="rep-name" style="margin-bottom: 2px;">${idx + 1}. ${r.name}</div>
+              <div class="rep-name" style="margin-bottom: 2px; display: flex; align-items: center; gap: 6px;">
+                <span>${idx + 1}. ${r.name}</span>
+                ${ctvBadgeHtml}
+              </div>
               <div style="font-size: 11px; color: var(--text-muted); font-weight: 500;">
                 Sản lượng 9T: <b style="color: #FFFFFF;">${r.tot_posts.toLocaleString()}</b> bài • Hiệu suất 9T: <b>${r.tot_eff.toLocaleString()}</b> v/b
               </div>
