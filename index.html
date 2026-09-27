@@ -1396,6 +1396,12 @@
           ? `<img src="${repAvatarMap[r.name]}" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-cyan); box-shadow: 0 0 10px rgba(14,165,233,0.35); flex-shrink: 0;">` 
           : `<div style="width: 48px; height: 48px; border-radius: 50%; background: #334155; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #94A3B8; flex-shrink: 0;">${r.name.charAt(0)}</div>`;
 
+        const effDiff = r.tot_eff - 5050;
+        const effDiffPct = Math.round((effDiff / 5050) * 100);
+        const effBadge = effDiff >= 0
+          ? `<span class="badge badge-green">▲ +${effDiffPct}%</span>`
+          : `<span class="badge badge-gray">▼ ${effDiffPct}%</span>`;
+
         const card = document.createElement('div');
         card.className = 'rep-card';
         card.innerHTML = `
@@ -1403,12 +1409,21 @@
             ${avBig}
             <div>
               <div class="rep-name" style="margin-bottom: 2px;">${idx + 1}. ${r.name}</div>
-              <div style="font-size: 11px; color: var(--text-muted);">${r.tot_posts.toLocaleString()} bài • ${r.tot_eff.toLocaleString()} v/b</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 500;">
+                Sản lượng: <b style="color: #FFFFFF;">${r.tot_posts.toLocaleString()}</b> bài
+              </div>
             </div>
           </div>
-          <div class="rep-metric"><span>Tổng Views (9T):</span> <strong>${r.tot_views.toLocaleString()}</strong> (${r.share_9m}%)</div>
+          <div class="rep-metric" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 6px 10px; margin-bottom: 8px;">
+            <span style="color: #A7F3D0; font-weight: 700;">🎯 Hiệu Suất (v/b):</span>
+            <span style="display: flex; align-items: center; gap: 6px;">
+              <strong style="color: #4ADE80; font-size: 14px;">${r.tot_eff.toLocaleString()}</strong>
+              ${effBadge}
+            </span>
+          </div>
+          <div class="rep-metric"><span>Tổng Lượt Xem (9T):</span> <strong>${r.tot_views.toLocaleString()}</strong> (${r.share_9m}%)</div>
           <div class="rep-metric"><span>Quý 1 / Quý 2 / Quý 3:</span> ${Math.round(r.q1.views/1e6 * 10)/10}M | ${Math.round(r.q2.views/1e6 * 10)/10}M | ${Math.round(r.q3.views/1e6 * 10)/10}M</div>
-          <div class="rep-metric"><span>So với TB VP (5.02M):</span> ${diffBadge}</div>
+          <div class="rep-metric"><span>So với TB Views VP:</span> ${diffBadge}</div>
         `;
         grid.appendChild(card);
       });
