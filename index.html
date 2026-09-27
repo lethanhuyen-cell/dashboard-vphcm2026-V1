@@ -135,36 +135,78 @@
     }
 
     /* TABS */
+    /* GRID 4 COLUMNS */
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 1100px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .grid-4 { grid-template-columns: 1fr; }
+    }
+
+    /* SECTION TITLE BAR (3 CỤM LỚN) */
+    .section-title-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #38BDF8;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin: 32px 0 14px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+    }
+    .section-title-bar:first-of-type {
+      margin-top: 18px;
+    }
+
+    /* TABS 2 BALANCED ROWS */
     .tabs-nav {
       display: flex;
+      flex-wrap: wrap;
       gap: 8px;
       background: var(--bg-subcard);
-      padding: 6px;
+      padding: 8px;
       border-radius: 12px;
       border: 1px solid var(--border-color);
       margin-bottom: 24px;
-      overflow-x: auto;
     }
     .tab-btn {
+      flex: 1 1 calc(25% - 8px);
+      min-width: 190px;
+      text-align: center;
       background: transparent;
-      border: none;
+      border: 1px solid transparent;
       color: var(--text-muted);
-      padding: 10px 16px;
-      font-size: 13.5px;
+      padding: 10px 14px;
+      font-size: 13px;
       font-weight: 700;
       border-radius: 8px;
       cursor: pointer;
       transition: all 0.2s;
-      white-space: nowrap;
+      white-space: normal;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
     }
     .tab-btn:hover {
       color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
     }
     .tab-btn.active {
       background: var(--accent-blue);
       color: #FFFFFF;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
     }
 
     /* TAB CONTENT PANELS */
@@ -394,6 +436,8 @@
     </div>
 
     <!-- 6 KPI CARDS -->
+        <!-- CỤM I: NHỮNG CON SỐ NỔI BẬT & THI ĐUA TOÀN TÒA SOẠN -->
+    <div class="section-title-bar"><span>📌</span> I. NHỮNG CON SỐ NỔI BẬT & THI ĐUA TOÀN TÒA SOẠN (2026)</div>
     <div class="kpi-grid">
       <div class="kpi-card blue">
         <div class="kpi-title">Tổng Lượt Xem (9T/2026)</div>
@@ -432,6 +476,53 @@
       </div>
     </div>
 
+        <!-- HERO CHART: BIỂU ĐỒ THI ĐUA TOÀN TÒA SOẠN 39 TUẦN -->
+    <div class="card" style="margin-bottom: 30px; border: 1px solid rgba(14, 165, 233, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.35);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+        <div>
+          <div class="card-title" style="margin-bottom: 4px;">🏆 THI ĐUA TOÀN TÒA SOẠN : BIỂU ĐỒ THAY ĐỔI THỨ HẠNG & % TIẾN ĐỘ VIEW QUA 39 TUẦN</div>
+          <div class="card-desc" style="margin-bottom: 0;">
+            Xếp hạng thuần theo <b>Tỷ lệ % Tiến độ Hoàn thành</b> (View Đạt / Định mức Phân bổ 2.754.400 view/tuần) so với 12 đơn vị toàn cơ quan.
+          </div>
+        </div>
+        <span class="badge badge-green" style="font-size: 12px; padding: 6px 14px;">🥉 Hạng #3/12 Toàn Cơ Quan (Luỹ Kế 85.67%)</span>
+      </div>
+
+      <!-- 4 MINI KPI THI ĐUA -->
+      <div class="grid-4" style="margin-bottom: 16px;">
+        <div class="kpi-card blue" style="padding: 14px 16px;">
+          <div class="kpi-title">% Hoàn Thành Luỹ Kế (38 Tuần)</div>
+          <div class="kpi-value" style="font-size: 22px; color: var(--accent-cyan);">85.67%</div>
+          <div class="kpi-sub">🥉 <span>Hạng 3/12 Toàn Toà Soạn</span> (89.67M / 104.67M)</div>
+        </div>
+        <div class="kpi-card amber" style="padding: 14px 16px;">
+          <div class="kpi-title">Quán Quân % Tiến Độ Tuần</div>
+          <div class="kpi-value" style="font-size: 22px; color: var(--accent-amber);">4 Tuần #1</div>
+          <div class="kpi-sub">W04 (108%), W05 (111%), W11 (98%), W32 (92%)</div>
+        </div>
+        <div class="kpi-card green" style="padding: 14px 16px;">
+          <div class="kpi-title">Tần Suất Đạt TOP 3 %</div>
+          <div class="kpi-value" style="font-size: 22px; color: var(--accent-emerald);">12 Tuần Top 3</div>
+          <div class="kpi-sub">Chiếm <span>31.6%</span> tổng số tuần trong năm</div>
+        </div>
+        <div class="kpi-card purple" style="padding: 14px 16px;">
+          <div class="kpi-title">Bứt Phá Quý 3 (W31 - W38)</div>
+          <div class="kpi-value" style="font-size: 22px; color: var(--accent-purple);">7 / 8 Tuần Top 3</div>
+          <div class="kpi-sub">Hạng % TB Quý 3 đạt <span>#2.9 / 12</span></div>
+        </div>
+      </div>
+
+      <div class="chart-box" style="height: 380px;">
+        <canvas id="chartWeekRankingTop"></canvas>
+      </div>
+      <div style="font-size: 12px; color: var(--text-muted); margin-top: 10px; display: flex; justify-content: space-between; flex-wrap: wrap;">
+        <span>🟡 <b>Đường Vàng (Trục Trái):</b> Thứ hạng % toà soạn (Hạng #1 ở đỉnh cao nhất, Hạng #12 ở đáy).</span>
+        <span>🔵 <b>Đường Xanh (Trục Phải):</b> % Tiến độ hoàn thành chỉ tiêu tuần (Mốc chuẩn 100%).</span>
+      </div>
+    </div>
+
+    <!-- CỤM II: ĐỌC DỮ LIỆU -->
+    <div class="section-title-bar"><span>📊</span> II. ĐỌC DỮ LIỆU & ĐỐI SOÁT CHI TIẾT (3 CẤP ĐỘ)</div>
     <!-- NAVIGATION TABS -->
     <div class="tabs-nav">
       <button class="tab-btn active" onclick="switchTab(event, 'tab-quarter')">🏢 Cấp Độ 1: Theo Quý (Q1-Q3)</button>
@@ -772,55 +863,179 @@
       </div>
     </div>
 
-  </div>
+  
+    <!-- CỤM III: NHẬN ĐỊNH ĐIỀU HÀNH (ĐẶT Ở CUỐI TRANG) -->
+    <div class="section-title-bar">
+      <span>💡</span> III. NHẬN ĐỊNH ĐIỀU HÀNH
+    </div>
+
+    <div id="executive-panel-container" style="margin-bottom: 36px;">
+      <div id="executive-panel-header" onclick="toggleExecutivePanel()" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95)); border: 1px solid rgba(14, 165, 233, 0.45); border-top-left-radius: 12px; border-top-right-radius: 12px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; padding: 14px 22px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 18px rgba(0,0,0,0.35); transition: all 0.25s ease;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 24px;">🎯</span>
+          <div style="font-size: 15.5px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.2px;">
+            NHẬN ĐỊNH ĐIỀU HÀNH : THẤY GÌ QUA NHỮNG CON SỐ?
+          </div>
+        </div>
+        <div>
+          <button id="btn-toggle-executive" type="button" style="background: var(--accent-cyan); color: #0F172A; border: none; border-radius: 6px; padding: 7px 16px; font-size: 13px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(14,165,233,0.3);">
+            <span id="toggle-icon">▲</span> <span id="toggle-text">Thu gọn nhận định</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- COLLAPSIBLE BODY (THẲNG THẮN, KHÁCH QUAN & ĐIỀM ĐẠM) -->
+      <div id="executive-panel-body" style="display: block; background: var(--bg-card); border: 1px solid var(--border-color); border-top: none; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; padding: 24px 28px; box-shadow: 0 12px 32px rgba(0,0,0,0.4); animation: fadeIn 0.3s ease;">
+        
+        <!-- KHUNG TỔNG KẾT QUẢN TRỊ -->
+        <div style="background: rgba(14, 165, 233, 0.08); border-left: 4px solid var(--accent-cyan); border-radius: 8px; padding: 16px 20px; margin-bottom: 24px;">
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 6px;">
+            <span>⚡</span> TÓM LƯỢC QUẢN TRỊ ĐIỀU HÀNH
+          </div>
+          <div style="font-size: 14px; line-height: 1.65; color: #E2E8F0;">
+            Đối soát chuỗi dữ liệu 9 tháng năm 2026 cho thấy <strong>sự tương phản rõ nét giữa 2 giai đoạn vận hành</strong>: Nếu như nửa đầu năm (Q1 & Q2) biểu đồ tiến độ <em>trồi sụt rất thất thường và phụ thuộc nặng vào sự vụ đột xuất</em>, thì trong 8–9 tuần gần đây của Quý 3, đồ thị <strong>bước đầu xuất hiện các dấu hiệu ổn định và bền vững hơn về nhịp độ sản xuất</strong>. Sự phối hợp giữa nhóm chủ lực và lực lượng trẻ đang dần đi vào nền nếp, tạo tiền đề quan trọng để duy trì kỷ luật vận hành trong giai đoạn cao điểm cuối năm.
+          </div>
+        </div>
+
+        <!-- MẠCH LẬP LUẬN THEO TIẾN TRÌNH THỜI GIAN -->
+        <div style="font-size: 14px; line-height: 1.7; color: var(--text-main); display: flex; flex-direction: column; gap: 18px;">
+
+          <!-- MỤC 1: QUÝ 1 & QUÝ 2 -->
+          <div style="background: rgba(30, 41, 59, 0.55); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 18px 22px;">
+            <h3 style="font-size: 15.5px; font-weight: 700; color: #F87171; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+              <span>📉</span> 1. Giai đoạn Quý 1 & Quý 2: Biểu đồ tiến độ trồi sụt rất thất thường và thiếu tính ổn định
+            </h3>
+            <p style="margin: 0 0 10px 0; padding-left: 12px; border-left: 3px solid #EF4444; color: #E2E8F0;">
+              <strong>• Thực trạng đồ thị răng cưa lớn:</strong> Nhìn vào chuỗi 26 tuần đầu năm, biểu đồ xếp hạng % tiến độ của Văn phòng <em>dao động trồi sụt rất thất thường</em>: Có những tuần đạt đỉnh Hạng #1 (W04, W05, W11), nhưng ngay sau đó lại rơi sâu xuống đáy Hạng #8, #9, #10 (như đợt Tết W06–W08 và đợt trũng mùa hè W24–W25). Biên độ biến động quá lớn cho thấy hệ thống vận hành chưa thực sự ổn định.
+            </p>
+            <p style="margin: 0; padding-left: 12px; border-left: 3px solid #EF4444; color: #CBD5E1;">
+              <strong>• Nguyên nhân cốt lõi:</strong> Dòng view thời kỳ này mang tính <em>ngẫu hứng, phụ thuộc nặng nề vào các luồng sự kiện thời sự nóng đột xuất hoặc công suất của một vài cây bút chủ lực gánh team</em>. Khi thị trường thiếu vắng tin nóng hoặc một vài vị trí bị chững lại, toàn bộ guồng máy lập tức bị hụt chân, nhịp độ sản xuất không duy trì được sự đều đặn 7 ngày trong tuần.
+            </p>
+          </div>
+
+          <!-- MỤC 2: QUÝ 3 -->
+          <div style="background: rgba(30, 41, 59, 0.55); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px;">
+            <h3 style="font-size: 15.5px; font-weight: 700; color: #38BDF8; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+              <span>📈</span> 2. Giai đoạn Quý 3: Bước đầu xuất hiện dấu hiệu ổn định, đồ thị thu hẹp biên độ trồi sụt
+            </h3>
+            <p style="margin: 0 0 10px 0; padding-left: 12px; border-left: 3px solid var(--accent-cyan); color: #E2E8F0;">
+              <strong>• Tín hiệu tích cực về nhịp độ:</strong> Qua 8–9 tuần tiếp quản gần đây, đồ thị đã có sự thay đổi rõ nét: <em>Biên độ trồi sụt được thu hẹp đáng kể, nhịp độ sản xuất có dấu hiệu ổn định và bền vững hơn</em>, duy trì thứ hạng % tiến độ vững chắc trong nhóm Top 3 toàn toà soạn ở 7/8 tuần (thứ hạng trung bình đạt #2.9/12). Đồ thị không còn xuất hiện những cú rơi tự do xuống nhóm đáy như trước.
+            </p>
+            <p style="margin: 0; padding-left: 12px; border-left: 3px solid var(--accent-cyan); color: #E2E8F0;">
+              <strong>• Sự chuyển biến về cơ cấu nội dung:</strong> Văn phòng bước đầu xây dựng được <em>chân hàng cơ bản (baseline) tương đối đều đặn</em> từ các mảng đề tài thế mạnh (kinh tế, đô thị, đời sống công đoàn, bạn đọc...), giúp duy trì lưu lượng tối thiểu an toàn hàng ngày mà không còn hoàn toàn bị động chờ đợi sự kiện phát sinh.
+            </p>
+          </div>
+
+          <!-- MỤC 3: 22 PHÓNG VIÊN -->
+          <div style="background: rgba(30, 41, 59, 0.55); border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 12px; padding: 18px 22px;">
+            <h3 style="font-size: 15.5px; font-weight: 700; color: #4ADE80; margin: 0 0 14px 0; display: flex; align-items: center; gap: 8px;">
+              <span>👥</span> 3. Chuyển động từ đội ngũ 22 phóng viên: Sự chia sẻ nhịp độ giữa các thế hệ
+            </h3>
+            
+            <div style="margin-bottom: 14px;">
+              <div style="font-weight: 700; color: #A7F3D0; font-size: 14px; margin-bottom: 4px;">
+                • Nhóm phóng viên chủ lực giữ vững vai trò đầu tàu:
+              </div>
+              <p style="margin: 0; padding-left: 14px; color: #CBD5E1; font-size: 13.5px;">
+                Các phóng viên trụ cột tiếp tục duy trì năng suất và chất lượng ổn định (Lý Thanh Vũ đạt 3,66M views Q3; Nguyễn Đăng Văn giữ vững 2,73M views với hiệu suất 7.341 v/b; Nguyễn Thị Minh Tâm, Hà Anh Chiến, Đào Thị Ngọc Lê đều có sự tăng trưởng tích cực), đóng vai trò giữ nhịp sản xuất liên tục cho cơ quan.
+              </p>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <div style="font-weight: 700; color: #A7F3D0; font-size: 14px; margin-bottom: 4px;">
+                • Lực lượng tầm trung và phóng viên trẻ có sự tiếp sức đồng đều hơn:
+              </div>
+              <p style="margin: 0; padding-left: 14px; color: #CBD5E1; font-size: 13.5px;">
+                Một số phóng viên trẻ và tầm trung có những bước tiến rõ rệt về sản lượng và sự hòa nhập (Lê Thanh Ngọc Ánh, Trần Nam Dương, Nguyễn Như Quỳnh, Nguyễn Lê Mai Anh, Huỳnh Ngọc Du), góp phần san sẻ bớt áp lực chỉ tiêu và thu hẹp khoảng cách giữa các cá nhân trong tập thể.
+              </p>
+            </div>
+
+            <div>
+              <div style="font-weight: 700; color: #A7F3D0; font-size: 14px; margin-bottom: 4px;">
+                • Kết hợp hài hòa giữa số lượng và chất lượng:
+              </div>
+              <p style="margin: 0; padding-left: 14px; color: #CBD5E1; font-size: 13.5px;">
+                Văn phòng duy trì đồng thời mũi sản xuất tin bài dày dặn nhằm phủ kín mặt báo và mũi chuyên sâu chất lượng cao (Bảo Chương 10.390 v/b, Trí Độ 8.136 v/b, Thanh Phong 6.916 v/b, Văn Quân 6.874 v/b) để giữ gìn thương hiệu và uy tín báo chí.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- MỤC 4: PHÁN ĐOÁN & NHẬN ĐỊNH THẬN TRỌNG CHO QUÝ 4 -->
+          <div style="background: rgba(30, 41, 59, 0.55); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 12px; padding: 18px 22px;">
+            <h3 style="font-size: 15.5px; font-weight: 700; color: #F59E0B; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+              <span>🎯</span> 4. Nhận định thận trọng & Định hướng trọng tâm cho Quý 4/2026
+            </h3>
+            <p style="margin: 0 0 10px 0; padding-left: 12px; border-left: 3px solid #F59E0B; color: #E2E8F0;">
+              <strong>• Giữ tâm thế thận trọng, không chủ quan:</strong> Mặc dù tỷ lệ hoàn thành luỹ kế 38 tuần đạt <strong>85,67% (tạm xếp Hạng #3 toàn toà soạn)</strong>, song đây mới là những <em>kết quả bước đầu của giai đoạn định hình lại phương thức làm việc</em>. Cần tiếp tục theo dõi sát sao để kiểm chứng độ bền vững thực sự của chuỗi chỉ số này qua các giai đoạn biến động tiếp theo.
+            </p>
+            <p style="margin: 0; padding-left: 12px; border-left: 3px solid #F59E0B; color: #E2E8F0;">
+              <strong>• Trọng tâm điều hành giai đoạn nước rút:</strong> Quý 4 là thời điểm các ban trong toàn cơ quan đều tăng tốc mạnh mẽ. Văn phòng cần tiếp tục <em>duy trì kỷ luật đề tài, chủ động phân bổ nguồn lực 7 ngày trong tuần, nâng cao chất lượng biên tập đa phương tiện và đồng hành sát sao cùng từng phóng viên</em> nhằm đảm bảo hoàn thành tốt các chỉ tiêu nhiệm vụ cả năm một cách thực chất và bền bỉ.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- NÚT THU GỌN Ở DƯỚI CÙNG -->
+        <div style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 14px; margin-top: 20px;">
+          <button onclick="toggleExecutivePanel()" type="button" style="background: rgba(255,255,255,0.08); color: var(--accent-cyan); border: 1px solid rgba(14,165,233,0.3); border-radius: 6px; padding: 6px 18px; font-size: 12.5px; font-weight: 600; cursor: pointer;">
+            ▲ Thu gọn
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    </div>
 
   <script>
-    const yoyData = {"monthly_totals": [{"code": "T1", "name": "Tháng 1", "views_2025": 7063394, "posts_2025": 1893, "eff_2025": 3731, "views_2026": 12338108, "posts_2026": 2257, "eff_2026": 5467, "growth_views": 74.7, "growth_posts": 19.2}, {"code": "T2", "name": "Tháng 2", "views_2025": 7065659, "posts_2025": 1758, "eff_2025": 4019, "views_2026": 10102261, "posts_2026": 1949, "eff_2026": 5183, "growth_views": 43.0, "growth_posts": 10.9}, {"code": "T3", "name": "Tháng 3", "views_2025": 7330156, "posts_2025": 2077, "eff_2025": 3529, "views_2026": 12177700, "posts_2026": 2276, "eff_2026": 5350, "growth_views": 66.1, "growth_posts": 9.6}, {"code": "T4", "name": "Tháng 4", "views_2025": 9351669, "posts_2025": 2181, "eff_2025": 4288, "views_2026": 13074247, "posts_2026": 2426, "eff_2026": 5389, "growth_views": 39.8, "growth_posts": 11.2}, {"code": "T5", "name": "Tháng 5", "views_2025": 9625213, "posts_2025": 2365, "eff_2025": 4070, "views_2026": 12971255, "posts_2026": 2622, "eff_2026": 4947, "growth_views": 34.8, "growth_posts": 10.9}, {"code": "T6", "name": "Tháng 6", "views_2025": 10404556, "posts_2025": 2373, "eff_2025": 4385, "views_2026": 10582746, "posts_2026": 2377, "eff_2026": 4452, "growth_views": 1.7, "growth_posts": 0.2}, {"code": "T7", "name": "Tháng 7", "views_2025": 11119201, "posts_2025": 2495, "eff_2025": 4457, "views_2026": 11272645, "posts_2026": 2557, "eff_2026": 4409, "growth_views": 1.4, "growth_posts": 2.5}, {"code": "T8", "name": "Tháng 8", "views_2025": 10220817, "posts_2025": 2570, "eff_2025": 3977, "views_2026": 13594783, "posts_2026": 2719, "eff_2026": 5000, "growth_views": 33.0, "growth_posts": 5.8}, {"code": "T9", "name": "Tháng 9", "views_2025": 10669655, "posts_2025": 2474, "eff_2025": 4313, "views_2026": 14414591, "posts_2026": 2705, "eff_2026": 5329, "growth_views": 35.1, "growth_posts": 9.3}], "quarterly_totals": [{"name": "Quý 1", "views_2025": 21459209, "posts_2025": 5728, "eff_2025": 3746, "views_2026": 34618069, "posts_2026": 6482, "eff_2026": 5341, "growth_views": 61.3, "growth_posts": 13.2}, {"name": "Quý 2", "views_2025": 29381438, "posts_2025": 6919, "eff_2025": 4246, "views_2026": 36628248, "posts_2026": 7425, "eff_2026": 4933, "growth_views": 24.7, "growth_posts": 7.3}, {"name": "Quý 3", "views_2025": 32009673, "posts_2025": 7539, "eff_2025": 4246, "views_2026": 39282019, "posts_2026": 7981, "eff_2026": 4922, "growth_views": 22.7, "growth_posts": 5.9}], "reporters": [{"name": "Lý Thanh Vũ", "views_2025": 5326965, "posts_2025": 1911, "eff_2025": 2788, "views_2026": 9403359, "posts_2026": 2334, "eff_2026": 4029, "diff_views": 4076394, "growth_views": 76.5, "diff_posts": 423, "growth_posts": 22.1, "months_2025": {"T1": {"views": 493316, "posts": 127, "video": 4, "photo": 6}, "T2": {"views": 348259, "posts": 142, "video": 3, "photo": 2}, "T3": {"views": 477755, "posts": 204, "video": 9, "photo": 1}, "T4": {"views": 427300, "posts": 152, "video": 3, "photo": 4}, "T5": {"views": 595637, "posts": 200, "video": 0, "photo": 1}, "T6": {"views": 597475, "posts": 220, "video": 0, "photo": 0}, "T7": {"views": 826350, "posts": 309, "video": 0, "photo": 1}, "T8": {"views": 791723, "posts": 275, "video": 2, "photo": 1}, "T9": {"views": 769150, "posts": 282, "video": 1, "photo": 0}}, "months_2026": {"T1": {"views": 942594, "posts": 261, "video": 1, "photo": 2}, "T2": {"views": 690320, "posts": 193, "video": 2, "photo": 5}, "T3": {"views": 783091, "posts": 229, "video": 1, "photo": 0}, "T4": {"views": 1167859, "posts": 309, "video": 0, "photo": 2}, "T5": {"views": 1002501, "posts": 287, "video": 0, "photo": 1}, "T6": {"views": 1157456, "posts": 254, "video": 0, "photo": 0}, "T7": {"views": 1177970, "posts": 292, "video": 0, "photo": 2}, "T8": {"views": 1425473, "posts": 283, "video": 0, "photo": 6}, "T9": {"views": 1056095, "posts": 226, "video": 0, "photo": 1}}}, {"name": "Nguyễn Đăng Văn", "views_2025": 4053843, "posts_2025": 1105, "eff_2025": 3669, "views_2026": 7892064, "posts_2026": 1075, "eff_2026": 7341, "diff_views": 3838221, "growth_views": 94.7, "diff_posts": -30, "growth_posts": -2.7, "months_2025": {"T1": {"views": 336654, "posts": 93, "video": 0, "photo": 0}, "T2": {"views": 276603, "posts": 105, "video": 0, "photo": 0}, "T3": {"views": 328131, "posts": 116, "video": 0, "photo": 0}, "T4": {"views": 481195, "posts": 115, "video": 1, "photo": 1}, "T5": {"views": 561734, "posts": 150, "video": 0, "photo": 1}, "T6": {"views": 505079, "posts": 133, "video": 0, "photo": 2}, "T7": {"views": 463331, "posts": 128, "video": 0, "photo": 0}, "T8": {"views": 531649, "posts": 140, "video": 0, "photo": 0}, "T9": {"views": 569467, "posts": 125, "video": 0, "photo": 0}}, "months_2026": {"T1": {"views": 951170, "posts": 120, "video": 0, "photo": 1}, "T2": {"views": 687318, "posts": 92, "video": 0, "photo": 0}, "T3": {"views": 936164, "posts": 124, "video": 0, "photo": 0}, "T4": {"views": 719167, "posts": 96, "video": 0, "photo": 1}, "T5": {"views": 863797, "posts": 137, "video": 0, "photo": 0}, "T6": {"views": 1003638, "posts": 159, "video": 0, "photo": 0}, "T7": {"views": 908774, "posts": 126, "video": 0, "photo": 1}, "T8": {"views": 901238, "posts": 119, "video": 0, "photo": 0}, "T9": {"views": 920798, "posts": 102, "video": 0, "photo": 1}}}, {"name": "Nguyễn Thị Minh Tâm", "views_2025": 4851441, "posts_2025": 948, "eff_2025": 5118, "views_2026": 7839415, "posts_2026": 1134, "eff_2026": 6913, "diff_views": 2987974, "growth_views": 61.6, "diff_posts": 186, "growth_posts": 19.6, "months_2025": {"T1": {"views": 350010, "posts": 106, "video": 37, "photo": 66}, "T2": {"views": 418431, "posts": 85, "video": 27, "photo": 54}, "T3": {"views": 448039, "posts": 124, "video": 29, "photo": 83}, "T4": {"views": 570091, "posts": 115, "video": 37, "photo": 70}, "T5": {"views": 606055, "posts": 108, "video": 29, "photo": 62}, "T6": {"views": 556646, "posts": 94, "video": 23, "photo": 51}, "T7": {"views": 651542, "posts": 103, "video": 31, "photo": 58}, "T8": {"views": 550562, "posts": 119, "video": 28, "photo": 76}, "T9": {"views": 700065, "posts": 94, "video": 24, "photo": 62}}, "months_2026": {"T1": {"views": 626043, "posts": 85, "video": 30, "photo": 52}, "T2": {"views": 485497, "posts": 73, "video": 24, "photo": 45}, "T3": {"views": 526932, "posts": 95, "video": 39, "photo": 55}, "T4": {"views": 1731328, "posts": 157, "video": 24, "photo": 99}, "T5": {"views": 1092078, "posts": 143, "video": 31, "photo": 51}, "T6": {"views": 671099, "posts": 104, "video": 25, "photo": 36}, "T7": {"views": 917043, "posts": 160, "video": 19, "photo": 46}, "T8": {"views": 926906, "posts": 169, "video": 12, "photo": 47}, "T9": {"views": 862489, "posts": 148, "video": 13, "photo": 47}}}, {"name": "Đào Thị Ngọc Lê", "views_2025": 7314944, "posts_2025": 1742, "eff_2025": 4199, "views_2026": 7528144, "posts_2026": 1838, "eff_2026": 4096, "diff_views": 213200, "growth_views": 2.9, "diff_posts": 96, "growth_posts": 5.5, "months_2025": {"T1": {"views": 810725, "posts": 201, "video": 47, "photo": 8}, "T2": {"views": 754378, "posts": 171, "video": 38, "photo": 0}, "T3": {"views": 840133, "posts": 202, "video": 50, "photo": 3}, "T4": {"views": 989544, "posts": 203, "video": 27, "photo": 9}, "T5": {"views": 779328, "posts": 195, "video": 22, "photo": 1}, "T6": {"views": 806718, "posts": 197, "video": 26, "photo": 2}, "T7": {"views": 784288, "posts": 180, "video": 12, "photo": 0}, "T8": {"views": 862456, "posts": 203, "video": 15, "photo": 3}, "T9": {"views": 687374, "posts": 190, "video": 19, "photo": 1}}, "months_2026": {"T1": {"views": 766378, "posts": 185, "video": 13, "photo": 7}, "T2": {"views": 736341, "posts": 202, "video": 22, "photo": 21}, "T3": {"views": 736332, "posts": 187, "video": 14, "photo": 3}, "T4": {"views": 900812, "posts": 199, "video": 18, "photo": 9}, "T5": {"views": 896200, "posts": 217, "video": 22, "photo": 6}, "T6": {"views": 788607, "posts": 203, "video": 27, "photo": 4}, "T7": {"views": 799643, "posts": 215, "video": 22, "photo": 5}, "T8": {"views": 879647, "posts": 202, "video": 14, "photo": 8}, "T9": {"views": 1024184, "posts": 228, "video": 31, "photo": 12}}}, {"name": "Nguyễn Chân Phúc", "views_2025": 4372010, "posts_2025": 919, "eff_2025": 4757, "views_2026": 6807800, "posts_2026": 1236, "eff_2026": 5508, "diff_views": 2435790, "growth_views": 55.7, "diff_posts": 317, "growth_posts": 34.5, "months_2025": {"T1": {"views": 329290, "posts": 59, "video": 17, "photo": 19}, "T2": {"views": 305863, "posts": 85, "video": 13, "photo": 2}, "T3": {"views": 330307, "posts": 90, "video": 10, "photo": 1}, "T4": {"views": 489890, "posts": 112, "video": 21, "photo": 14}, "T5": {"views": 512595, "posts": 115, "video": 9, "photo": 9}, "T6": {"views": 655329, "posts": 112, "video": 17, "photo": 7}, "T7": {"views": 754521, "posts": 119, "video": 11, "photo": 2}, "T8": {"views": 590372, "posts": 137, "video": 16, "photo": 3}, "T9": {"views": 403843, "posts": 90, "video": 12, "photo": 6}}, "months_2026": {"T1": {"views": 624424, "posts": 108, "video": 12, "photo": 5}, "T2": {"views": 551451, "posts": 94, "video": 8, "photo": 17}, "T3": {"views": 937752, "posts": 87, "video": 10, "photo": 4}, "T4": {"views": 598393, "posts": 125, "video": 10, "photo": 8}, "T5": {"views": 739743, "posts": 144, "video": 21, "photo": 11}, "T6": {"views": 1133990, "posts": 205, "video": 19, "photo": 6}, "T7": {"views": 666284, "posts": 173, "video": 14, "photo": 2}, "T8": {"views": 743635, "posts": 176, "video": 10, "photo": 6}, "T9": {"views": 812128, "posts": 124, "video": 8, "photo": 7}}}, {"name": "Trịnh Văn Quân", "views_2025": 6751585, "posts_2025": 867, "eff_2025": 7787, "views_2026": 6536913, "posts_2026": 951, "eff_2026": 6874, "diff_views": -214672, "growth_views": -3.2, "diff_posts": 84, "growth_posts": 9.7, "months_2025": {"T1": {"views": 427059, "posts": 76, "video": 0, "photo": 0}, "T2": {"views": 762644, "posts": 88, "video": 0, "photo": 0}, "T3": {"views": 728667, "posts": 103, "video": 0, "photo": 0}, "T4": {"views": 792296, "posts": 129, "video": 2, "photo": 4}, "T5": {"views": 986494, "posts": 89, "video": 1, "photo": 1}, "T6": {"views": 809516, "posts": 107, "video": 0, "photo": 1}, "T7": {"views": 773250, "posts": 89, "video": 0, "photo": 2}, "T8": {"views": 720416, "posts": 90, "video": 0, "photo": 0}, "T9": {"views": 751243, "posts": 96, "video": 0, "photo": 0}}, "months_2026": {"T1": {"views": 837548, "posts": 94, "video": 0, "photo": 3}, "T2": {"views": 756325, "posts": 96, "video": 0, "photo": 3}, "T3": {"views": 830599, "posts": 120, "video": 0, "photo": 3}, "T4": {"views": 781501, "posts": 108, "video": 1, "photo": 2}, "T5": {"views": 710033, "posts": 108, "video": 0, "photo": 2}, "T6": {"views": 525773, "posts": 102, "video": 0, "photo": 1}, "T7": {"views": 609372, "posts": 108, "video": 0, "photo": 2}, "T8": {"views": 723553, "posts": 97, "video": 1, "photo": 6}, "T9": {"views": 762209, "posts": 118, "video": 1, "photo": 4}}}, {"name": "Đặng Ngọc Thanh Chân", "views_2025": 4524087, "posts_2025": 1345, "eff_2025": 3364, "views_2026": 6530918, "posts_2026": 1704, "eff_2026": 3833, "diff_views": 2006831, "growth_views": 44.4, "diff_posts": 359, "growth_posts": 26.7, "months_2025": {"T1": {"views": 435785, "posts": 145, "video": 47, "photo": 5}, "T2": {"views": 564930, "posts": 153, "video": 41, "photo": 0}, "T3": {"views": 417442, "posts": 171, "video": 44, "photo": 0}, "T4": {"views": 455865, "posts": 157, "video": 35, "photo": 4}, "T5": {"views": 466524, "posts": 153, "video": 26, "photo": 1}, "T6": {"views": 468605, "posts": 144, "video": 15, "photo": 3}, "T7": {"views": 546734, "posts": 142, "video": 10, "photo": 1}, "T8": {"views": 513351, "posts": 137, "video": 7, "photo": 4}, "T9": {"views": 654851, "posts": 143, "video": 17, "photo": 2}}, "months_2026": {"T1": {"views": 622104, "posts": 152, "video": 21, "photo": 8}, "T2": {"views": 672125, "posts": 156, "video": 21, "photo": 6}, "T3": {"views": 783537, "posts": 203, "video": 29, "photo": 13}, "T4": {"views": 785822, "posts": 220, "video": 28, "photo": 10}, "T5": {"views": 771354, "posts": 218, "video": 28, "photo": 5}, "T6": {"views": 679603, "posts": 198, "video": 26, "photo": 3}, "T7": {"views": 771578, "posts": 206, "video": 24, "photo": 12}, "T8": {"views": 670149, "posts": 170, "video": 17, "photo": 5}, "T9": {"views": 774646, "posts": 181, "video": 25, "photo": 16}}}, {"name": "Nguyễn Thị Ly", "views_2025": 5004896, "posts_2025": 1057, "eff_2025": 4735, "views_2026": 6436227, "posts_2026": 1371, "eff_2026": 4695, "diff_views": 1431331, "growth_views": 28.6, "diff_posts": 314, "growth_posts": 29.7, "months_2025": {"T1": {"views": 94331, "posts": 35, "video": 0, "photo": 0}, "T2": {"views": 158403, "posts": 50, "video": 1, "photo": 0}, "T3": {"views": 126747, "posts": 48, "video": 1, "photo": 0}, "T4": {"views": 648059, "posts": 85, "video": 5, "photo": 0}, "T5": {"views": 694824, "posts": 158, "video": 5, "photo": 0}, "T6": {"views": 768524, "posts": 161, "video": 5, "photo": 1}, "T7": {"views": 859757, "posts": 176, "video": 10, "photo": 2}, "T8": {"views": 790394, "posts": 168, "video": 15, "photo": 0}, "T9": {"views": 863857, "posts": 176, "video": 9, "photo": 1}}, "months_2026": {"T1": {"views": 663056, "posts": 139, "video": 12, "photo": 10}, "T2": {"views": 716617, "posts": 136, "video": 12, "photo": 5}, "T3": {"views": 797633, "posts": 162, "video": 12, "photo": 7}, "T4": {"views": 879063, "posts": 177, "video": 15, "photo": 7}, "T5": {"views": 760060, "posts": 159, "video": 21, "photo": 2}, "T6": {"views": 538306, "posts": 131, "video": 8, "photo": 0}, "T7": {"views": 745178, "posts": 146, "video": 6, "photo": 1}, "T8": {"views": 618202, "posts": 155, "video": 6, "photo": 4}, "T9": {"views": 718112, "posts": 166, "video": 1, "photo": 4}}}, {"name": "Lê Ngọc Dủ", "views_2025": 6910056, "posts_2025": 3049, "eff_2025": 2266, "views_2026": 6425772, "posts_2026": 2425, "eff_2026": 2650, "diff_views": -484284, "growth_views": -7.0, "diff_posts": -624, "growth_posts": -20.5, "months_2025": {"T1": {"views": 804406, "posts": 317, "video": 2, "photo": 0}, "T2": {"views": 486191, "posts": 247, "video": 4, "photo": 0}, "T3": {"views": 654261, "posts": 324, "video": 4, "photo": 0}, "T4": {"views": 524562, "posts": 325, "video": 6, "photo": 0}, "T5": {"views": 705390, "posts": 395, "video": 3, "photo": 2}, "T6": {"views": 890184, "posts": 351, "video": 5, "photo": 2}, "T7": {"views": 1003000, "posts": 351, "video": 9, "photo": 2}, "T8": {"views": 860245, "posts": 373, "video": 5, "photo": 1}, "T9": {"views": 981817, "posts": 366, "video": 11, "photo": 1}}, "months_2026": {"T1": {"views": 691007, "posts": 297, "video": 4, "photo": 2}, "T2": {"views": 633494, "posts": 257, "video": 6, "photo": 1}, "T3": {"views": 779585, "posts": 324, "video": 7, "photo": 4}, "T4": {"views": 731781, "posts": 239, "video": 2, "photo": 3}, "T5": {"views": 834998, "posts": 303, "video": 2, "photo": 1}, "T6": {"views": 572527, "posts": 246, "video": 6, "photo": 1}, "T7": {"views": 525681, "posts": 262, "video": 3, "photo": 3}, "T8": {"views": 809048, "posts": 246, "video": 2, "photo": 4}, "T9": {"views": 847651, "posts": 251, "video": 12, "photo": 5}}}, {"name": "Hà Anh Chiến", "views_2025": 4116108, "posts_2025": 991, "eff_2025": 4153, "views_2026": 6119502, "posts_2026": 925, "eff_2026": 6616, "diff_views": 2003394, "growth_views": 48.7, "diff_posts": -66, "growth_posts": -6.7, "months_2025": {"T1": {"views": 311075, "posts": 75, "video": 2, "photo": 0}, "T2": {"views": 334665, "posts": 84, "video": 1, "photo": 0}, "T3": {"views": 359115, "posts": 94, "video": 1, "photo": 0}, "T4": {"views": 375539, "posts": 108, "video": 1, "photo": 1}, "T5": {"views": 478068, "posts": 122, "video": 1, "photo": 2}, "T6": {"views": 520376, "posts": 116, "video": 0, "photo": 0}, "T7": {"views": 586945, "posts": 120, "video": 1, "photo": 0}, "T8": {"views": 579728, "posts": 142, "video": 0, "photo": 0}, "T9": {"views": 570597, "posts": 130, "video": 2, "photo": 1}}, "months_2026": {"T1": {"views": 760462, "posts": 94, "video": 3, "photo": 1}, "T2": {"views": 401343, "posts": 63, "video": 0, "photo": 2}, "T3": {"views": 782856, "posts": 85, "video": 2, "photo": 0}, "T4": {"views": 592511, "posts": 89, "video": 1, "photo": 2}, "T5": {"views": 589203, "posts": 106, "video": 1, "photo": 5}, "T6": {"views": 363839, "posts": 84, "video": 0, "photo": 2}, "T7": {"views": 595070, "posts": 119, "video": 2, "photo": 5}, "T8": {"views": 952213, "posts": 127, "video": 3, "photo": 0}, "T9": {"views": 1082005, "posts": 158, "video": 8, "photo": 2}}}, {"name": "Nguyễn Phúc Bảo Chương", "views_2025": 4416931, "posts_2025": 500, "eff_2025": 8834, "views_2026": 5984773, "posts_2026": 576, "eff_2026": 10390, "diff_views": 1567842, "growth_views": 35.5, "diff_posts": 76, "growth_posts": 15.2, "months_2025": {"T1": {"views": 316165, "posts": 62, "video": 0, "photo": 0}, "T2": {"views": 266743, "posts": 58, "video": 1, "photo": 0}, "T3": {"views": 287667, "posts": 61, "video": 0, "photo": 0}, "T4": {"views": 593899, "posts": 60, "video": 0, "photo": 0}, "T5": {"views": 516133, "posts": 50, "video": 0, "photo": 0}, "T6": {"views": 530491, "posts": 40, "video": 0, "photo": 0}, "T7": {"views": 631486, "posts": 55, "video": 0, "photo": 0}, "T8": {"views": 583129, "posts": 53, "video": 0, "photo": 0}, "T9": {"views": 691218, "posts": 61, "video": 0, "photo": 0}}, "months_2026": {"T1": {"views": 779914, "posts": 56, "video": 0, "photo": 0}, "T2": {"views": 563988, "posts": 35, "video": 0, "photo": 0}, "T3": {"views": 666620, "posts": 58, "video": 0, "photo": 0}, "T4": {"views": 800985, "posts": 73, "video": 0, "photo": 0}, "T5": {"views": 836892, "posts": 83, "video": 0, "photo": 0}, "T6": {"views": 457652, "posts": 57, "video": 0, "photo": 0}, "T7": {"views": 597718, "posts": 66, "video": 0, "photo": 0}, "T8": {"views": 619762, "posts": 76, "video": 0, "photo": 0}, "T9": {"views": 661242, "posts": 72, "video": 0, "photo": 0}}}, {"name": "Nguyễn Trí Độ", "views_2025": 4655547, "posts_2025": 875, "eff_2025": 5321, "views_2026": 5377619, "posts_2026": 661, "eff_2026": 8136, "diff_views": 722072, "growth_views": 15.5, "diff_posts": -214, "growth_posts": -24.5, "months_2025": {"T1": {"views": 366592, "posts": 58, "video": 0, "photo": 0}, "T2": {"views": 430404, "posts": 58, "video": 0, "photo": 0}, "T3": {"views": 298317, "posts": 82, "video": 0, "photo": 0}, "T4": {"views": 425156, "posts": 87, "video": 0, "photo": 0}, "T5": {"views": 484625, "posts": 104, "video": 2, "photo": 2}, "T6": {"views": 617453, "posts": 108, "video": 0, "photo": 1}, "T7": {"views": 733363, "posts": 129, "video": 0, "photo": 0}, "T8": {"views": 754723, "posts": 144, "video": 0, "photo": 2}, "T9": {"views": 544914, "posts": 105, "video": 2, "photo": 3}}, "months_2026": {"T1": {"views": 677958, "posts": 70, "video": 7, "photo": 3}, "T2": {"views": 665638, "posts": 65, "video": 2, "photo": 3}, "T3": {"views": 626131, "posts": 74, "video": 0, "photo": 3}, "T4": {"views": 659935, "posts": 75, "video": 2, "photo": 0}, "T5": {"views": 622086, "posts": 73, "video": 0, "photo": 0}, "T6": {"views": 368566, "posts": 62, "video": 0, "photo": 1}, "T7": {"views": 436382, "posts": 72, "video": 0, "photo": 2}, "T8": {"views": 657673, "posts": 86, "video": 0, "photo": 1}, "T9": {"views": 663250, "posts": 84, "video": 1, "photo": 1}}}, {"name": "Đinh Văn Trọng", "views_2025": 4062160, "posts_2025": 1009, "eff_2025": 4026, "views_2026": 5328482, "posts_2026": 809, "eff_2026": 6587, "diff_views": 1266322, "growth_views": 31.2, "diff_posts": -200, "growth_posts": -19.8, "months_2025": {"T1": {"views": 323158, "posts": 97, "video": 3, "photo": 0}, "T2": {"views": 323104, "posts": 97, "video": 1, "photo": 0}, "T3": {"views": 340932, "posts": 107, "video": 0, "photo": 0}, "T4": {"views": 416091, "posts": 108, "video": 3, "photo": 1}, "T5": {"views": 541121, "posts": 140, "video": 2, "photo": 1}, "T6": {"views": 537592, "posts": 124, "video": 2, "photo": 1}, "T7": {"views": 560624, "posts": 122, "video": 8, "photo": 0}, "T8": {"views": 423031, "posts": 101, "video": 5, "photo": 0}, "T9": {"views": 596507, "posts": 113, "video": 5, "photo": 0}}, "months_2026": {"T1": {"views": 666531, "posts": 89, "video": 14, "photo": 3}, "T2": {"views": 636513, "posts": 75, "video": 11, "photo": 3}, "T3": {"views": 691698, "posts": 87, "video": 16, "photo": 3}, "T4": {"views": 532422, "posts": 66, "video": 2, "photo": 1}, "T5": {"views": 629762, "posts": 87, "video": 7, "photo": 8}, "T6": {"views": 442471, "posts": 94, "video": 3, "photo": 5}, "T7": {"views": 363259, "posts": 84, "video": 3, "photo": 2}, "T8": {"views": 671904, "posts": 111, "video": 5, "photo": 3}, "T9": {"views": 693922, "posts": 116, "video": 10, "photo": 2}}}, {"name": "Hồ Anh Tú", "views_2025": 3708888, "posts_2025": 913, "eff_2025": 4062, "views_2026": 5066733, "posts_2026": 1142, "eff_2026": 4437, "diff_views": 1357845, "growth_views": 36.6, "diff_posts": 229, "growth_posts": 25.1, "months_2025": {"T1": {"views": 393658, "posts": 104, "video": 12, "photo": 39}, "T2": {"views": 301848, "posts": 74, "video": 20, "photo": 23}, "T3": {"views": 356702, "posts": 86, "video": 19, "photo": 17}, "T4": {"views": 405424, "posts": 117, "video": 34, "photo": 31}, "T5": {"views": 435794, "posts": 91, "video": 24, "photo": 19}, "T6": {"views": 507164, "posts": 108, "video": 20, "photo": 26}, "T7": {"views": 425476, "posts": 94, "video": 22, "photo": 33}, "T8": {"views": 433722, "posts": 120, "video": 19, "photo": 29}, "T9": {"views": 449100, "posts": 119, "video": 26, "photo": 21}}, "months_2026": {"T1": {"views": 705119, "posts": 118, "video": 22, "photo": 33}, "T2": {"views": 401180, "posts": 94, "video": 24, "photo": 27}, "T3": {"views": 410034, "posts": 79, "video": 22, "photo": 16}, "T4": {"views": 639328, "posts": 136, "video": 27, "photo": 18}, "T5": {"views": 756969, "posts": 175, "video": 29, "photo": 17}, "T6": {"views": 448148, "posts": 142, "video": 14, "photo": 16}, "T7": {"views": 547760, "posts": 145, "video": 13, "photo": 21}, "T8": {"views": 528104, "posts": 127, "video": 19, "photo": 19}, "T9": {"views": 630091, "posts": 126, "video": 17, "photo": 29}}}, {"name": "Lê Thanh Phong", "views_2025": 2962334, "posts_2025": 499, "eff_2025": 5937, "views_2026": 4018092, "posts_2026": 581, "eff_2026": 6916, "diff_views": 1055758, "growth_views": 35.6, "diff_posts": 82, "growth_posts": 16.4, "months_2025": {"T1": {"views": 285261, "posts": 53, "video": 0, "photo": 0}, "T2": {"views": 471136, "posts": 54, "video": 0, "photo": 0}, "T3": {"views": 432582, "posts": 51, "video": 0, "photo": 0}, "T4": {"views": 625300, "posts": 44, "video": 0, "photo": 0}, "T5": {"views": 253214, "posts": 59, "video": 0, "photo": 0}, "T6": {"views": 352133, "posts": 67, "video": 0, "photo": 0}, "T7": {"views": 139039, "posts": 54, "video": 0, "photo": 0}, "T8": {"views": 184699, "posts": 52, "video": 0, "photo": 0}, "T9": {"views": 218970, "posts": 65, "video": 0, "photo": 0}}, "months_2026": {"T1": {"views": 458996, "posts": 61, "video": 0, "photo": 0}, "T2": {"views": 398157, "posts": 61, "video": 0, "photo": 0}, "T3": {"views": 503743, "posts": 68, "video": 0, "photo": 0}, "T4": {"views": 438121, "posts": 64, "video": 0, "photo": 0}, "T5": {"views": 568048, "posts": 72, "video": 0, "photo": 0}, "T6": {"views": 360700, "posts": 62, "video": 0, "photo": 0}, "T7": {"views": 330995, "posts": 65, "video": 0, "photo": 0}, "T8": {"views": 378134, "posts": 64, "video": 0, "photo": 0}, "T9": {"views": 581198, "posts": 64, "video": 0, "photo": 0}}}, {"name": "Trần Nam Dương", "views_2025": 3404189, "posts_2025": 956, "eff_2025": 3561, "views_2026": 3831580, "posts_2026": 954, "eff_2026": 4016, "diff_views": 427391, "growth_views": 12.6, "diff_posts": -2, "growth_posts": -0.2, "months_2025": {"T1": {"views": 225696, "posts": 91, "video": 1, "photo": 0}, "T2": {"views": 414279, "posts": 73, "video": 1, "photo": 0}, "T3": {"views": 411579, "posts": 85, "video": 1, "photo": 0}, "T4": {"views": 460127, "posts": 99, "video": 1, "photo": 0}, "T5": {"views": 455565, "posts": 115, "video": 0, "photo": 0}, "T6": {"views": 419674, "posts": 123, "video": 0, "photo": 1}, "T7": {"views": 491952, "posts": 140, "video": 1, "photo": 0}, "T8": {"views": 208297, "posts": 108, "video": 1, "photo": 0}, "T9": {"views": 317020, "posts": 122, "video": 2, "photo": 0}}, "months_2026": {"T1": {"views": 529103, "posts": 124, "video": 2, "photo": 0}, "T2": {"views": 232623, "posts": 82, "video": 2, "photo": 2}, "T3": {"views": 375054, "posts": 116, "video": 0, "photo": 2}, "T4": {"views": 355264, "posts": 109, "video": 0, "photo": 0}, "T5": {"views": 438938, "posts": 110, "video": 4, "photo": 0}, "T6": {"views": 399162, "posts": 96, "video": 0, "photo": 0}, "T7": {"views": 529207, "posts": 106, "video": 0, "photo": 0}, "T8": {"views": 447668, "posts": 99, "video": 1, "photo": 1}, "T9": {"views": 524561, "posts": 112, "video": 0, "photo": 0}}}, {"name": "Lê Thanh Ngọc Ánh", "views_2025": 2523200, "posts_2025": 555, "eff_2025": 4546, "views_2026": 2785417, "posts_2026": 699, "eff_2026": 3985, "diff_views": 262217, "growth_views": 10.4, "diff_posts": 144, "growth_posts": 25.9, "months_2025": {"T1": {"views": 233932, "posts": 68, "video": 35, "photo": 7}, "T2": {"views": 151136, "posts": 48, "video": 28, "photo": 3}, "T3": {"views": 174560, "posts": 43, "video": 31, "photo": 1}, "T4": {"views": 278657, "posts": 61, "video": 45, "photo": 4}, "T5": {"views": 260825, "posts": 55, "video": 39, "photo": 4}, "T6": {"views": 376100, "posts": 64, "video": 40, "photo": 1}, "T7": {"views": 438846, "posts": 81, "video": 47, "photo": 8}, "T8": {"views": 299856, "posts": 71, "video": 47, "photo": 5}, "T9": {"views": 309288, "posts": 64, "video": 46, "photo": 4}}, "months_2026": {"T1": {"views": 281331, "posts": 59, "video": 43, "photo": 6}, "T2": {"views": 308055, "posts": 59, "video": 34, "photo": 10}, "T3": {"views": 272749, "posts": 54, "video": 35, "photo": 7}, "T4": {"views": 243403, "posts": 59, "video": 42, "photo": 6}, "T5": {"views": 267857, "posts": 60, "video": 44, "photo": 7}, "T6": {"views": 167044, "posts": 40, "video": 30, "photo": 0}, "T7": {"views": 264713, "posts": 78, "video": 41, "photo": 13}, "T8": {"views": 495123, "posts": 145, "video": 50, "photo": 10}, "T9": {"views": 485142, "posts": 145, "video": 54, "photo": 12}}}, {"name": "Nguyễn Như Quỳnh", "views_2025": 2522377, "posts_2025": 582, "eff_2025": 4334, "views_2026": 2454072, "posts_2026": 437, "eff_2026": 5616, "diff_views": -68305, "growth_views": -2.7, "diff_posts": -145, "growth_posts": -24.9, "months_2025": {"T1": {"views": 367048, "posts": 79, "video": 31, "photo": 21}, "T2": {"views": 147947, "posts": 43, "video": 17, "photo": 4}, "T3": {"views": 185180, "posts": 46, "video": 18, "photo": 3}, "T4": {"views": 223255, "posts": 62, "video": 38, "photo": 9}, "T5": {"views": 249845, "posts": 55, "video": 31, "photo": 5}, "T6": {"views": 371781, "posts": 72, "video": 38, "photo": 9}, "T7": {"views": 343983, "posts": 74, "video": 41, "photo": 7}, "T8": {"views": 289114, "posts": 72, "video": 34, "photo": 12}, "T9": {"views": 344224, "posts": 79, "video": 40, "photo": 12}}, "months_2026": {"T1": {"views": 430438, "posts": 71, "video": 44, "photo": 9}, "T2": {"views": 176564, "posts": 26, "video": 20, "photo": 2}, "T3": {"views": 318728, "posts": 45, "video": 41, "photo": 3}, "T4": {"views": 56612, "posts": 7, "video": 4, "photo": 1}, "T5": {"views": 153830, "posts": 29, "video": 26, "photo": 2}, "T6": {"views": 172803, "posts": 37, "video": 27, "photo": 1}, "T7": {"views": 162417, "posts": 33, "video": 24, "photo": 1}, "T8": {"views": 436463, "posts": 86, "video": 39, "photo": 13}, "T9": {"views": 546217, "posts": 103, "video": 59, "photo": 11}}}, {"name": "Nguyễn Thái Bảo", "views_2025": 300122, "posts_2025": 63, "eff_2025": 4764, "views_2026": 1823346, "posts_2026": 415, "eff_2026": 4394, "diff_views": 1523224, "growth_views": 507.5, "diff_posts": 352, "growth_posts": 558.7, "months_2025": {"T1": {"views": 0, "posts": 0}, "T2": {"views": 0, "posts": 0}, "T3": {"views": 0, "posts": 0}, "T4": {"views": 0, "posts": 0}, "T5": {"views": 0, "posts": 0}, "T6": {"views": 0, "posts": 0}, "T7": {"views": 20680, "posts": 5, "video": 1, "photo": 2}, "T8": {"views": 123208, "posts": 28, "video": 13, "photo": 9}, "T9": {"views": 156234, "posts": 30, "video": 15, "photo": 8}}, "months_2026": {"T1": {"views": 188187, "posts": 46, "video": 16, "photo": 21}, "T2": {"views": 235809, "posts": 50, "video": 16, "photo": 18}, "T3": {"views": 251894, "posts": 36, "video": 9, "photo": 15}, "T4": {"views": 148039, "posts": 48, "video": 17, "photo": 15}, "T5": {"views": 143641, "posts": 38, "video": 16, "photo": 8}, "T6": {"views": 137305, "posts": 41, "video": 24, "photo": 3}, "T7": {"views": 181376, "posts": 48, "video": 12, "photo": 4}, "T8": {"views": 266499, "posts": 50, "video": 11, "photo": 11}, "T9": {"views": 270596, "posts": 58, "video": 28, "photo": 12}}}, {"name": "Nguyễn Thị Phương Thảo", "views_2025": 1068637, "posts_2025": 300, "eff_2025": 3562, "views_2026": 1190905, "posts_2026": 280, "eff_2026": 4253, "diff_views": 122268, "growth_views": 11.4, "diff_posts": -20, "growth_posts": -6.7, "months_2025": {"T1": {"views": 159233, "posts": 47, "video": 0, "photo": 0}, "T2": {"views": 148695, "posts": 43, "video": 0, "photo": 0}, "T3": {"views": 132040, "posts": 40, "video": 0, "photo": 0}, "T4": {"views": 169419, "posts": 42, "video": 0, "photo": 0}, "T5": {"views": 41442, "posts": 11, "video": 0, "photo": 0}, "T6": {"views": 113716, "posts": 32, "video": 0, "photo": 0}, "T7": {"views": 84034, "posts": 24, "video": 0, "photo": 0}, "T8": {"views": 130142, "posts": 37, "video": 0, "photo": 0}, "T9": {"views": 89916, "posts": 24, "video": 0, "photo": 0}}, "months_2026": {"T1": {"views": 135745, "posts": 28, "video": 0, "photo": 0}, "T2": {"views": 132835, "posts": 26, "video": 0, "photo": 0}, "T3": {"views": 133854, "posts": 28, "video": 0, "photo": 0}, "T4": {"views": 230980, "posts": 49, "video": 0, "photo": 0}, "T5": {"views": 247031, "posts": 57, "video": 0, "photo": 0}, "T6": {"views": 136601, "posts": 41, "video": 0, "photo": 0}, "T7": {"views": 77764, "posts": 27, "video": 0, "photo": 0}, "T8": {"views": 85182, "posts": 20, "video": 0, "photo": 0}, "T9": {"views": 10913, "posts": 4, "video": 0, "photo": 0}}}, {"name": "Nguyễn Lê Mai Anh", "views_2025": 0, "posts_2025": 0, "eff_2025": 0, "views_2026": 719383, "posts_2026": 245, "eff_2026": 2936, "diff_views": 719383, "growth_views": null, "diff_posts": 245, "growth_posts": null, "months_2025": {"T1": {"views": 0, "posts": 0}, "T2": {"views": 0, "posts": 0}, "T3": {"views": 0, "posts": 0}, "T4": {"views": 0, "posts": 0}, "T5": {"views": 0, "posts": 0}, "T6": {"views": 0, "posts": 0}, "T7": {"views": 0, "posts": 0}, "T8": {"views": 0, "posts": 0}, "T9": {"views": 0, "posts": 0}}, "months_2026": {"T1": {"views": 0, "posts": 0}, "T2": {"views": 20068, "posts": 14, "video": 3, "photo": 0}, "T3": {"views": 32714, "posts": 15, "video": 2, "photo": 1}, "T4": {"views": 80921, "posts": 21, "video": 4, "photo": 1}, "T5": {"views": 46234, "posts": 16, "video": 2, "photo": 1}, "T6": {"views": 57456, "posts": 19, "video": 4, "photo": 2}, "T7": {"views": 64461, "posts": 26, "video": 4, "photo": 1}, "T8": {"views": 222288, "posts": 74, "video": 2, "photo": 9}, "T9": {"views": 195241, "posts": 60, "video": 1, "photo": 7}}}, {"name": "Huỳnh Ngọc Du", "views_2025": 0, "posts_2025": 0, "eff_2025": 0, "views_2026": 427820, "posts_2026": 96, "eff_2026": 4456, "diff_views": 427820, "growth_views": null, "diff_posts": 96, "growth_posts": null, "months_2025": {"T1": {"views": 0, "posts": 0}, "T2": {"views": 0, "posts": 0}, "T3": {"views": 0, "posts": 0}, "T4": {"views": 0, "posts": 0}, "T5": {"views": 0, "posts": 0}, "T6": {"views": 0, "posts": 0}, "T7": {"views": 0, "posts": 0}, "T8": {"views": 0, "posts": 0}, "T9": {"views": 0, "posts": 0}}, "months_2026": {"T1": {"views": 0, "posts": 0}, "T2": {"views": 0, "posts": 0}, "T3": {"views": 0, "posts": 0}, "T4": {"views": 0, "posts": 0}, "T5": {"views": 0, "posts": 0}, "T6": {"views": 0, "posts": 0}, "T7": {"views": 0, "posts": 0}, "T8": {"views": 135919, "posts": 37, "video": 0, "photo": 1}, "T9": {"views": 291901, "posts": 59, "video": 0, "photo": 2}}}]};
-    const reportersData = [{"name": "Lý Thanh Vũ", "tot_views": 9403359, "tot_posts": 2334, "tot_eff": 4029, "share_9m": 8.51, "tot_video": 4, "tot_photo": 19, "q1": {"views": 2416005, "posts": 683, "eff": 3537}, "q2": {"views": 3327816, "posts": 850, "eff": 3915, "growth_vs_q1": 37.7}, "q3": {"views": 3659538, "posts": 801, "eff": 4569, "growth_vs_q2": 10.0, "growth_vs_q1": 51.5}, "months": {"T1": {"views": 942594, "posts": 261, "eff": 3611, "video": 1, "photo": 2}, "T2": {"views": 690320, "posts": 193, "eff": 3577, "video": 2, "photo": 5}, "T3": {"views": 783091, "posts": 229, "eff": 3420, "video": 1, "photo": 0}, "T4": {"views": 1167859, "posts": 309, "eff": 3779, "video": 0, "photo": 2}, "T5": {"views": 1002501, "posts": 287, "eff": 3493, "video": 0, "photo": 1}, "T6": {"views": 1157456, "posts": 254, "eff": 4557, "video": 0, "photo": 0}, "T7": {"views": 1177970, "posts": 292, "eff": 4034, "video": 0, "photo": 2}, "T8": {"views": 1425473, "posts": 283, "eff": 5037, "video": 0, "photo": 6}, "T9": {"views": 1056095, "posts": 226, "eff": 4673, "video": 0, "photo": 1}}}, {"name": "Nguyễn Đăng Văn", "tot_views": 7892064, "tot_posts": 1075, "tot_eff": 7341, "share_9m": 7.14, "tot_video": 0, "tot_photo": 4, "q1": {"views": 2574652, "posts": 336, "eff": 7663}, "q2": {"views": 2586602, "posts": 392, "eff": 6598, "growth_vs_q1": 0.5}, "q3": {"views": 2730810, "posts": 347, "eff": 7870, "growth_vs_q2": 5.6, "growth_vs_q1": 6.1}, "months": {"T1": {"views": 951170, "posts": 120, "eff": 7926, "video": 0, "photo": 1}, "T2": {"views": 687318, "posts": 92, "eff": 7471, "video": 0, "photo": 0}, "T3": {"views": 936164, "posts": 124, "eff": 7550, "video": 0, "photo": 0}, "T4": {"views": 719167, "posts": 96, "eff": 7491, "video": 0, "photo": 1}, "T5": {"views": 863797, "posts": 137, "eff": 6305, "video": 0, "photo": 0}, "T6": {"views": 1003638, "posts": 159, "eff": 6312, "video": 0, "photo": 0}, "T7": {"views": 908774, "posts": 126, "eff": 7212, "video": 0, "photo": 1}, "T8": {"views": 901238, "posts": 119, "eff": 7573, "video": 0, "photo": 0}, "T9": {"views": 920798, "posts": 102, "eff": 9027, "video": 0, "photo": 1}}}, {"name": "Nguyễn Thị Minh Tâm", "tot_views": 7839415, "tot_posts": 1134, "tot_eff": 6913, "share_9m": 7.09, "tot_video": 217, "tot_photo": 478, "q1": {"views": 1638472, "posts": 253, "eff": 6476}, "q2": {"views": 3494505, "posts": 404, "eff": 8650, "growth_vs_q1": 113.3}, "q3": {"views": 2706438, "posts": 477, "eff": 5674, "growth_vs_q2": -22.6, "growth_vs_q1": 65.2}, "months": {"T1": {"views": 626043, "posts": 85, "eff": 7365, "video": 30, "photo": 52}, "T2": {"views": 485497, "posts": 73, "eff": 6651, "video": 24, "photo": 45}, "T3": {"views": 526932, "posts": 95, "eff": 5547, "video": 39, "photo": 55}, "T4": {"views": 1731328, "posts": 157, "eff": 11028, "video": 24, "photo": 99}, "T5": {"views": 1092078, "posts": 143, "eff": 7637, "video": 31, "photo": 51}, "T6": {"views": 671099, "posts": 104, "eff": 6453, "video": 25, "photo": 36}, "T7": {"views": 917043, "posts": 160, "eff": 5732, "video": 19, "photo": 46}, "T8": {"views": 926906, "posts": 169, "eff": 5485, "video": 12, "photo": 47}, "T9": {"views": 862489, "posts": 148, "eff": 5828, "video": 13, "photo": 47}}}, {"name": "Đào Thị Ngọc Lê", "tot_views": 7528144, "tot_posts": 1838, "tot_eff": 4096, "share_9m": 6.81, "tot_video": 183, "tot_photo": 75, "q1": {"views": 2239051, "posts": 574, "eff": 3901}, "q2": {"views": 2585619, "posts": 619, "eff": 4177, "growth_vs_q1": 15.5}, "q3": {"views": 2703474, "posts": 645, "eff": 4191, "growth_vs_q2": 4.6, "growth_vs_q1": 20.7}, "months": {"T1": {"views": 766378, "posts": 185, "eff": 4143, "video": 13, "photo": 7}, "T2": {"views": 736341, "posts": 202, "eff": 3645, "video": 22, "photo": 21}, "T3": {"views": 736332, "posts": 187, "eff": 3938, "video": 14, "photo": 3}, "T4": {"views": 900812, "posts": 199, "eff": 4527, "video": 18, "photo": 9}, "T5": {"views": 896200, "posts": 217, "eff": 4130, "video": 22, "photo": 6}, "T6": {"views": 788607, "posts": 203, "eff": 3885, "video": 27, "photo": 4}, "T7": {"views": 799643, "posts": 215, "eff": 3719, "video": 22, "photo": 5}, "T8": {"views": 879647, "posts": 202, "eff": 4355, "video": 14, "photo": 8}, "T9": {"views": 1024184, "posts": 228, "eff": 4492, "video": 31, "photo": 12}}}, {"name": "Nguyễn Chân Phúc", "tot_views": 6807800, "tot_posts": 1236, "tot_eff": 5508, "share_9m": 6.16, "tot_video": 112, "tot_photo": 66, "q1": {"views": 2113627, "posts": 289, "eff": 7314}, "q2": {"views": 2472126, "posts": 474, "eff": 5215, "growth_vs_q1": 17.0}, "q3": {"views": 2222047, "posts": 473, "eff": 4698, "growth_vs_q2": -10.1, "growth_vs_q1": 5.1}, "months": {"T1": {"views": 624424, "posts": 108, "eff": 5782, "video": 12, "photo": 5}, "T2": {"views": 551451, "posts": 94, "eff": 5866, "video": 8, "photo": 17}, "T3": {"views": 937752, "posts": 87, "eff": 10779, "video": 10, "photo": 4}, "T4": {"views": 598393, "posts": 125, "eff": 4787, "video": 10, "photo": 8}, "T5": {"views": 739743, "posts": 144, "eff": 5137, "video": 21, "photo": 11}, "T6": {"views": 1133990, "posts": 205, "eff": 5532, "video": 19, "photo": 6}, "T7": {"views": 666284, "posts": 173, "eff": 3851, "video": 14, "photo": 2}, "T8": {"views": 743635, "posts": 176, "eff": 4225, "video": 10, "photo": 6}, "T9": {"views": 812128, "posts": 124, "eff": 6549, "video": 8, "photo": 7}}}, {"name": "Trịnh Văn Quân", "tot_views": 6536913, "tot_posts": 951, "tot_eff": 6874, "share_9m": 5.91, "tot_video": 3, "tot_photo": 26, "q1": {"views": 2424472, "posts": 310, "eff": 7821}, "q2": {"views": 2017307, "posts": 318, "eff": 6344, "growth_vs_q1": -16.8}, "q3": {"views": 2095134, "posts": 323, "eff": 6486, "growth_vs_q2": 3.9, "growth_vs_q1": -13.6}, "months": {"T1": {"views": 837548, "posts": 94, "eff": 8910, "video": 0, "photo": 3}, "T2": {"views": 756325, "posts": 96, "eff": 7878, "video": 0, "photo": 3}, "T3": {"views": 830599, "posts": 120, "eff": 6922, "video": 0, "photo": 3}, "T4": {"views": 781501, "posts": 108, "eff": 7236, "video": 1, "photo": 2}, "T5": {"views": 710033, "posts": 108, "eff": 6574, "video": 0, "photo": 2}, "T6": {"views": 525773, "posts": 102, "eff": 5155, "video": 0, "photo": 1}, "T7": {"views": 609372, "posts": 108, "eff": 5642, "video": 0, "photo": 2}, "T8": {"views": 723553, "posts": 97, "eff": 7459, "video": 1, "photo": 6}, "T9": {"views": 762209, "posts": 118, "eff": 6459, "video": 1, "photo": 4}}}, {"name": "Đặng Ngọc Thanh Chân", "tot_views": 6530918, "tot_posts": 1704, "tot_eff": 3833, "share_9m": 5.91, "tot_video": 219, "tot_photo": 78, "q1": {"views": 2077766, "posts": 511, "eff": 4066}, "q2": {"views": 2236779, "posts": 636, "eff": 3517, "growth_vs_q1": 7.7}, "q3": {"views": 2216373, "posts": 557, "eff": 3979, "growth_vs_q2": -0.9, "growth_vs_q1": 6.7}, "months": {"T1": {"views": 622104, "posts": 152, "eff": 4093, "video": 21, "photo": 8}, "T2": {"views": 672125, "posts": 156, "eff": 4308, "video": 21, "photo": 6}, "T3": {"views": 783537, "posts": 203, "eff": 3860, "video": 29, "photo": 13}, "T4": {"views": 785822, "posts": 220, "eff": 3572, "video": 28, "photo": 10}, "T5": {"views": 771354, "posts": 218, "eff": 3538, "video": 28, "photo": 5}, "T6": {"views": 679603, "posts": 198, "eff": 3432, "video": 26, "photo": 3}, "T7": {"views": 771578, "posts": 206, "eff": 3746, "video": 24, "photo": 12}, "T8": {"views": 670149, "posts": 170, "eff": 3942, "video": 17, "photo": 5}, "T9": {"views": 774646, "posts": 181, "eff": 4280, "video": 25, "photo": 16}}}, {"name": "Nguyễn Thị Ly", "tot_views": 6436227, "tot_posts": 1371, "tot_eff": 4695, "share_9m": 5.82, "tot_video": 93, "tot_photo": 40, "q1": {"views": 2177306, "posts": 437, "eff": 4982}, "q2": {"views": 2177429, "posts": 467, "eff": 4663, "growth_vs_q1": 0.0}, "q3": {"views": 2081492, "posts": 467, "eff": 4457, "growth_vs_q2": -4.4, "growth_vs_q1": -4.4}, "months": {"T1": {"views": 663056, "posts": 139, "eff": 4770, "video": 12, "photo": 10}, "T2": {"views": 716617, "posts": 136, "eff": 5269, "video": 12, "photo": 5}, "T3": {"views": 797633, "posts": 162, "eff": 4924, "video": 12, "photo": 7}, "T4": {"views": 879063, "posts": 177, "eff": 4966, "video": 15, "photo": 7}, "T5": {"views": 760060, "posts": 159, "eff": 4780, "video": 21, "photo": 2}, "T6": {"views": 538306, "posts": 131, "eff": 4109, "video": 8, "photo": 0}, "T7": {"views": 745178, "posts": 146, "eff": 5104, "video": 6, "photo": 1}, "T8": {"views": 618202, "posts": 155, "eff": 3988, "video": 6, "photo": 4}, "T9": {"views": 718112, "posts": 166, "eff": 4326, "video": 1, "photo": 4}}}, {"name": "Lê Ngọc Dủ", "tot_views": 6425772, "tot_posts": 2425, "tot_eff": 2650, "share_9m": 5.81, "tot_video": 44, "tot_photo": 24, "q1": {"views": 2104086, "posts": 878, "eff": 2396}, "q2": {"views": 2139306, "posts": 788, "eff": 2715, "growth_vs_q1": 1.7}, "q3": {"views": 2182380, "posts": 759, "eff": 2875, "growth_vs_q2": 2.0, "growth_vs_q1": 3.7}, "months": {"T1": {"views": 691007, "posts": 297, "eff": 2327, "video": 4, "photo": 2}, "T2": {"views": 633494, "posts": 257, "eff": 2465, "video": 6, "photo": 1}, "T3": {"views": 779585, "posts": 324, "eff": 2406, "video": 7, "photo": 4}, "T4": {"views": 731781, "posts": 239, "eff": 3062, "video": 2, "photo": 3}, "T5": {"views": 834998, "posts": 303, "eff": 2756, "video": 2, "photo": 1}, "T6": {"views": 572527, "posts": 246, "eff": 2327, "video": 6, "photo": 1}, "T7": {"views": 525681, "posts": 262, "eff": 2006, "video": 3, "photo": 3}, "T8": {"views": 809048, "posts": 246, "eff": 3289, "video": 2, "photo": 4}, "T9": {"views": 847651, "posts": 251, "eff": 3377, "video": 12, "photo": 5}}}, {"name": "Hà Anh Chiến", "tot_views": 6119502, "tot_posts": 925, "tot_eff": 6616, "share_9m": 5.54, "tot_video": 20, "tot_photo": 19, "q1": {"views": 1944661, "posts": 242, "eff": 8036}, "q2": {"views": 1545553, "posts": 279, "eff": 5540, "growth_vs_q1": -20.5}, "q3": {"views": 2629288, "posts": 404, "eff": 6508, "growth_vs_q2": 70.1, "growth_vs_q1": 35.2}, "months": {"T1": {"views": 760462, "posts": 94, "eff": 8090, "video": 3, "photo": 1}, "T2": {"views": 401343, "posts": 63, "eff": 6371, "video": 0, "photo": 2}, "T3": {"views": 782856, "posts": 85, "eff": 9210, "video": 2, "photo": 0}, "T4": {"views": 592511, "posts": 89, "eff": 6657, "video": 1, "photo": 2}, "T5": {"views": 589203, "posts": 106, "eff": 5559, "video": 1, "photo": 5}, "T6": {"views": 363839, "posts": 84, "eff": 4331, "video": 0, "photo": 2}, "T7": {"views": 595070, "posts": 119, "eff": 5001, "video": 2, "photo": 5}, "T8": {"views": 952213, "posts": 127, "eff": 7498, "video": 3, "photo": 0}, "T9": {"views": 1082005, "posts": 158, "eff": 6848, "video": 8, "photo": 2}}}, {"name": "Nguyễn Phúc Bảo Chương", "tot_views": 5984773, "tot_posts": 576, "tot_eff": 10390, "share_9m": 5.41, "tot_video": 0, "tot_photo": 0, "q1": {"views": 2010522, "posts": 149, "eff": 13493}, "q2": {"views": 2095529, "posts": 213, "eff": 9838, "growth_vs_q1": 4.2}, "q3": {"views": 1878722, "posts": 214, "eff": 8779, "growth_vs_q2": -10.3, "growth_vs_q1": -6.6}, "months": {"T1": {"views": 779914, "posts": 56, "eff": 13927, "video": 0, "photo": 0}, "T2": {"views": 563988, "posts": 35, "eff": 16114, "video": 0, "photo": 0}, "T3": {"views": 666620, "posts": 58, "eff": 11493, "video": 0, "photo": 0}, "T4": {"views": 800985, "posts": 73, "eff": 10972, "video": 0, "photo": 0}, "T5": {"views": 836892, "posts": 83, "eff": 10083, "video": 0, "photo": 0}, "T6": {"views": 457652, "posts": 57, "eff": 8029, "video": 0, "photo": 0}, "T7": {"views": 597718, "posts": 66, "eff": 9056, "video": 0, "photo": 0}, "T8": {"views": 619762, "posts": 76, "eff": 8155, "video": 0, "photo": 0}, "T9": {"views": 661242, "posts": 72, "eff": 9184, "video": 0, "photo": 0}}}, {"name": "Nguyễn Trí Độ", "tot_views": 5377619, "tot_posts": 661, "tot_eff": 8136, "share_9m": 4.87, "tot_video": 12, "tot_photo": 14, "q1": {"views": 1969727, "posts": 209, "eff": 9425}, "q2": {"views": 1650587, "posts": 210, "eff": 7860, "growth_vs_q1": -16.2}, "q3": {"views": 1757305, "posts": 242, "eff": 7262, "growth_vs_q2": 6.5, "growth_vs_q1": -10.8}, "months": {"T1": {"views": 677958, "posts": 70, "eff": 9685, "video": 7, "photo": 3}, "T2": {"views": 665638, "posts": 65, "eff": 10241, "video": 2, "photo": 3}, "T3": {"views": 626131, "posts": 74, "eff": 8461, "video": 0, "photo": 3}, "T4": {"views": 659935, "posts": 75, "eff": 8799, "video": 2, "photo": 0}, "T5": {"views": 622086, "posts": 73, "eff": 8522, "video": 0, "photo": 0}, "T6": {"views": 368566, "posts": 62, "eff": 5945, "video": 0, "photo": 1}, "T7": {"views": 436382, "posts": 72, "eff": 6061, "video": 0, "photo": 2}, "T8": {"views": 657673, "posts": 86, "eff": 7647, "video": 0, "photo": 1}, "T9": {"views": 663250, "posts": 84, "eff": 7896, "video": 1, "photo": 1}}}, {"name": "Đinh Văn Trọng", "tot_views": 5328482, "tot_posts": 809, "tot_eff": 6587, "share_9m": 4.82, "tot_video": 71, "tot_photo": 30, "q1": {"views": 1994742, "posts": 251, "eff": 7947}, "q2": {"views": 1604655, "posts": 247, "eff": 6497, "growth_vs_q1": -19.6}, "q3": {"views": 1729085, "posts": 311, "eff": 5560, "growth_vs_q2": 7.8, "growth_vs_q1": -13.3}, "months": {"T1": {"views": 666531, "posts": 89, "eff": 7489, "video": 14, "photo": 3}, "T2": {"views": 636513, "posts": 75, "eff": 8487, "video": 11, "photo": 3}, "T3": {"views": 691698, "posts": 87, "eff": 7951, "video": 16, "photo": 3}, "T4": {"views": 532422, "posts": 66, "eff": 8067, "video": 2, "photo": 1}, "T5": {"views": 629762, "posts": 87, "eff": 7239, "video": 7, "photo": 8}, "T6": {"views": 442471, "posts": 94, "eff": 4707, "video": 3, "photo": 5}, "T7": {"views": 363259, "posts": 84, "eff": 4325, "video": 3, "photo": 2}, "T8": {"views": 671904, "posts": 111, "eff": 6053, "video": 5, "photo": 3}, "T9": {"views": 693922, "posts": 116, "eff": 5982, "video": 10, "photo": 2}}}, {"name": "Hồ Anh Tú", "tot_views": 5066733, "tot_posts": 1142, "tot_eff": 4437, "share_9m": 4.58, "tot_video": 187, "tot_photo": 196, "q1": {"views": 1516333, "posts": 291, "eff": 5211}, "q2": {"views": 1844445, "posts": 453, "eff": 4072, "growth_vs_q1": 21.6}, "q3": {"views": 1705955, "posts": 398, "eff": 4286, "growth_vs_q2": -7.5, "growth_vs_q1": 12.5}, "months": {"T1": {"views": 705119, "posts": 118, "eff": 5976, "video": 22, "photo": 33}, "T2": {"views": 401180, "posts": 94, "eff": 4268, "video": 24, "photo": 27}, "T3": {"views": 410034, "posts": 79, "eff": 5190, "video": 22, "photo": 16}, "T4": {"views": 639328, "posts": 136, "eff": 4701, "video": 27, "photo": 18}, "T5": {"views": 756969, "posts": 175, "eff": 4326, "video": 29, "photo": 17}, "T6": {"views": 448148, "posts": 142, "eff": 3156, "video": 14, "photo": 16}, "T7": {"views": 547760, "posts": 145, "eff": 3778, "video": 13, "photo": 21}, "T8": {"views": 528104, "posts": 127, "eff": 4158, "video": 19, "photo": 19}, "T9": {"views": 630091, "posts": 126, "eff": 5001, "video": 17, "photo": 29}}}, {"name": "Lê Thanh Phong", "tot_views": 4018092, "tot_posts": 581, "tot_eff": 6916, "share_9m": 3.64, "tot_video": 0, "tot_photo": 0, "q1": {"views": 1360896, "posts": 190, "eff": 7163}, "q2": {"views": 1366869, "posts": 198, "eff": 6903, "growth_vs_q1": 0.4}, "q3": {"views": 1290327, "posts": 193, "eff": 6686, "growth_vs_q2": -5.6, "growth_vs_q1": -5.2}, "months": {"T1": {"views": 458996, "posts": 61, "eff": 7525, "video": 0, "photo": 0}, "T2": {"views": 398157, "posts": 61, "eff": 6527, "video": 0, "photo": 0}, "T3": {"views": 503743, "posts": 68, "eff": 7408, "video": 0, "photo": 0}, "T4": {"views": 438121, "posts": 64, "eff": 6846, "video": 0, "photo": 0}, "T5": {"views": 568048, "posts": 72, "eff": 7890, "video": 0, "photo": 0}, "T6": {"views": 360700, "posts": 62, "eff": 5818, "video": 0, "photo": 0}, "T7": {"views": 330995, "posts": 65, "eff": 5092, "video": 0, "photo": 0}, "T8": {"views": 378134, "posts": 64, "eff": 5908, "video": 0, "photo": 0}, "T9": {"views": 581198, "posts": 64, "eff": 9081, "video": 0, "photo": 0}}}, {"name": "Trần Nam Dương", "tot_views": 3831580, "tot_posts": 954, "tot_eff": 4016, "share_9m": 3.47, "tot_video": 9, "tot_photo": 5, "q1": {"views": 1136780, "posts": 322, "eff": 3530}, "q2": {"views": 1193364, "posts": 315, "eff": 3788, "growth_vs_q1": 5.0}, "q3": {"views": 1501436, "posts": 317, "eff": 4736, "growth_vs_q2": 25.8, "growth_vs_q1": 32.1}, "months": {"T1": {"views": 529103, "posts": 124, "eff": 4267, "video": 2, "photo": 0}, "T2": {"views": 232623, "posts": 82, "eff": 2837, "video": 2, "photo": 2}, "T3": {"views": 375054, "posts": 116, "eff": 3233, "video": 0, "photo": 2}, "T4": {"views": 355264, "posts": 109, "eff": 3259, "video": 0, "photo": 0}, "T5": {"views": 438938, "posts": 110, "eff": 3990, "video": 4, "photo": 0}, "T6": {"views": 399162, "posts": 96, "eff": 4158, "video": 0, "photo": 0}, "T7": {"views": 529207, "posts": 106, "eff": 4993, "video": 0, "photo": 0}, "T8": {"views": 447668, "posts": 99, "eff": 4522, "video": 1, "photo": 1}, "T9": {"views": 524561, "posts": 112, "eff": 4684, "video": 0, "photo": 0}}}, {"name": "Lê Thanh Ngọc Ánh", "tot_views": 2785417, "tot_posts": 699, "tot_eff": 3985, "share_9m": 2.52, "tot_video": 373, "tot_photo": 71, "q1": {"views": 862135, "posts": 172, "eff": 5012}, "q2": {"views": 678304, "posts": 159, "eff": 4266, "growth_vs_q1": -21.3}, "q3": {"views": 1244978, "posts": 368, "eff": 3383, "growth_vs_q2": 83.5, "growth_vs_q1": 44.4}, "months": {"T1": {"views": 281331, "posts": 59, "eff": 4768, "video": 43, "photo": 6}, "T2": {"views": 308055, "posts": 59, "eff": 5221, "video": 34, "photo": 10}, "T3": {"views": 272749, "posts": 54, "eff": 5051, "video": 35, "photo": 7}, "T4": {"views": 243403, "posts": 59, "eff": 4125, "video": 42, "photo": 6}, "T5": {"views": 267857, "posts": 60, "eff": 4464, "video": 44, "photo": 7}, "T6": {"views": 167044, "posts": 40, "eff": 4176, "video": 30, "photo": 0}, "T7": {"views": 264713, "posts": 78, "eff": 3394, "video": 41, "photo": 13}, "T8": {"views": 495123, "posts": 145, "eff": 3415, "video": 50, "photo": 10}, "T9": {"views": 485142, "posts": 145, "eff": 3346, "video": 54, "photo": 12}}}, {"name": "Nguyễn Như Quỳnh", "tot_views": 2454072, "tot_posts": 437, "tot_eff": 5616, "share_9m": 2.22, "tot_video": 284, "tot_photo": 43, "q1": {"views": 925730, "posts": 142, "eff": 6519}, "q2": {"views": 383245, "posts": 73, "eff": 5250, "growth_vs_q1": -58.6}, "q3": {"views": 1145097, "posts": 222, "eff": 5158, "growth_vs_q2": 198.8, "growth_vs_q1": 23.7}, "months": {"T1": {"views": 430438, "posts": 71, "eff": 6063, "video": 44, "photo": 9}, "T2": {"views": 176564, "posts": 26, "eff": 6791, "video": 20, "photo": 2}, "T3": {"views": 318728, "posts": 45, "eff": 7083, "video": 41, "photo": 3}, "T4": {"views": 56612, "posts": 7, "eff": 8087, "video": 4, "photo": 1}, "T5": {"views": 153830, "posts": 29, "eff": 5304, "video": 26, "photo": 2}, "T6": {"views": 172803, "posts": 37, "eff": 4670, "video": 27, "photo": 1}, "T7": {"views": 162417, "posts": 33, "eff": 4922, "video": 24, "photo": 1}, "T8": {"views": 436463, "posts": 86, "eff": 5075, "video": 39, "photo": 13}, "T9": {"views": 546217, "posts": 103, "eff": 5303, "video": 59, "photo": 11}}}, {"name": "Nguyễn Thái Bảo", "tot_views": 1823346, "tot_posts": 415, "tot_eff": 4394, "share_9m": 1.65, "tot_video": 149, "tot_photo": 107, "q1": {"views": 675890, "posts": 132, "eff": 5120}, "q2": {"views": 428985, "posts": 127, "eff": 3378, "growth_vs_q1": -36.5}, "q3": {"views": 718471, "posts": 156, "eff": 4606, "growth_vs_q2": 67.5, "growth_vs_q1": 6.3}, "months": {"T1": {"views": 188187, "posts": 46, "eff": 4091, "video": 16, "photo": 21}, "T2": {"views": 235809, "posts": 50, "eff": 4716, "video": 16, "photo": 18}, "T3": {"views": 251894, "posts": 36, "eff": 6997, "video": 9, "photo": 15}, "T4": {"views": 148039, "posts": 48, "eff": 3084, "video": 17, "photo": 15}, "T5": {"views": 143641, "posts": 38, "eff": 3780, "video": 16, "photo": 8}, "T6": {"views": 137305, "posts": 41, "eff": 3349, "video": 24, "photo": 3}, "T7": {"views": 181376, "posts": 48, "eff": 3779, "video": 12, "photo": 4}, "T8": {"views": 266499, "posts": 50, "eff": 5330, "video": 11, "photo": 11}, "T9": {"views": 270596, "posts": 58, "eff": 4665, "video": 28, "photo": 12}}}, {"name": "Nguyễn Thị Phương Thảo", "tot_views": 1190905, "tot_posts": 280, "tot_eff": 4253, "share_9m": 1.08, "tot_video": 0, "tot_photo": 0, "q1": {"views": 402434, "posts": 82, "eff": 4908}, "q2": {"views": 614612, "posts": 147, "eff": 4181, "growth_vs_q1": 52.7}, "q3": {"views": 173859, "posts": 51, "eff": 3409, "growth_vs_q2": -71.7, "growth_vs_q1": -56.8}, "months": {"T1": {"views": 135745, "posts": 28, "eff": 4848, "video": 0, "photo": 0}, "T2": {"views": 132835, "posts": 26, "eff": 5109, "video": 0, "photo": 0}, "T3": {"views": 133854, "posts": 28, "eff": 4780, "video": 0, "photo": 0}, "T4": {"views": 230980, "posts": 49, "eff": 4714, "video": 0, "photo": 0}, "T5": {"views": 247031, "posts": 57, "eff": 4334, "video": 0, "photo": 0}, "T6": {"views": 136601, "posts": 41, "eff": 3332, "video": 0, "photo": 0}, "T7": {"views": 77764, "posts": 27, "eff": 2880, "video": 0, "photo": 0}, "T8": {"views": 85182, "posts": 20, "eff": 4259, "video": 0, "photo": 0}, "T9": {"views": 10913, "posts": 4, "eff": 2728, "video": 0, "photo": 0}}}, {"name": "Nguyễn Lê Mai Anh", "tot_views": 719383, "tot_posts": 245, "tot_eff": 2936, "share_9m": 0.65, "tot_video": 22, "tot_photo": 22, "q1": {"views": 52782, "posts": 29, "eff": 1820}, "q2": {"views": 184611, "posts": 56, "eff": 3297, "growth_vs_q1": 249.8}, "q3": {"views": 481990, "posts": 160, "eff": 3012, "growth_vs_q2": 161.1, "growth_vs_q1": 813.2}, "months": {"T1": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T2": {"views": 20068, "posts": 14, "eff": 1433, "video": 3, "photo": 0}, "T3": {"views": 32714, "posts": 15, "eff": 2181, "video": 2, "photo": 1}, "T4": {"views": 80921, "posts": 21, "eff": 3853, "video": 4, "photo": 1}, "T5": {"views": 46234, "posts": 16, "eff": 2890, "video": 2, "photo": 1}, "T6": {"views": 57456, "posts": 19, "eff": 3024, "video": 4, "photo": 2}, "T7": {"views": 64461, "posts": 26, "eff": 2479, "video": 4, "photo": 1}, "T8": {"views": 222288, "posts": 74, "eff": 3004, "video": 2, "photo": 9}, "T9": {"views": 195241, "posts": 60, "eff": 3254, "video": 1, "photo": 7}}}, {"name": "Huỳnh Ngọc Du", "tot_views": 427820, "tot_posts": 96, "tot_eff": 4456, "share_9m": 0.39, "tot_video": 0, "tot_photo": 3, "q1": {"views": 0, "posts": 0, "eff": 0}, "q2": {"views": 0, "posts": 0, "eff": 0, "growth_vs_q1": null}, "q3": {"views": 427820, "posts": 96, "eff": 4456, "growth_vs_q2": null, "growth_vs_q1": null}, "months": {"T1": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T2": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T3": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T4": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T5": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T6": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T7": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T8": {"views": 135919, "posts": 37, "eff": 3673, "video": 0, "photo": 1}, "T9": {"views": 291901, "posts": 59, "eff": 4947, "video": 0, "photo": 2}}}];
+    const yoyData = {"monthly_totals": [{"code": "T1", "name": "Th\u00e1ng 1", "views_2025": 7063394, "posts_2025": 1893, "eff_2025": 3731, "views_2026": 12338108, "posts_2026": 2257, "eff_2026": 5467, "growth_views": 74.7, "growth_posts": 19.2}, {"code": "T2", "name": "Th\u00e1ng 2", "views_2025": 7065659, "posts_2025": 1758, "eff_2025": 4019, "views_2026": 10102261, "posts_2026": 1949, "eff_2026": 5183, "growth_views": 43.0, "growth_posts": 10.9}, {"code": "T3", "name": "Th\u00e1ng 3", "views_2025": 7330156, "posts_2025": 2077, "eff_2025": 3529, "views_2026": 12177700, "posts_2026": 2276, "eff_2026": 5350, "growth_views": 66.1, "growth_posts": 9.6}, {"code": "T4", "name": "Th\u00e1ng 4", "views_2025": 9351669, "posts_2025": 2181, "eff_2025": 4288, "views_2026": 13074247, "posts_2026": 2426, "eff_2026": 5389, "growth_views": 39.8, "growth_posts": 11.2}, {"code": "T5", "name": "Th\u00e1ng 5", "views_2025": 9625213, "posts_2025": 2365, "eff_2025": 4070, "views_2026": 12971255, "posts_2026": 2622, "eff_2026": 4947, "growth_views": 34.8, "growth_posts": 10.9}, {"code": "T6", "name": "Th\u00e1ng 6", "views_2025": 10404556, "posts_2025": 2373, "eff_2025": 4385, "views_2026": 10582746, "posts_2026": 2377, "eff_2026": 4452, "growth_views": 1.7, "growth_posts": 0.2}, {"code": "T7", "name": "Th\u00e1ng 7", "views_2025": 11119201, "posts_2025": 2495, "eff_2025": 4457, "views_2026": 11272645, "posts_2026": 2557, "eff_2026": 4409, "growth_views": 1.4, "growth_posts": 2.5}, {"code": "T8", "name": "Th\u00e1ng 8", "views_2025": 10220817, "posts_2025": 2570, "eff_2025": 3977, "views_2026": 13594783, "posts_2026": 2719, "eff_2026": 5000, "growth_views": 33.0, "growth_posts": 5.8}, {"code": "T9", "name": "Th\u00e1ng 9", "views_2025": 10669655, "posts_2025": 2474, "eff_2025": 4313, "views_2026": 14414591, "posts_2026": 2705, "eff_2026": 5329, "growth_views": 35.1, "growth_posts": 9.3}], "quarterly_totals": [{"name": "Qu\u00fd 1", "views_2025": 21459209, "posts_2025": 5728, "eff_2025": 3746, "views_2026": 34618069, "posts_2026": 6482, "eff_2026": 5341, "growth_views": 61.3, "growth_posts": 13.2}, {"name": "Qu\u00fd 2", "views_2025": 29381438, "posts_2025": 6919, "eff_2025": 4246, "views_2026": 36628248, "posts_2026": 7425, "eff_2026": 4933, "growth_views": 24.7, "growth_posts": 7.3}, {"name": "Qu\u00fd 3", "views_2025": 32009673, "posts_2025": 7539, "eff_2025": 4246, "views_2026": 39282019, "posts_2026": 7981, "eff_2026": 4922, "growth_views": 22.7, "growth_posts": 5.9}], "reporters": [{"name": "L\u00fd Thanh V\u0169", "views_2025": 5326965, "posts_2025": 1911, "eff_2025": 2788, "views_2026": 9403359, "posts_2026": 2334, "eff_2026": 4029, "diff_views": 4076394, "growth_views": 76.5, "diff_posts": 423, "growth_posts": 22.1, "months_2025": {"T1": {"views": 493316, "posts": 127, "video": 4, "photo": 6}, "T2": {"views": 348259, "posts": 142, "video": 3, "photo": 2}, "T3": {"views": 477755, "posts": 204, "video": 9, "photo": 1}, "T4": {"views": 427300, "posts": 152, "video": 3, "photo": 4}, "T5": {"views": 595637, "posts": 200, "video": 0, "photo": 1}, "T6": {"views": 597475, "posts": 220, "video": 0, "photo": 0}, "T7": {"views": 826350, "posts": 309, "video": 0, "photo": 1}, "T8": {"views": 791723, "posts": 275, "video": 2, "photo": 1}, "T9": {"views": 769150, "posts": 282, "video": 1, "photo": 0}}, "months_2026": {"T1": {"views": 942594, "posts": 261, "video": 1, "photo": 2}, "T2": {"views": 690320, "posts": 193, "video": 2, "photo": 5}, "T3": {"views": 783091, "posts": 229, "video": 1, "photo": 0}, "T4": {"views": 1167859, "posts": 309, "video": 0, "photo": 2}, "T5": {"views": 1002501, "posts": 287, "video": 0, "photo": 1}, "T6": {"views": 1157456, "posts": 254, "video": 0, "photo": 0}, "T7": {"views": 1177970, "posts": 292, "video": 0, "photo": 2}, "T8": {"views": 1425473, "posts": 283, "video": 0, "photo": 6}, "T9": {"views": 1056095, "posts": 226, "video": 0, "photo": 1}}}, {"name": "Nguy\u1ec5n \u0110\u0103ng V\u0103n", "views_2025": 4053843, "posts_2025": 1105, "eff_2025": 3669, "views_2026": 7892064, "posts_2026": 1075, "eff_2026": 7341, "diff_views": 3838221, "growth_views": 94.7, "diff_posts": -30, "growth_posts": -2.7, "months_2025": {"T1": {"views": 336654, "posts": 93, "video": 0, "photo": 0}, "T2": {"views": 276603, "posts": 105, "video": 0, "photo": 0}, "T3": {"views": 328131, "posts": 116, "video": 0, "photo": 0}, "T4": {"views": 481195, "posts": 115, "video": 1, "photo": 1}, "T5": {"views": 561734, "posts": 150, "video": 0, "photo": 1}, "T6": {"views": 505079, "posts": 133, "video": 0, "photo": 2}, "T7": {"views": 463331, "posts": 128, "video": 0, "photo": 0}, "T8": {"views": 531649, "posts": 140, "video": 0, "photo": 0}, "T9": {"views": 569467, "posts": 125, "video": 0, "photo": 0}}, "months_2026": {"T1": {"views": 951170, "posts": 120, "video": 0, "photo": 1}, "T2": {"views": 687318, "posts": 92, "video": 0, "photo": 0}, "T3": {"views": 936164, "posts": 124, "video": 0, "photo": 0}, "T4": {"views": 719167, "posts": 96, "video": 0, "photo": 1}, "T5": {"views": 863797, "posts": 137, "video": 0, "photo": 0}, "T6": {"views": 1003638, "posts": 159, "video": 0, "photo": 0}, "T7": {"views": 908774, "posts": 126, "video": 0, "photo": 1}, "T8": {"views": 901238, "posts": 119, "video": 0, "photo": 0}, "T9": {"views": 920798, "posts": 102, "video": 0, "photo": 1}}}, {"name": "Nguy\u1ec5n Th\u1ecb Minh T\u00e2m", "views_2025": 4851441, "posts_2025": 948, "eff_2025": 5118, "views_2026": 7839415, "posts_2026": 1134, "eff_2026": 6913, "diff_views": 2987974, "growth_views": 61.6, "diff_posts": 186, "growth_posts": 19.6, "months_2025": {"T1": {"views": 350010, "posts": 106, "video": 37, "photo": 66}, "T2": {"views": 418431, "posts": 85, "video": 27, "photo": 54}, "T3": {"views": 448039, "posts": 124, "video": 29, "photo": 83}, "T4": {"views": 570091, "posts": 115, "video": 37, "photo": 70}, "T5": {"views": 606055, "posts": 108, "video": 29, "photo": 62}, "T6": {"views": 556646, "posts": 94, "video": 23, "photo": 51}, "T7": {"views": 651542, "posts": 103, "video": 31, "photo": 58}, "T8": {"views": 550562, "posts": 119, "video": 28, "photo": 76}, "T9": {"views": 700065, "posts": 94, "video": 24, "photo": 62}}, "months_2026": {"T1": {"views": 626043, "posts": 85, "video": 30, "photo": 52}, "T2": {"views": 485497, "posts": 73, "video": 24, "photo": 45}, "T3": {"views": 526932, "posts": 95, "video": 39, "photo": 55}, "T4": {"views": 1731328, "posts": 157, "video": 24, "photo": 99}, "T5": {"views": 1092078, "posts": 143, "video": 31, "photo": 51}, "T6": {"views": 671099, "posts": 104, "video": 25, "photo": 36}, "T7": {"views": 917043, "posts": 160, "video": 19, "photo": 46}, "T8": {"views": 926906, "posts": 169, "video": 12, "photo": 47}, "T9": {"views": 862489, "posts": 148, "video": 13, "photo": 47}}}, {"name": "\u0110\u00e0o Th\u1ecb Ng\u1ecdc L\u00ea", "views_2025": 7314944, "posts_2025": 1742, "eff_2025": 4199, "views_2026": 7528144, "posts_2026": 1838, "eff_2026": 4096, "diff_views": 213200, "growth_views": 2.9, "diff_posts": 96, "growth_posts": 5.5, "months_2025": {"T1": {"views": 810725, "posts": 201, "video": 47, "photo": 8}, "T2": {"views": 754378, "posts": 171, "video": 38, "photo": 0}, "T3": {"views": 840133, "posts": 202, "video": 50, "photo": 3}, "T4": {"views": 989544, "posts": 203, "video": 27, "photo": 9}, "T5": {"views": 779328, "posts": 195, "video": 22, "photo": 1}, "T6": {"views": 806718, "posts": 197, "video": 26, "photo": 2}, "T7": {"views": 784288, "posts": 180, "video": 12, "photo": 0}, "T8": {"views": 862456, "posts": 203, "video": 15, "photo": 3}, "T9": {"views": 687374, "posts": 190, "video": 19, "photo": 1}}, "months_2026": {"T1": {"views": 766378, "posts": 185, "video": 13, "photo": 7}, "T2": {"views": 736341, "posts": 202, "video": 22, "photo": 21}, "T3": {"views": 736332, "posts": 187, "video": 14, "photo": 3}, "T4": {"views": 900812, "posts": 199, "video": 18, "photo": 9}, "T5": {"views": 896200, "posts": 217, "video": 22, "photo": 6}, "T6": {"views": 788607, "posts": 203, "video": 27, "photo": 4}, "T7": {"views": 799643, "posts": 215, "video": 22, "photo": 5}, "T8": {"views": 879647, "posts": 202, "video": 14, "photo": 8}, "T9": {"views": 1024184, "posts": 228, "video": 31, "photo": 12}}}, {"name": "Nguy\u1ec5n Ch\u00e2n Ph\u00fac", "views_2025": 4372010, "posts_2025": 919, "eff_2025": 4757, "views_2026": 6807800, "posts_2026": 1236, "eff_2026": 5508, "diff_views": 2435790, "growth_views": 55.7, "diff_posts": 317, "growth_posts": 34.5, "months_2025": {"T1": {"views": 329290, "posts": 59, "video": 17, "photo": 19}, "T2": {"views": 305863, "posts": 85, "video": 13, "photo": 2}, "T3": {"views": 330307, "posts": 90, "video": 10, "photo": 1}, "T4": {"views": 489890, "posts": 112, "video": 21, "photo": 14}, "T5": {"views": 512595, "posts": 115, "video": 9, "photo": 9}, "T6": {"views": 655329, "posts": 112, "video": 17, "photo": 7}, "T7": {"views": 754521, "posts": 119, "video": 11, "photo": 2}, "T8": {"views": 590372, "posts": 137, "video": 16, "photo": 3}, "T9": {"views": 403843, "posts": 90, "video": 12, "photo": 6}}, "months_2026": {"T1": {"views": 624424, "posts": 108, "video": 12, "photo": 5}, "T2": {"views": 551451, "posts": 94, "video": 8, "photo": 17}, "T3": {"views": 937752, "posts": 87, "video": 10, "photo": 4}, "T4": {"views": 598393, "posts": 125, "video": 10, "photo": 8}, "T5": {"views": 739743, "posts": 144, "video": 21, "photo": 11}, "T6": {"views": 1133990, "posts": 205, "video": 19, "photo": 6}, "T7": {"views": 666284, "posts": 173, "video": 14, "photo": 2}, "T8": {"views": 743635, "posts": 176, "video": 10, "photo": 6}, "T9": {"views": 812128, "posts": 124, "video": 8, "photo": 7}}}, {"name": "Tr\u1ecbnh V\u0103n Qu\u00e2n", "views_2025": 6751585, "posts_2025": 867, "eff_2025": 7787, "views_2026": 6536913, "posts_2026": 951, "eff_2026": 6874, "diff_views": -214672, "growth_views": -3.2, "diff_posts": 84, "growth_posts": 9.7, "months_2025": {"T1": {"views": 427059, "posts": 76, "video": 0, "photo": 0}, "T2": {"views": 762644, "posts": 88, "video": 0, "photo": 0}, "T3": {"views": 728667, "posts": 103, "video": 0, "photo": 0}, "T4": {"views": 792296, "posts": 129, "video": 2, "photo": 4}, "T5": {"views": 986494, "posts": 89, "video": 1, "photo": 1}, "T6": {"views": 809516, "posts": 107, "video": 0, "photo": 1}, "T7": {"views": 773250, "posts": 89, "video": 0, "photo": 2}, "T8": {"views": 720416, "posts": 90, "video": 0, "photo": 0}, "T9": {"views": 751243, "posts": 96, "video": 0, "photo": 0}}, "months_2026": {"T1": {"views": 837548, "posts": 94, "video": 0, "photo": 3}, "T2": {"views": 756325, "posts": 96, "video": 0, "photo": 3}, "T3": {"views": 830599, "posts": 120, "video": 0, "photo": 3}, "T4": {"views": 781501, "posts": 108, "video": 1, "photo": 2}, "T5": {"views": 710033, "posts": 108, "video": 0, "photo": 2}, "T6": {"views": 525773, "posts": 102, "video": 0, "photo": 1}, "T7": {"views": 609372, "posts": 108, "video": 0, "photo": 2}, "T8": {"views": 723553, "posts": 97, "video": 1, "photo": 6}, "T9": {"views": 762209, "posts": 118, "video": 1, "photo": 4}}}, {"name": "\u0110\u1eb7ng Ng\u1ecdc Thanh Ch\u00e2n", "views_2025": 4524087, "posts_2025": 1345, "eff_2025": 3364, "views_2026": 6530918, "posts_2026": 1704, "eff_2026": 3833, "diff_views": 2006831, "growth_views": 44.4, "diff_posts": 359, "growth_posts": 26.7, "months_2025": {"T1": {"views": 435785, "posts": 145, "video": 47, "photo": 5}, "T2": {"views": 564930, "posts": 153, "video": 41, "photo": 0}, "T3": {"views": 417442, "posts": 171, "video": 44, "photo": 0}, "T4": {"views": 455865, "posts": 157, "video": 35, "photo": 4}, "T5": {"views": 466524, "posts": 153, "video": 26, "photo": 1}, "T6": {"views": 468605, "posts": 144, "video": 15, "photo": 3}, "T7": {"views": 546734, "posts": 142, "video": 10, "photo": 1}, "T8": {"views": 513351, "posts": 137, "video": 7, "photo": 4}, "T9": {"views": 654851, "posts": 143, "video": 17, "photo": 2}}, "months_2026": {"T1": {"views": 622104, "posts": 152, "video": 21, "photo": 8}, "T2": {"views": 672125, "posts": 156, "video": 21, "photo": 6}, "T3": {"views": 783537, "posts": 203, "video": 29, "photo": 13}, "T4": {"views": 785822, "posts": 220, "video": 28, "photo": 10}, "T5": {"views": 771354, "posts": 218, "video": 28, "photo": 5}, "T6": {"views": 679603, "posts": 198, "video": 26, "photo": 3}, "T7": {"views": 771578, "posts": 206, "video": 24, "photo": 12}, "T8": {"views": 670149, "posts": 170, "video": 17, "photo": 5}, "T9": {"views": 774646, "posts": 181, "video": 25, "photo": 16}}}, {"name": "Nguy\u1ec5n Th\u1ecb Ly", "views_2025": 5004896, "posts_2025": 1057, "eff_2025": 4735, "views_2026": 6436227, "posts_2026": 1371, "eff_2026": 4695, "diff_views": 1431331, "growth_views": 28.6, "diff_posts": 314, "growth_posts": 29.7, "months_2025": {"T1": {"views": 94331, "posts": 35, "video": 0, "photo": 0}, "T2": {"views": 158403, "posts": 50, "video": 1, "photo": 0}, "T3": {"views": 126747, "posts": 48, "video": 1, "photo": 0}, "T4": {"views": 648059, "posts": 85, "video": 5, "photo": 0}, "T5": {"views": 694824, "posts": 158, "video": 5, "photo": 0}, "T6": {"views": 768524, "posts": 161, "video": 5, "photo": 1}, "T7": {"views": 859757, "posts": 176, "video": 10, "photo": 2}, "T8": {"views": 790394, "posts": 168, "video": 15, "photo": 0}, "T9": {"views": 863857, "posts": 176, "video": 9, "photo": 1}}, "months_2026": {"T1": {"views": 663056, "posts": 139, "video": 12, "photo": 10}, "T2": {"views": 716617, "posts": 136, "video": 12, "photo": 5}, "T3": {"views": 797633, "posts": 162, "video": 12, "photo": 7}, "T4": {"views": 879063, "posts": 177, "video": 15, "photo": 7}, "T5": {"views": 760060, "posts": 159, "video": 21, "photo": 2}, "T6": {"views": 538306, "posts": 131, "video": 8, "photo": 0}, "T7": {"views": 745178, "posts": 146, "video": 6, "photo": 1}, "T8": {"views": 618202, "posts": 155, "video": 6, "photo": 4}, "T9": {"views": 718112, "posts": 166, "video": 1, "photo": 4}}}, {"name": "L\u00ea Ng\u1ecdc D\u1ee7", "views_2025": 6910056, "posts_2025": 3049, "eff_2025": 2266, "views_2026": 6425772, "posts_2026": 2425, "eff_2026": 2650, "diff_views": -484284, "growth_views": -7.0, "diff_posts": -624, "growth_posts": -20.5, "months_2025": {"T1": {"views": 804406, "posts": 317, "video": 2, "photo": 0}, "T2": {"views": 486191, "posts": 247, "video": 4, "photo": 0}, "T3": {"views": 654261, "posts": 324, "video": 4, "photo": 0}, "T4": {"views": 524562, "posts": 325, "video": 6, "photo": 0}, "T5": {"views": 705390, "posts": 395, "video": 3, "photo": 2}, "T6": {"views": 890184, "posts": 351, "video": 5, "photo": 2}, "T7": {"views": 1003000, "posts": 351, "video": 9, "photo": 2}, "T8": {"views": 860245, "posts": 373, "video": 5, "photo": 1}, "T9": {"views": 981817, "posts": 366, "video": 11, "photo": 1}}, "months_2026": {"T1": {"views": 691007, "posts": 297, "video": 4, "photo": 2}, "T2": {"views": 633494, "posts": 257, "video": 6, "photo": 1}, "T3": {"views": 779585, "posts": 324, "video": 7, "photo": 4}, "T4": {"views": 731781, "posts": 239, "video": 2, "photo": 3}, "T5": {"views": 834998, "posts": 303, "video": 2, "photo": 1}, "T6": {"views": 572527, "posts": 246, "video": 6, "photo": 1}, "T7": {"views": 525681, "posts": 262, "video": 3, "photo": 3}, "T8": {"views": 809048, "posts": 246, "video": 2, "photo": 4}, "T9": {"views": 847651, "posts": 251, "video": 12, "photo": 5}}}, {"name": "H\u00e0 Anh Chi\u1ebfn", "views_2025": 4116108, "posts_2025": 991, "eff_2025": 4153, "views_2026": 6119502, "posts_2026": 925, "eff_2026": 6616, "diff_views": 2003394, "growth_views": 48.7, "diff_posts": -66, "growth_posts": -6.7, "months_2025": {"T1": {"views": 311075, "posts": 75, "video": 2, "photo": 0}, "T2": {"views": 334665, "posts": 84, "video": 1, "photo": 0}, "T3": {"views": 359115, "posts": 94, "video": 1, "photo": 0}, "T4": {"views": 375539, "posts": 108, "video": 1, "photo": 1}, "T5": {"views": 478068, "posts": 122, "video": 1, "photo": 2}, "T6": {"views": 520376, "posts": 116, "video": 0, "photo": 0}, "T7": {"views": 586945, "posts": 120, "video": 1, "photo": 0}, "T8": {"views": 579728, "posts": 142, "video": 0, "photo": 0}, "T9": {"views": 570597, "posts": 130, "video": 2, "photo": 1}}, "months_2026": {"T1": {"views": 760462, "posts": 94, "video": 3, "photo": 1}, "T2": {"views": 401343, "posts": 63, "video": 0, "photo": 2}, "T3": {"views": 782856, "posts": 85, "video": 2, "photo": 0}, "T4": {"views": 592511, "posts": 89, "video": 1, "photo": 2}, "T5": {"views": 589203, "posts": 106, "video": 1, "photo": 5}, "T6": {"views": 363839, "posts": 84, "video": 0, "photo": 2}, "T7": {"views": 595070, "posts": 119, "video": 2, "photo": 5}, "T8": {"views": 952213, "posts": 127, "video": 3, "photo": 0}, "T9": {"views": 1082005, "posts": 158, "video": 8, "photo": 2}}}, {"name": "Nguy\u1ec5n Ph\u00fac B\u1ea3o Ch\u01b0\u01a1ng", "views_2025": 4416931, "posts_2025": 500, "eff_2025": 8834, "views_2026": 5984773, "posts_2026": 576, "eff_2026": 10390, "diff_views": 1567842, "growth_views": 35.5, "diff_posts": 76, "growth_posts": 15.2, "months_2025": {"T1": {"views": 316165, "posts": 62, "video": 0, "photo": 0}, "T2": {"views": 266743, "posts": 58, "video": 1, "photo": 0}, "T3": {"views": 287667, "posts": 61, "video": 0, "photo": 0}, "T4": {"views": 593899, "posts": 60, "video": 0, "photo": 0}, "T5": {"views": 516133, "posts": 50, "video": 0, "photo": 0}, "T6": {"views": 530491, "posts": 40, "video": 0, "photo": 0}, "T7": {"views": 631486, "posts": 55, "video": 0, "photo": 0}, "T8": {"views": 583129, "posts": 53, "video": 0, "photo": 0}, "T9": {"views": 691218, "posts": 61, "video": 0, "photo": 0}}, "months_2026": {"T1": {"views": 779914, "posts": 56, "video": 0, "photo": 0}, "T2": {"views": 563988, "posts": 35, "video": 0, "photo": 0}, "T3": {"views": 666620, "posts": 58, "video": 0, "photo": 0}, "T4": {"views": 800985, "posts": 73, "video": 0, "photo": 0}, "T5": {"views": 836892, "posts": 83, "video": 0, "photo": 0}, "T6": {"views": 457652, "posts": 57, "video": 0, "photo": 0}, "T7": {"views": 597718, "posts": 66, "video": 0, "photo": 0}, "T8": {"views": 619762, "posts": 76, "video": 0, "photo": 0}, "T9": {"views": 661242, "posts": 72, "video": 0, "photo": 0}}}, {"name": "Nguy\u1ec5n Tr\u00ed \u0110\u1ed9", "views_2025": 4655547, "posts_2025": 875, "eff_2025": 5321, "views_2026": 5377619, "posts_2026": 661, "eff_2026": 8136, "diff_views": 722072, "growth_views": 15.5, "diff_posts": -214, "growth_posts": -24.5, "months_2025": {"T1": {"views": 366592, "posts": 58, "video": 0, "photo": 0}, "T2": {"views": 430404, "posts": 58, "video": 0, "photo": 0}, "T3": {"views": 298317, "posts": 82, "video": 0, "photo": 0}, "T4": {"views": 425156, "posts": 87, "video": 0, "photo": 0}, "T5": {"views": 484625, "posts": 104, "video": 2, "photo": 2}, "T6": {"views": 617453, "posts": 108, "video": 0, "photo": 1}, "T7": {"views": 733363, "posts": 129, "video": 0, "photo": 0}, "T8": {"views": 754723, "posts": 144, "video": 0, "photo": 2}, "T9": {"views": 544914, "posts": 105, "video": 2, "photo": 3}}, "months_2026": {"T1": {"views": 677958, "posts": 70, "video": 7, "photo": 3}, "T2": {"views": 665638, "posts": 65, "video": 2, "photo": 3}, "T3": {"views": 626131, "posts": 74, "video": 0, "photo": 3}, "T4": {"views": 659935, "posts": 75, "video": 2, "photo": 0}, "T5": {"views": 622086, "posts": 73, "video": 0, "photo": 0}, "T6": {"views": 368566, "posts": 62, "video": 0, "photo": 1}, "T7": {"views": 436382, "posts": 72, "video": 0, "photo": 2}, "T8": {"views": 657673, "posts": 86, "video": 0, "photo": 1}, "T9": {"views": 663250, "posts": 84, "video": 1, "photo": 1}}}, {"name": "\u0110inh V\u0103n Tr\u1ecdng", "views_2025": 4062160, "posts_2025": 1009, "eff_2025": 4026, "views_2026": 5328482, "posts_2026": 809, "eff_2026": 6587, "diff_views": 1266322, "growth_views": 31.2, "diff_posts": -200, "growth_posts": -19.8, "months_2025": {"T1": {"views": 323158, "posts": 97, "video": 3, "photo": 0}, "T2": {"views": 323104, "posts": 97, "video": 1, "photo": 0}, "T3": {"views": 340932, "posts": 107, "video": 0, "photo": 0}, "T4": {"views": 416091, "posts": 108, "video": 3, "photo": 1}, "T5": {"views": 541121, "posts": 140, "video": 2, "photo": 1}, "T6": {"views": 537592, "posts": 124, "video": 2, "photo": 1}, "T7": {"views": 560624, "posts": 122, "video": 8, "photo": 0}, "T8": {"views": 423031, "posts": 101, "video": 5, "photo": 0}, "T9": {"views": 596507, "posts": 113, "video": 5, "photo": 0}}, "months_2026": {"T1": {"views": 666531, "posts": 89, "video": 14, "photo": 3}, "T2": {"views": 636513, "posts": 75, "video": 11, "photo": 3}, "T3": {"views": 691698, "posts": 87, "video": 16, "photo": 3}, "T4": {"views": 532422, "posts": 66, "video": 2, "photo": 1}, "T5": {"views": 629762, "posts": 87, "video": 7, "photo": 8}, "T6": {"views": 442471, "posts": 94, "video": 3, "photo": 5}, "T7": {"views": 363259, "posts": 84, "video": 3, "photo": 2}, "T8": {"views": 671904, "posts": 111, "video": 5, "photo": 3}, "T9": {"views": 693922, "posts": 116, "video": 10, "photo": 2}}}, {"name": "H\u1ed3 Anh T\u00fa", "views_2025": 3708888, "posts_2025": 913, "eff_2025": 4062, "views_2026": 5066733, "posts_2026": 1142, "eff_2026": 4437, "diff_views": 1357845, "growth_views": 36.6, "diff_posts": 229, "growth_posts": 25.1, "months_2025": {"T1": {"views": 393658, "posts": 104, "video": 12, "photo": 39}, "T2": {"views": 301848, "posts": 74, "video": 20, "photo": 23}, "T3": {"views": 356702, "posts": 86, "video": 19, "photo": 17}, "T4": {"views": 405424, "posts": 117, "video": 34, "photo": 31}, "T5": {"views": 435794, "posts": 91, "video": 24, "photo": 19}, "T6": {"views": 507164, "posts": 108, "video": 20, "photo": 26}, "T7": {"views": 425476, "posts": 94, "video": 22, "photo": 33}, "T8": {"views": 433722, "posts": 120, "video": 19, "photo": 29}, "T9": {"views": 449100, "posts": 119, "video": 26, "photo": 21}}, "months_2026": {"T1": {"views": 705119, "posts": 118, "video": 22, "photo": 33}, "T2": {"views": 401180, "posts": 94, "video": 24, "photo": 27}, "T3": {"views": 410034, "posts": 79, "video": 22, "photo": 16}, "T4": {"views": 639328, "posts": 136, "video": 27, "photo": 18}, "T5": {"views": 756969, "posts": 175, "video": 29, "photo": 17}, "T6": {"views": 448148, "posts": 142, "video": 14, "photo": 16}, "T7": {"views": 547760, "posts": 145, "video": 13, "photo": 21}, "T8": {"views": 528104, "posts": 127, "video": 19, "photo": 19}, "T9": {"views": 630091, "posts": 126, "video": 17, "photo": 29}}}, {"name": "L\u00ea Thanh Phong", "views_2025": 2962334, "posts_2025": 499, "eff_2025": 5937, "views_2026": 4018092, "posts_2026": 581, "eff_2026": 6916, "diff_views": 1055758, "growth_views": 35.6, "diff_posts": 82, "growth_posts": 16.4, "months_2025": {"T1": {"views": 285261, "posts": 53, "video": 0, "photo": 0}, "T2": {"views": 471136, "posts": 54, "video": 0, "photo": 0}, "T3": {"views": 432582, "posts": 51, "video": 0, "photo": 0}, "T4": {"views": 625300, "posts": 44, "video": 0, "photo": 0}, "T5": {"views": 253214, "posts": 59, "video": 0, "photo": 0}, "T6": {"views": 352133, "posts": 67, "video": 0, "photo": 0}, "T7": {"views": 139039, "posts": 54, "video": 0, "photo": 0}, "T8": {"views": 184699, "posts": 52, "video": 0, "photo": 0}, "T9": {"views": 218970, "posts": 65, "video": 0, "photo": 0}}, "months_2026": {"T1": {"views": 458996, "posts": 61, "video": 0, "photo": 0}, "T2": {"views": 398157, "posts": 61, "video": 0, "photo": 0}, "T3": {"views": 503743, "posts": 68, "video": 0, "photo": 0}, "T4": {"views": 438121, "posts": 64, "video": 0, "photo": 0}, "T5": {"views": 568048, "posts": 72, "video": 0, "photo": 0}, "T6": {"views": 360700, "posts": 62, "video": 0, "photo": 0}, "T7": {"views": 330995, "posts": 65, "video": 0, "photo": 0}, "T8": {"views": 378134, "posts": 64, "video": 0, "photo": 0}, "T9": {"views": 581198, "posts": 64, "video": 0, "photo": 0}}}, {"name": "Tr\u1ea7n Nam D\u01b0\u01a1ng", "views_2025": 3404189, "posts_2025": 956, "eff_2025": 3561, "views_2026": 3831580, "posts_2026": 954, "eff_2026": 4016, "diff_views": 427391, "growth_views": 12.6, "diff_posts": -2, "growth_posts": -0.2, "months_2025": {"T1": {"views": 225696, "posts": 91, "video": 1, "photo": 0}, "T2": {"views": 414279, "posts": 73, "video": 1, "photo": 0}, "T3": {"views": 411579, "posts": 85, "video": 1, "photo": 0}, "T4": {"views": 460127, "posts": 99, "video": 1, "photo": 0}, "T5": {"views": 455565, "posts": 115, "video": 0, "photo": 0}, "T6": {"views": 419674, "posts": 123, "video": 0, "photo": 1}, "T7": {"views": 491952, "posts": 140, "video": 1, "photo": 0}, "T8": {"views": 208297, "posts": 108, "video": 1, "photo": 0}, "T9": {"views": 317020, "posts": 122, "video": 2, "photo": 0}}, "months_2026": {"T1": {"views": 529103, "posts": 124, "video": 2, "photo": 0}, "T2": {"views": 232623, "posts": 82, "video": 2, "photo": 2}, "T3": {"views": 375054, "posts": 116, "video": 0, "photo": 2}, "T4": {"views": 355264, "posts": 109, "video": 0, "photo": 0}, "T5": {"views": 438938, "posts": 110, "video": 4, "photo": 0}, "T6": {"views": 399162, "posts": 96, "video": 0, "photo": 0}, "T7": {"views": 529207, "posts": 106, "video": 0, "photo": 0}, "T8": {"views": 447668, "posts": 99, "video": 1, "photo": 1}, "T9": {"views": 524561, "posts": 112, "video": 0, "photo": 0}}}, {"name": "L\u00ea Thanh Ng\u1ecdc \u00c1nh", "views_2025": 2523200, "posts_2025": 555, "eff_2025": 4546, "views_2026": 2785417, "posts_2026": 699, "eff_2026": 3985, "diff_views": 262217, "growth_views": 10.4, "diff_posts": 144, "growth_posts": 25.9, "months_2025": {"T1": {"views": 233932, "posts": 68, "video": 35, "photo": 7}, "T2": {"views": 151136, "posts": 48, "video": 28, "photo": 3}, "T3": {"views": 174560, "posts": 43, "video": 31, "photo": 1}, "T4": {"views": 278657, "posts": 61, "video": 45, "photo": 4}, "T5": {"views": 260825, "posts": 55, "video": 39, "photo": 4}, "T6": {"views": 376100, "posts": 64, "video": 40, "photo": 1}, "T7": {"views": 438846, "posts": 81, "video": 47, "photo": 8}, "T8": {"views": 299856, "posts": 71, "video": 47, "photo": 5}, "T9": {"views": 309288, "posts": 64, "video": 46, "photo": 4}}, "months_2026": {"T1": {"views": 281331, "posts": 59, "video": 43, "photo": 6}, "T2": {"views": 308055, "posts": 59, "video": 34, "photo": 10}, "T3": {"views": 272749, "posts": 54, "video": 35, "photo": 7}, "T4": {"views": 243403, "posts": 59, "video": 42, "photo": 6}, "T5": {"views": 267857, "posts": 60, "video": 44, "photo": 7}, "T6": {"views": 167044, "posts": 40, "video": 30, "photo": 0}, "T7": {"views": 264713, "posts": 78, "video": 41, "photo": 13}, "T8": {"views": 495123, "posts": 145, "video": 50, "photo": 10}, "T9": {"views": 485142, "posts": 145, "video": 54, "photo": 12}}}, {"name": "Nguy\u1ec5n Nh\u01b0 Qu\u1ef3nh", "views_2025": 2522377, "posts_2025": 582, "eff_2025": 4334, "views_2026": 2454072, "posts_2026": 437, "eff_2026": 5616, "diff_views": -68305, "growth_views": -2.7, "diff_posts": -145, "growth_posts": -24.9, "months_2025": {"T1": {"views": 367048, "posts": 79, "video": 31, "photo": 21}, "T2": {"views": 147947, "posts": 43, "video": 17, "photo": 4}, "T3": {"views": 185180, "posts": 46, "video": 18, "photo": 3}, "T4": {"views": 223255, "posts": 62, "video": 38, "photo": 9}, "T5": {"views": 249845, "posts": 55, "video": 31, "photo": 5}, "T6": {"views": 371781, "posts": 72, "video": 38, "photo": 9}, "T7": {"views": 343983, "posts": 74, "video": 41, "photo": 7}, "T8": {"views": 289114, "posts": 72, "video": 34, "photo": 12}, "T9": {"views": 344224, "posts": 79, "video": 40, "photo": 12}}, "months_2026": {"T1": {"views": 430438, "posts": 71, "video": 44, "photo": 9}, "T2": {"views": 176564, "posts": 26, "video": 20, "photo": 2}, "T3": {"views": 318728, "posts": 45, "video": 41, "photo": 3}, "T4": {"views": 56612, "posts": 7, "video": 4, "photo": 1}, "T5": {"views": 153830, "posts": 29, "video": 26, "photo": 2}, "T6": {"views": 172803, "posts": 37, "video": 27, "photo": 1}, "T7": {"views": 162417, "posts": 33, "video": 24, "photo": 1}, "T8": {"views": 436463, "posts": 86, "video": 39, "photo": 13}, "T9": {"views": 546217, "posts": 103, "video": 59, "photo": 11}}}, {"name": "Nguy\u1ec5n Th\u00e1i B\u1ea3o", "views_2025": 300122, "posts_2025": 63, "eff_2025": 4764, "views_2026": 1823346, "posts_2026": 415, "eff_2026": 4394, "diff_views": 1523224, "growth_views": 507.5, "diff_posts": 352, "growth_posts": 558.7, "months_2025": {"T1": {"views": 0, "posts": 0}, "T2": {"views": 0, "posts": 0}, "T3": {"views": 0, "posts": 0}, "T4": {"views": 0, "posts": 0}, "T5": {"views": 0, "posts": 0}, "T6": {"views": 0, "posts": 0}, "T7": {"views": 20680, "posts": 5, "video": 1, "photo": 2}, "T8": {"views": 123208, "posts": 28, "video": 13, "photo": 9}, "T9": {"views": 156234, "posts": 30, "video": 15, "photo": 8}}, "months_2026": {"T1": {"views": 188187, "posts": 46, "video": 16, "photo": 21}, "T2": {"views": 235809, "posts": 50, "video": 16, "photo": 18}, "T3": {"views": 251894, "posts": 36, "video": 9, "photo": 15}, "T4": {"views": 148039, "posts": 48, "video": 17, "photo": 15}, "T5": {"views": 143641, "posts": 38, "video": 16, "photo": 8}, "T6": {"views": 137305, "posts": 41, "video": 24, "photo": 3}, "T7": {"views": 181376, "posts": 48, "video": 12, "photo": 4}, "T8": {"views": 266499, "posts": 50, "video": 11, "photo": 11}, "T9": {"views": 270596, "posts": 58, "video": 28, "photo": 12}}}, {"name": "Nguy\u1ec5n Th\u1ecb Ph\u01b0\u01a1ng Th\u1ea3o", "views_2025": 1068637, "posts_2025": 300, "eff_2025": 3562, "views_2026": 1190905, "posts_2026": 280, "eff_2026": 4253, "diff_views": 122268, "growth_views": 11.4, "diff_posts": -20, "growth_posts": -6.7, "months_2025": {"T1": {"views": 159233, "posts": 47, "video": 0, "photo": 0}, "T2": {"views": 148695, "posts": 43, "video": 0, "photo": 0}, "T3": {"views": 132040, "posts": 40, "video": 0, "photo": 0}, "T4": {"views": 169419, "posts": 42, "video": 0, "photo": 0}, "T5": {"views": 41442, "posts": 11, "video": 0, "photo": 0}, "T6": {"views": 113716, "posts": 32, "video": 0, "photo": 0}, "T7": {"views": 84034, "posts": 24, "video": 0, "photo": 0}, "T8": {"views": 130142, "posts": 37, "video": 0, "photo": 0}, "T9": {"views": 89916, "posts": 24, "video": 0, "photo": 0}}, "months_2026": {"T1": {"views": 135745, "posts": 28, "video": 0, "photo": 0}, "T2": {"views": 132835, "posts": 26, "video": 0, "photo": 0}, "T3": {"views": 133854, "posts": 28, "video": 0, "photo": 0}, "T4": {"views": 230980, "posts": 49, "video": 0, "photo": 0}, "T5": {"views": 247031, "posts": 57, "video": 0, "photo": 0}, "T6": {"views": 136601, "posts": 41, "video": 0, "photo": 0}, "T7": {"views": 77764, "posts": 27, "video": 0, "photo": 0}, "T8": {"views": 85182, "posts": 20, "video": 0, "photo": 0}, "T9": {"views": 10913, "posts": 4, "video": 0, "photo": 0}}}, {"name": "Nguy\u1ec5n L\u00ea Mai Anh", "views_2025": 0, "posts_2025": 0, "eff_2025": 0, "views_2026": 719383, "posts_2026": 245, "eff_2026": 2936, "diff_views": 719383, "growth_views": null, "diff_posts": 245, "growth_posts": null, "months_2025": {"T1": {"views": 0, "posts": 0}, "T2": {"views": 0, "posts": 0}, "T3": {"views": 0, "posts": 0}, "T4": {"views": 0, "posts": 0}, "T5": {"views": 0, "posts": 0}, "T6": {"views": 0, "posts": 0}, "T7": {"views": 0, "posts": 0}, "T8": {"views": 0, "posts": 0}, "T9": {"views": 0, "posts": 0}}, "months_2026": {"T1": {"views": 0, "posts": 0}, "T2": {"views": 20068, "posts": 14, "video": 3, "photo": 0}, "T3": {"views": 32714, "posts": 15, "video": 2, "photo": 1}, "T4": {"views": 80921, "posts": 21, "video": 4, "photo": 1}, "T5": {"views": 46234, "posts": 16, "video": 2, "photo": 1}, "T6": {"views": 57456, "posts": 19, "video": 4, "photo": 2}, "T7": {"views": 64461, "posts": 26, "video": 4, "photo": 1}, "T8": {"views": 222288, "posts": 74, "video": 2, "photo": 9}, "T9": {"views": 195241, "posts": 60, "video": 1, "photo": 7}}}, {"name": "Hu\u1ef3nh Ng\u1ecdc Du", "views_2025": 0, "posts_2025": 0, "eff_2025": 0, "views_2026": 427820, "posts_2026": 96, "eff_2026": 4456, "diff_views": 427820, "growth_views": null, "diff_posts": 96, "growth_posts": null, "months_2025": {"T1": {"views": 0, "posts": 0}, "T2": {"views": 0, "posts": 0}, "T3": {"views": 0, "posts": 0}, "T4": {"views": 0, "posts": 0}, "T5": {"views": 0, "posts": 0}, "T6": {"views": 0, "posts": 0}, "T7": {"views": 0, "posts": 0}, "T8": {"views": 0, "posts": 0}, "T9": {"views": 0, "posts": 0}}, "months_2026": {"T1": {"views": 0, "posts": 0}, "T2": {"views": 0, "posts": 0}, "T3": {"views": 0, "posts": 0}, "T4": {"views": 0, "posts": 0}, "T5": {"views": 0, "posts": 0}, "T6": {"views": 0, "posts": 0}, "T7": {"views": 0, "posts": 0}, "T8": {"views": 135919, "posts": 37, "video": 0, "photo": 1}, "T9": {"views": 291901, "posts": 59, "video": 0, "photo": 2}}}]};
+    const reportersData = [{"name": "L\u00fd Thanh V\u0169", "tot_views": 9403359, "tot_posts": 2334, "tot_eff": 4029, "share_9m": 8.51, "tot_video": 4, "tot_photo": 19, "q1": {"views": 2416005, "posts": 683, "eff": 3537}, "q2": {"views": 3327816, "posts": 850, "eff": 3915, "growth_vs_q1": 37.7}, "q3": {"views": 3659538, "posts": 801, "eff": 4569, "growth_vs_q2": 10.0, "growth_vs_q1": 51.5}, "months": {"T1": {"views": 942594, "posts": 261, "eff": 3611, "video": 1, "photo": 2}, "T2": {"views": 690320, "posts": 193, "eff": 3577, "video": 2, "photo": 5}, "T3": {"views": 783091, "posts": 229, "eff": 3420, "video": 1, "photo": 0}, "T4": {"views": 1167859, "posts": 309, "eff": 3779, "video": 0, "photo": 2}, "T5": {"views": 1002501, "posts": 287, "eff": 3493, "video": 0, "photo": 1}, "T6": {"views": 1157456, "posts": 254, "eff": 4557, "video": 0, "photo": 0}, "T7": {"views": 1177970, "posts": 292, "eff": 4034, "video": 0, "photo": 2}, "T8": {"views": 1425473, "posts": 283, "eff": 5037, "video": 0, "photo": 6}, "T9": {"views": 1056095, "posts": 226, "eff": 4673, "video": 0, "photo": 1}}}, {"name": "Nguy\u1ec5n \u0110\u0103ng V\u0103n", "tot_views": 7892064, "tot_posts": 1075, "tot_eff": 7341, "share_9m": 7.14, "tot_video": 0, "tot_photo": 4, "q1": {"views": 2574652, "posts": 336, "eff": 7663}, "q2": {"views": 2586602, "posts": 392, "eff": 6598, "growth_vs_q1": 0.5}, "q3": {"views": 2730810, "posts": 347, "eff": 7870, "growth_vs_q2": 5.6, "growth_vs_q1": 6.1}, "months": {"T1": {"views": 951170, "posts": 120, "eff": 7926, "video": 0, "photo": 1}, "T2": {"views": 687318, "posts": 92, "eff": 7471, "video": 0, "photo": 0}, "T3": {"views": 936164, "posts": 124, "eff": 7550, "video": 0, "photo": 0}, "T4": {"views": 719167, "posts": 96, "eff": 7491, "video": 0, "photo": 1}, "T5": {"views": 863797, "posts": 137, "eff": 6305, "video": 0, "photo": 0}, "T6": {"views": 1003638, "posts": 159, "eff": 6312, "video": 0, "photo": 0}, "T7": {"views": 908774, "posts": 126, "eff": 7212, "video": 0, "photo": 1}, "T8": {"views": 901238, "posts": 119, "eff": 7573, "video": 0, "photo": 0}, "T9": {"views": 920798, "posts": 102, "eff": 9027, "video": 0, "photo": 1}}}, {"name": "Nguy\u1ec5n Th\u1ecb Minh T\u00e2m", "tot_views": 7839415, "tot_posts": 1134, "tot_eff": 6913, "share_9m": 7.09, "tot_video": 217, "tot_photo": 478, "q1": {"views": 1638472, "posts": 253, "eff": 6476}, "q2": {"views": 3494505, "posts": 404, "eff": 8650, "growth_vs_q1": 113.3}, "q3": {"views": 2706438, "posts": 477, "eff": 5674, "growth_vs_q2": -22.6, "growth_vs_q1": 65.2}, "months": {"T1": {"views": 626043, "posts": 85, "eff": 7365, "video": 30, "photo": 52}, "T2": {"views": 485497, "posts": 73, "eff": 6651, "video": 24, "photo": 45}, "T3": {"views": 526932, "posts": 95, "eff": 5547, "video": 39, "photo": 55}, "T4": {"views": 1731328, "posts": 157, "eff": 11028, "video": 24, "photo": 99}, "T5": {"views": 1092078, "posts": 143, "eff": 7637, "video": 31, "photo": 51}, "T6": {"views": 671099, "posts": 104, "eff": 6453, "video": 25, "photo": 36}, "T7": {"views": 917043, "posts": 160, "eff": 5732, "video": 19, "photo": 46}, "T8": {"views": 926906, "posts": 169, "eff": 5485, "video": 12, "photo": 47}, "T9": {"views": 862489, "posts": 148, "eff": 5828, "video": 13, "photo": 47}}}, {"name": "\u0110\u00e0o Th\u1ecb Ng\u1ecdc L\u00ea", "tot_views": 7528144, "tot_posts": 1838, "tot_eff": 4096, "share_9m": 6.81, "tot_video": 183, "tot_photo": 75, "q1": {"views": 2239051, "posts": 574, "eff": 3901}, "q2": {"views": 2585619, "posts": 619, "eff": 4177, "growth_vs_q1": 15.5}, "q3": {"views": 2703474, "posts": 645, "eff": 4191, "growth_vs_q2": 4.6, "growth_vs_q1": 20.7}, "months": {"T1": {"views": 766378, "posts": 185, "eff": 4143, "video": 13, "photo": 7}, "T2": {"views": 736341, "posts": 202, "eff": 3645, "video": 22, "photo": 21}, "T3": {"views": 736332, "posts": 187, "eff": 3938, "video": 14, "photo": 3}, "T4": {"views": 900812, "posts": 199, "eff": 4527, "video": 18, "photo": 9}, "T5": {"views": 896200, "posts": 217, "eff": 4130, "video": 22, "photo": 6}, "T6": {"views": 788607, "posts": 203, "eff": 3885, "video": 27, "photo": 4}, "T7": {"views": 799643, "posts": 215, "eff": 3719, "video": 22, "photo": 5}, "T8": {"views": 879647, "posts": 202, "eff": 4355, "video": 14, "photo": 8}, "T9": {"views": 1024184, "posts": 228, "eff": 4492, "video": 31, "photo": 12}}}, {"name": "Nguy\u1ec5n Ch\u00e2n Ph\u00fac", "tot_views": 6807800, "tot_posts": 1236, "tot_eff": 5508, "share_9m": 6.16, "tot_video": 112, "tot_photo": 66, "q1": {"views": 2113627, "posts": 289, "eff": 7314}, "q2": {"views": 2472126, "posts": 474, "eff": 5215, "growth_vs_q1": 17.0}, "q3": {"views": 2222047, "posts": 473, "eff": 4698, "growth_vs_q2": -10.1, "growth_vs_q1": 5.1}, "months": {"T1": {"views": 624424, "posts": 108, "eff": 5782, "video": 12, "photo": 5}, "T2": {"views": 551451, "posts": 94, "eff": 5866, "video": 8, "photo": 17}, "T3": {"views": 937752, "posts": 87, "eff": 10779, "video": 10, "photo": 4}, "T4": {"views": 598393, "posts": 125, "eff": 4787, "video": 10, "photo": 8}, "T5": {"views": 739743, "posts": 144, "eff": 5137, "video": 21, "photo": 11}, "T6": {"views": 1133990, "posts": 205, "eff": 5532, "video": 19, "photo": 6}, "T7": {"views": 666284, "posts": 173, "eff": 3851, "video": 14, "photo": 2}, "T8": {"views": 743635, "posts": 176, "eff": 4225, "video": 10, "photo": 6}, "T9": {"views": 812128, "posts": 124, "eff": 6549, "video": 8, "photo": 7}}}, {"name": "Tr\u1ecbnh V\u0103n Qu\u00e2n", "tot_views": 6536913, "tot_posts": 951, "tot_eff": 6874, "share_9m": 5.91, "tot_video": 3, "tot_photo": 26, "q1": {"views": 2424472, "posts": 310, "eff": 7821}, "q2": {"views": 2017307, "posts": 318, "eff": 6344, "growth_vs_q1": -16.8}, "q3": {"views": 2095134, "posts": 323, "eff": 6486, "growth_vs_q2": 3.9, "growth_vs_q1": -13.6}, "months": {"T1": {"views": 837548, "posts": 94, "eff": 8910, "video": 0, "photo": 3}, "T2": {"views": 756325, "posts": 96, "eff": 7878, "video": 0, "photo": 3}, "T3": {"views": 830599, "posts": 120, "eff": 6922, "video": 0, "photo": 3}, "T4": {"views": 781501, "posts": 108, "eff": 7236, "video": 1, "photo": 2}, "T5": {"views": 710033, "posts": 108, "eff": 6574, "video": 0, "photo": 2}, "T6": {"views": 525773, "posts": 102, "eff": 5155, "video": 0, "photo": 1}, "T7": {"views": 609372, "posts": 108, "eff": 5642, "video": 0, "photo": 2}, "T8": {"views": 723553, "posts": 97, "eff": 7459, "video": 1, "photo": 6}, "T9": {"views": 762209, "posts": 118, "eff": 6459, "video": 1, "photo": 4}}}, {"name": "\u0110\u1eb7ng Ng\u1ecdc Thanh Ch\u00e2n", "tot_views": 6530918, "tot_posts": 1704, "tot_eff": 3833, "share_9m": 5.91, "tot_video": 219, "tot_photo": 78, "q1": {"views": 2077766, "posts": 511, "eff": 4066}, "q2": {"views": 2236779, "posts": 636, "eff": 3517, "growth_vs_q1": 7.7}, "q3": {"views": 2216373, "posts": 557, "eff": 3979, "growth_vs_q2": -0.9, "growth_vs_q1": 6.7}, "months": {"T1": {"views": 622104, "posts": 152, "eff": 4093, "video": 21, "photo": 8}, "T2": {"views": 672125, "posts": 156, "eff": 4308, "video": 21, "photo": 6}, "T3": {"views": 783537, "posts": 203, "eff": 3860, "video": 29, "photo": 13}, "T4": {"views": 785822, "posts": 220, "eff": 3572, "video": 28, "photo": 10}, "T5": {"views": 771354, "posts": 218, "eff": 3538, "video": 28, "photo": 5}, "T6": {"views": 679603, "posts": 198, "eff": 3432, "video": 26, "photo": 3}, "T7": {"views": 771578, "posts": 206, "eff": 3746, "video": 24, "photo": 12}, "T8": {"views": 670149, "posts": 170, "eff": 3942, "video": 17, "photo": 5}, "T9": {"views": 774646, "posts": 181, "eff": 4280, "video": 25, "photo": 16}}}, {"name": "Nguy\u1ec5n Th\u1ecb Ly", "tot_views": 6436227, "tot_posts": 1371, "tot_eff": 4695, "share_9m": 5.82, "tot_video": 93, "tot_photo": 40, "q1": {"views": 2177306, "posts": 437, "eff": 4982}, "q2": {"views": 2177429, "posts": 467, "eff": 4663, "growth_vs_q1": 0.0}, "q3": {"views": 2081492, "posts": 467, "eff": 4457, "growth_vs_q2": -4.4, "growth_vs_q1": -4.4}, "months": {"T1": {"views": 663056, "posts": 139, "eff": 4770, "video": 12, "photo": 10}, "T2": {"views": 716617, "posts": 136, "eff": 5269, "video": 12, "photo": 5}, "T3": {"views": 797633, "posts": 162, "eff": 4924, "video": 12, "photo": 7}, "T4": {"views": 879063, "posts": 177, "eff": 4966, "video": 15, "photo": 7}, "T5": {"views": 760060, "posts": 159, "eff": 4780, "video": 21, "photo": 2}, "T6": {"views": 538306, "posts": 131, "eff": 4109, "video": 8, "photo": 0}, "T7": {"views": 745178, "posts": 146, "eff": 5104, "video": 6, "photo": 1}, "T8": {"views": 618202, "posts": 155, "eff": 3988, "video": 6, "photo": 4}, "T9": {"views": 718112, "posts": 166, "eff": 4326, "video": 1, "photo": 4}}}, {"name": "L\u00ea Ng\u1ecdc D\u1ee7", "tot_views": 6425772, "tot_posts": 2425, "tot_eff": 2650, "share_9m": 5.81, "tot_video": 44, "tot_photo": 24, "q1": {"views": 2104086, "posts": 878, "eff": 2396}, "q2": {"views": 2139306, "posts": 788, "eff": 2715, "growth_vs_q1": 1.7}, "q3": {"views": 2182380, "posts": 759, "eff": 2875, "growth_vs_q2": 2.0, "growth_vs_q1": 3.7}, "months": {"T1": {"views": 691007, "posts": 297, "eff": 2327, "video": 4, "photo": 2}, "T2": {"views": 633494, "posts": 257, "eff": 2465, "video": 6, "photo": 1}, "T3": {"views": 779585, "posts": 324, "eff": 2406, "video": 7, "photo": 4}, "T4": {"views": 731781, "posts": 239, "eff": 3062, "video": 2, "photo": 3}, "T5": {"views": 834998, "posts": 303, "eff": 2756, "video": 2, "photo": 1}, "T6": {"views": 572527, "posts": 246, "eff": 2327, "video": 6, "photo": 1}, "T7": {"views": 525681, "posts": 262, "eff": 2006, "video": 3, "photo": 3}, "T8": {"views": 809048, "posts": 246, "eff": 3289, "video": 2, "photo": 4}, "T9": {"views": 847651, "posts": 251, "eff": 3377, "video": 12, "photo": 5}}}, {"name": "H\u00e0 Anh Chi\u1ebfn", "tot_views": 6119502, "tot_posts": 925, "tot_eff": 6616, "share_9m": 5.54, "tot_video": 20, "tot_photo": 19, "q1": {"views": 1944661, "posts": 242, "eff": 8036}, "q2": {"views": 1545553, "posts": 279, "eff": 5540, "growth_vs_q1": -20.5}, "q3": {"views": 2629288, "posts": 404, "eff": 6508, "growth_vs_q2": 70.1, "growth_vs_q1": 35.2}, "months": {"T1": {"views": 760462, "posts": 94, "eff": 8090, "video": 3, "photo": 1}, "T2": {"views": 401343, "posts": 63, "eff": 6371, "video": 0, "photo": 2}, "T3": {"views": 782856, "posts": 85, "eff": 9210, "video": 2, "photo": 0}, "T4": {"views": 592511, "posts": 89, "eff": 6657, "video": 1, "photo": 2}, "T5": {"views": 589203, "posts": 106, "eff": 5559, "video": 1, "photo": 5}, "T6": {"views": 363839, "posts": 84, "eff": 4331, "video": 0, "photo": 2}, "T7": {"views": 595070, "posts": 119, "eff": 5001, "video": 2, "photo": 5}, "T8": {"views": 952213, "posts": 127, "eff": 7498, "video": 3, "photo": 0}, "T9": {"views": 1082005, "posts": 158, "eff": 6848, "video": 8, "photo": 2}}}, {"name": "Nguy\u1ec5n Ph\u00fac B\u1ea3o Ch\u01b0\u01a1ng", "tot_views": 5984773, "tot_posts": 576, "tot_eff": 10390, "share_9m": 5.41, "tot_video": 0, "tot_photo": 0, "q1": {"views": 2010522, "posts": 149, "eff": 13493}, "q2": {"views": 2095529, "posts": 213, "eff": 9838, "growth_vs_q1": 4.2}, "q3": {"views": 1878722, "posts": 214, "eff": 8779, "growth_vs_q2": -10.3, "growth_vs_q1": -6.6}, "months": {"T1": {"views": 779914, "posts": 56, "eff": 13927, "video": 0, "photo": 0}, "T2": {"views": 563988, "posts": 35, "eff": 16114, "video": 0, "photo": 0}, "T3": {"views": 666620, "posts": 58, "eff": 11493, "video": 0, "photo": 0}, "T4": {"views": 800985, "posts": 73, "eff": 10972, "video": 0, "photo": 0}, "T5": {"views": 836892, "posts": 83, "eff": 10083, "video": 0, "photo": 0}, "T6": {"views": 457652, "posts": 57, "eff": 8029, "video": 0, "photo": 0}, "T7": {"views": 597718, "posts": 66, "eff": 9056, "video": 0, "photo": 0}, "T8": {"views": 619762, "posts": 76, "eff": 8155, "video": 0, "photo": 0}, "T9": {"views": 661242, "posts": 72, "eff": 9184, "video": 0, "photo": 0}}}, {"name": "Nguy\u1ec5n Tr\u00ed \u0110\u1ed9", "tot_views": 5377619, "tot_posts": 661, "tot_eff": 8136, "share_9m": 4.87, "tot_video": 12, "tot_photo": 14, "q1": {"views": 1969727, "posts": 209, "eff": 9425}, "q2": {"views": 1650587, "posts": 210, "eff": 7860, "growth_vs_q1": -16.2}, "q3": {"views": 1757305, "posts": 242, "eff": 7262, "growth_vs_q2": 6.5, "growth_vs_q1": -10.8}, "months": {"T1": {"views": 677958, "posts": 70, "eff": 9685, "video": 7, "photo": 3}, "T2": {"views": 665638, "posts": 65, "eff": 10241, "video": 2, "photo": 3}, "T3": {"views": 626131, "posts": 74, "eff": 8461, "video": 0, "photo": 3}, "T4": {"views": 659935, "posts": 75, "eff": 8799, "video": 2, "photo": 0}, "T5": {"views": 622086, "posts": 73, "eff": 8522, "video": 0, "photo": 0}, "T6": {"views": 368566, "posts": 62, "eff": 5945, "video": 0, "photo": 1}, "T7": {"views": 436382, "posts": 72, "eff": 6061, "video": 0, "photo": 2}, "T8": {"views": 657673, "posts": 86, "eff": 7647, "video": 0, "photo": 1}, "T9": {"views": 663250, "posts": 84, "eff": 7896, "video": 1, "photo": 1}}}, {"name": "\u0110inh V\u0103n Tr\u1ecdng", "tot_views": 5328482, "tot_posts": 809, "tot_eff": 6587, "share_9m": 4.82, "tot_video": 71, "tot_photo": 30, "q1": {"views": 1994742, "posts": 251, "eff": 7947}, "q2": {"views": 1604655, "posts": 247, "eff": 6497, "growth_vs_q1": -19.6}, "q3": {"views": 1729085, "posts": 311, "eff": 5560, "growth_vs_q2": 7.8, "growth_vs_q1": -13.3}, "months": {"T1": {"views": 666531, "posts": 89, "eff": 7489, "video": 14, "photo": 3}, "T2": {"views": 636513, "posts": 75, "eff": 8487, "video": 11, "photo": 3}, "T3": {"views": 691698, "posts": 87, "eff": 7951, "video": 16, "photo": 3}, "T4": {"views": 532422, "posts": 66, "eff": 8067, "video": 2, "photo": 1}, "T5": {"views": 629762, "posts": 87, "eff": 7239, "video": 7, "photo": 8}, "T6": {"views": 442471, "posts": 94, "eff": 4707, "video": 3, "photo": 5}, "T7": {"views": 363259, "posts": 84, "eff": 4325, "video": 3, "photo": 2}, "T8": {"views": 671904, "posts": 111, "eff": 6053, "video": 5, "photo": 3}, "T9": {"views": 693922, "posts": 116, "eff": 5982, "video": 10, "photo": 2}}}, {"name": "H\u1ed3 Anh T\u00fa", "tot_views": 5066733, "tot_posts": 1142, "tot_eff": 4437, "share_9m": 4.58, "tot_video": 187, "tot_photo": 196, "q1": {"views": 1516333, "posts": 291, "eff": 5211}, "q2": {"views": 1844445, "posts": 453, "eff": 4072, "growth_vs_q1": 21.6}, "q3": {"views": 1705955, "posts": 398, "eff": 4286, "growth_vs_q2": -7.5, "growth_vs_q1": 12.5}, "months": {"T1": {"views": 705119, "posts": 118, "eff": 5976, "video": 22, "photo": 33}, "T2": {"views": 401180, "posts": 94, "eff": 4268, "video": 24, "photo": 27}, "T3": {"views": 410034, "posts": 79, "eff": 5190, "video": 22, "photo": 16}, "T4": {"views": 639328, "posts": 136, "eff": 4701, "video": 27, "photo": 18}, "T5": {"views": 756969, "posts": 175, "eff": 4326, "video": 29, "photo": 17}, "T6": {"views": 448148, "posts": 142, "eff": 3156, "video": 14, "photo": 16}, "T7": {"views": 547760, "posts": 145, "eff": 3778, "video": 13, "photo": 21}, "T8": {"views": 528104, "posts": 127, "eff": 4158, "video": 19, "photo": 19}, "T9": {"views": 630091, "posts": 126, "eff": 5001, "video": 17, "photo": 29}}}, {"name": "L\u00ea Thanh Phong", "tot_views": 4018092, "tot_posts": 581, "tot_eff": 6916, "share_9m": 3.64, "tot_video": 0, "tot_photo": 0, "q1": {"views": 1360896, "posts": 190, "eff": 7163}, "q2": {"views": 1366869, "posts": 198, "eff": 6903, "growth_vs_q1": 0.4}, "q3": {"views": 1290327, "posts": 193, "eff": 6686, "growth_vs_q2": -5.6, "growth_vs_q1": -5.2}, "months": {"T1": {"views": 458996, "posts": 61, "eff": 7525, "video": 0, "photo": 0}, "T2": {"views": 398157, "posts": 61, "eff": 6527, "video": 0, "photo": 0}, "T3": {"views": 503743, "posts": 68, "eff": 7408, "video": 0, "photo": 0}, "T4": {"views": 438121, "posts": 64, "eff": 6846, "video": 0, "photo": 0}, "T5": {"views": 568048, "posts": 72, "eff": 7890, "video": 0, "photo": 0}, "T6": {"views": 360700, "posts": 62, "eff": 5818, "video": 0, "photo": 0}, "T7": {"views": 330995, "posts": 65, "eff": 5092, "video": 0, "photo": 0}, "T8": {"views": 378134, "posts": 64, "eff": 5908, "video": 0, "photo": 0}, "T9": {"views": 581198, "posts": 64, "eff": 9081, "video": 0, "photo": 0}}}, {"name": "Tr\u1ea7n Nam D\u01b0\u01a1ng", "tot_views": 3831580, "tot_posts": 954, "tot_eff": 4016, "share_9m": 3.47, "tot_video": 9, "tot_photo": 5, "q1": {"views": 1136780, "posts": 322, "eff": 3530}, "q2": {"views": 1193364, "posts": 315, "eff": 3788, "growth_vs_q1": 5.0}, "q3": {"views": 1501436, "posts": 317, "eff": 4736, "growth_vs_q2": 25.8, "growth_vs_q1": 32.1}, "months": {"T1": {"views": 529103, "posts": 124, "eff": 4267, "video": 2, "photo": 0}, "T2": {"views": 232623, "posts": 82, "eff": 2837, "video": 2, "photo": 2}, "T3": {"views": 375054, "posts": 116, "eff": 3233, "video": 0, "photo": 2}, "T4": {"views": 355264, "posts": 109, "eff": 3259, "video": 0, "photo": 0}, "T5": {"views": 438938, "posts": 110, "eff": 3990, "video": 4, "photo": 0}, "T6": {"views": 399162, "posts": 96, "eff": 4158, "video": 0, "photo": 0}, "T7": {"views": 529207, "posts": 106, "eff": 4993, "video": 0, "photo": 0}, "T8": {"views": 447668, "posts": 99, "eff": 4522, "video": 1, "photo": 1}, "T9": {"views": 524561, "posts": 112, "eff": 4684, "video": 0, "photo": 0}}}, {"name": "L\u00ea Thanh Ng\u1ecdc \u00c1nh", "tot_views": 2785417, "tot_posts": 699, "tot_eff": 3985, "share_9m": 2.52, "tot_video": 373, "tot_photo": 71, "q1": {"views": 862135, "posts": 172, "eff": 5012}, "q2": {"views": 678304, "posts": 159, "eff": 4266, "growth_vs_q1": -21.3}, "q3": {"views": 1244978, "posts": 368, "eff": 3383, "growth_vs_q2": 83.5, "growth_vs_q1": 44.4}, "months": {"T1": {"views": 281331, "posts": 59, "eff": 4768, "video": 43, "photo": 6}, "T2": {"views": 308055, "posts": 59, "eff": 5221, "video": 34, "photo": 10}, "T3": {"views": 272749, "posts": 54, "eff": 5051, "video": 35, "photo": 7}, "T4": {"views": 243403, "posts": 59, "eff": 4125, "video": 42, "photo": 6}, "T5": {"views": 267857, "posts": 60, "eff": 4464, "video": 44, "photo": 7}, "T6": {"views": 167044, "posts": 40, "eff": 4176, "video": 30, "photo": 0}, "T7": {"views": 264713, "posts": 78, "eff": 3394, "video": 41, "photo": 13}, "T8": {"views": 495123, "posts": 145, "eff": 3415, "video": 50, "photo": 10}, "T9": {"views": 485142, "posts": 145, "eff": 3346, "video": 54, "photo": 12}}}, {"name": "Nguy\u1ec5n Nh\u01b0 Qu\u1ef3nh", "tot_views": 2454072, "tot_posts": 437, "tot_eff": 5616, "share_9m": 2.22, "tot_video": 284, "tot_photo": 43, "q1": {"views": 925730, "posts": 142, "eff": 6519}, "q2": {"views": 383245, "posts": 73, "eff": 5250, "growth_vs_q1": -58.6}, "q3": {"views": 1145097, "posts": 222, "eff": 5158, "growth_vs_q2": 198.8, "growth_vs_q1": 23.7}, "months": {"T1": {"views": 430438, "posts": 71, "eff": 6063, "video": 44, "photo": 9}, "T2": {"views": 176564, "posts": 26, "eff": 6791, "video": 20, "photo": 2}, "T3": {"views": 318728, "posts": 45, "eff": 7083, "video": 41, "photo": 3}, "T4": {"views": 56612, "posts": 7, "eff": 8087, "video": 4, "photo": 1}, "T5": {"views": 153830, "posts": 29, "eff": 5304, "video": 26, "photo": 2}, "T6": {"views": 172803, "posts": 37, "eff": 4670, "video": 27, "photo": 1}, "T7": {"views": 162417, "posts": 33, "eff": 4922, "video": 24, "photo": 1}, "T8": {"views": 436463, "posts": 86, "eff": 5075, "video": 39, "photo": 13}, "T9": {"views": 546217, "posts": 103, "eff": 5303, "video": 59, "photo": 11}}}, {"name": "Nguy\u1ec5n Th\u00e1i B\u1ea3o", "tot_views": 1823346, "tot_posts": 415, "tot_eff": 4394, "share_9m": 1.65, "tot_video": 149, "tot_photo": 107, "q1": {"views": 675890, "posts": 132, "eff": 5120}, "q2": {"views": 428985, "posts": 127, "eff": 3378, "growth_vs_q1": -36.5}, "q3": {"views": 718471, "posts": 156, "eff": 4606, "growth_vs_q2": 67.5, "growth_vs_q1": 6.3}, "months": {"T1": {"views": 188187, "posts": 46, "eff": 4091, "video": 16, "photo": 21}, "T2": {"views": 235809, "posts": 50, "eff": 4716, "video": 16, "photo": 18}, "T3": {"views": 251894, "posts": 36, "eff": 6997, "video": 9, "photo": 15}, "T4": {"views": 148039, "posts": 48, "eff": 3084, "video": 17, "photo": 15}, "T5": {"views": 143641, "posts": 38, "eff": 3780, "video": 16, "photo": 8}, "T6": {"views": 137305, "posts": 41, "eff": 3349, "video": 24, "photo": 3}, "T7": {"views": 181376, "posts": 48, "eff": 3779, "video": 12, "photo": 4}, "T8": {"views": 266499, "posts": 50, "eff": 5330, "video": 11, "photo": 11}, "T9": {"views": 270596, "posts": 58, "eff": 4665, "video": 28, "photo": 12}}}, {"name": "Nguy\u1ec5n Th\u1ecb Ph\u01b0\u01a1ng Th\u1ea3o", "tot_views": 1190905, "tot_posts": 280, "tot_eff": 4253, "share_9m": 1.08, "tot_video": 0, "tot_photo": 0, "q1": {"views": 402434, "posts": 82, "eff": 4908}, "q2": {"views": 614612, "posts": 147, "eff": 4181, "growth_vs_q1": 52.7}, "q3": {"views": 173859, "posts": 51, "eff": 3409, "growth_vs_q2": -71.7, "growth_vs_q1": -56.8}, "months": {"T1": {"views": 135745, "posts": 28, "eff": 4848, "video": 0, "photo": 0}, "T2": {"views": 132835, "posts": 26, "eff": 5109, "video": 0, "photo": 0}, "T3": {"views": 133854, "posts": 28, "eff": 4780, "video": 0, "photo": 0}, "T4": {"views": 230980, "posts": 49, "eff": 4714, "video": 0, "photo": 0}, "T5": {"views": 247031, "posts": 57, "eff": 4334, "video": 0, "photo": 0}, "T6": {"views": 136601, "posts": 41, "eff": 3332, "video": 0, "photo": 0}, "T7": {"views": 77764, "posts": 27, "eff": 2880, "video": 0, "photo": 0}, "T8": {"views": 85182, "posts": 20, "eff": 4259, "video": 0, "photo": 0}, "T9": {"views": 10913, "posts": 4, "eff": 2728, "video": 0, "photo": 0}}}, {"name": "Nguy\u1ec5n L\u00ea Mai Anh", "tot_views": 719383, "tot_posts": 245, "tot_eff": 2936, "share_9m": 0.65, "tot_video": 22, "tot_photo": 22, "q1": {"views": 52782, "posts": 29, "eff": 1820}, "q2": {"views": 184611, "posts": 56, "eff": 3297, "growth_vs_q1": 249.8}, "q3": {"views": 481990, "posts": 160, "eff": 3012, "growth_vs_q2": 161.1, "growth_vs_q1": 813.2}, "months": {"T1": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T2": {"views": 20068, "posts": 14, "eff": 1433, "video": 3, "photo": 0}, "T3": {"views": 32714, "posts": 15, "eff": 2181, "video": 2, "photo": 1}, "T4": {"views": 80921, "posts": 21, "eff": 3853, "video": 4, "photo": 1}, "T5": {"views": 46234, "posts": 16, "eff": 2890, "video": 2, "photo": 1}, "T6": {"views": 57456, "posts": 19, "eff": 3024, "video": 4, "photo": 2}, "T7": {"views": 64461, "posts": 26, "eff": 2479, "video": 4, "photo": 1}, "T8": {"views": 222288, "posts": 74, "eff": 3004, "video": 2, "photo": 9}, "T9": {"views": 195241, "posts": 60, "eff": 3254, "video": 1, "photo": 7}}}, {"name": "Hu\u1ef3nh Ng\u1ecdc Du", "tot_views": 427820, "tot_posts": 96, "tot_eff": 4456, "share_9m": 0.39, "tot_video": 0, "tot_photo": 3, "q1": {"views": 0, "posts": 0, "eff": 0}, "q2": {"views": 0, "posts": 0, "eff": 0, "growth_vs_q1": null}, "q3": {"views": 427820, "posts": 96, "eff": 4456, "growth_vs_q2": null, "growth_vs_q1": null}, "months": {"T1": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T2": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T3": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T4": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T5": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T6": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T7": {"views": 0, "posts": 0, "eff": 0, "video": 0, "photo": 0}, "T8": {"views": 135919, "posts": 37, "eff": 3673, "video": 0, "photo": 1}, "T9": {"views": 291901, "posts": 59, "eff": 4947, "video": 0, "photo": 2}}}];
     const vpAvgViews = 5024015;
 
-    // 39 Weeks Data
-    const wLabels = Array.from({length: 39}, (_, i) => `W${String(i+1).padStart(2, '0')}`);
-    const wViews = [
-      2.75, 2.80, 2.78, 2.65, 2.50, 2.10, 2.25, 2.60, 2.65, 2.72, 2.78, 2.85, 3.19,
-      2.92, 2.95, 3.02, 2.98, 3.05, 2.90, 2.95, 2.92, 2.80, 2.42, 2.51, 2.68, 2.97,
-      2.53, 2.65, 2.82, 3.01, 3.45, 3.32, 3.58, 3.44, 3.71, 3.39, 3.65, 3.40, 3.46
-    ];
-    const wPosts = [
-      510, 515, 510, 485, 460, 385, 430, 490, 500, 510, 520, 530, 647,
-      540, 545, 560, 555, 570, 585, 590, 600, 570, 540, 555, 610, 672,
-      575, 600, 640, 682, 680, 665, 715, 690, 700, 635, 685, 640, 652
-    ];
+    // 39 WEEKS GLOBAL DATA (SINGLE UNIQUE DECLARATION)
+    const wLabels = ["W01", "W02", "W03", "W04", "W05", "W06", "W07", "W08", "W09", "W10", "W11", "W12", "W13", "W14", "W15", "W16", "W17", "W18", "W19", "W20", "W21", "W22", "W23", "W24", "W25", "W26", "W27", "W28", "W29", "W30", "W31", "W32", "W33", "W34", "W35", "W36", "W37", "W38", "W39"];
+    const wDates = ["03/01/2026 - 09/01/2026", "10/01/2026 - 16/01/2026", "17/01/2026 - 23/01/2026", "24/01/2026 - 30/01/2026", "31/01/2026 - 06/02/2026", "07/02/2026 - 13/02/2026", "14/02/2026 - 20/02/2026", "21/02/2026 - 27/02/2026", "28/02/2026 - 06/03/2026", "07/03/2026 - 13/03/2026", "14/03/2026 - 20/03/2026", "21/03/2026 - 27/03/2026", "28/03/2026 - 03/04/2026", "04/04/2026 - 10/04/2026", "11/04/2026 - 17/04/2026", "18/04/2026 - 24/04/2026", "25/04/2026 - 01/05/2026", "02/05/2026 - 08/05/2026", "09/05/2026 - 15/05/2026", "16/05/2026 - 22/05/2026", "23/05/2026 - 29/05/2026", "30/05/2026 - 05/06/2026", "06/06/2026 - 12/06/2026", "13/06/2026 - 19/06/2026", "20/06/2026 - 26/06/2026", "27/06/2026 - 03/07/2026", "04/07/2026 - 10/07/2026", "11/07/2026 - 17/07/2026", "18/07/2026 - 24/07/2026", "25/07/2026 - 31/07/2026", "01/08/2026 - 07/08/2026", "08/08/2026 - 14/08/2026", "15/08/2026 - 21/08/2026", "22/08/2026 - 28/08/2026", "29/08/2026 - 04/09/2026", "05/09/2026 - 11/09/2026", "12/09/2026 - 18/09/2026", "19/09/2026 - 25/09/2026", "26/09/2026 - 02/10/2026"];
+    const wRankPct = [4, 2, 5, 1, 1, 8, 8, 9, 4, 4, 1, 10, 7, 3, 8, 5, 7, 7, 7, 5, 4, 6, 7, 9, 9, 7, 7, 7, 7, 7, 3, 1, 6, 2, 2, 3, 3, 3, 3];
+    const wPcts = [87.5, 99.3, 94.3, 108.2, 111.3, 68.1, 59.8, 69.9, 91.5, 93.2, 97.7, 71.9, 84.8, 96.8, 84.9, 102.3, 83.2, 90.8, 90.4, 91.7, 89.0, 79.0, 81.6, 74.4, 60.7, 73.4, 71.9, 66.7, 66.6, 74.9, 85.4, 92.2, 71.5, 97.4, 94.2, 99.5, 96.5, 102.9, 10.4];
+    const wViews = [2.41, 2.74, 2.6, 2.98, 3.06, 1.88, 1.65, 1.92, 2.52, 2.57, 2.69, 1.98, 2.34, 2.67, 2.34, 2.82, 2.29, 2.5, 2.49, 2.53, 2.45, 2.18, 2.25, 2.05, 1.67, 2.02, 1.98, 1.84, 1.83, 2.06, 2.35, 2.54, 1.97, 2.68, 2.59, 2.74, 2.66, 2.83, 0.29];
+    const wActuals = [2408876, 2735224, 2597361, 2979344, 3064711, 1876472, 1646297, 1924230, 2519330, 2568393, 2690660, 1980612, 2335687, 2667100, 2339368, 2818733, 2291961, 2502153, 2490739, 2526619, 2450811, 2175863, 2247574, 2049462, 1672532, 2022703, 1980289, 1837418, 1833218, 2061922, 2351777, 2538695, 1969938, 2683296, 2593304, 2739538, 2659100, 2834335, 287224];
+    const wTop1Names = ["VP Bắc Trung Bộ", "VP Bắc Trung Bộ", "Ban Văn Hóa - Thể Thao", "CQTT Miền Nam (VPHCM)", "CQTT Miền Nam (VPHCM)", "VP Bắc Trung Bộ", "VP Bắc Trung Bộ", "Ban Công đoàn - Bạn đọc", "Văn phòng ĐBSCL", "VP Bắc Trung Bộ", "CQTT Miền Nam (VPHCM)", "Ban Kinh Tế", "Ban Kinh Tế", "Ban Kinh Tế", "Lao Động Điện Tử", "VP Bắc Trung Bộ", "Lao Động Điện Tử", "Lao Động Điện Tử", "Lao Động Điện Tử", "VP Bắc Trung Bộ", "VP Bắc Trung Bộ", "Văn phòng ĐBSCL", "Lao Động Điện Tử", "Ban Văn Hóa - Thể Thao", "Văn phòng ĐBSCL", "Lao Động Điện Tử", "Ban Văn Hóa - Thể Thao", "VP Bắc Trung Bộ", "VP Bắc Trung Bộ", "VP Bắc Trung Bộ", "VP Bắc Trung Bộ", "CQTT Miền Nam (VPHCM)", "VP Bắc Trung Bộ", "VP Bắc Trung Bộ", "VP Bắc Trung Bộ", "VP Bắc Trung Bộ", "VP Bắc Trung Bộ", "VP Bắc Trung Bộ", "Ban Văn Hóa - Thể Thao"];
+    const wTop1Pcts = [110.9, 108.4, 129.9, 108.2, 111.3, 100.7, 102.9, 97.2, 156.7, 96.6, 97.7, 107.6, 117.0, 119.2, 111.7, 112.3, 98.8, 110.3, 106.8, 115.6, 113.7, 98.0, 100.0, 121.6, 100.7, 99.4, 112.2, 98.0, 96.9, 90.8, 91.6, 92.2, 111.7, 100.3, 107.3, 108.2, 125.1, 111.7, 15.3];
+    const wPosts = [510, 515, 510, 485, 460, 385, 430, 490, 500, 510, 520, 530, 647, 540, 545, 560, 555, 570, 585, 590, 600, 570, 540, 555, 610, 672, 575, 600, 640, 682, 680, 665, 715, 690, 700, 635, 685, 640, 652];
 
     // Populate YoY Table
     const yoyTbody = document.getElementById('yoyTableBody');
-    yoyData.reporters.forEach((r, idx) => {
-      const gVal = r.growth_views;
-      const gBadge = gVal !== null
-        ? (gVal >= 0 ? `<span class="badge badge-green">+${gVal}%</span>` : `<span class="badge badge-orange">${gVal}%</span>`)
-        : `<span class="badge badge-gray">N/A</span>`;
-      const diffStr = (r.diff_views >= 0 ? '+' : '') + Math.round(r.diff_views / 1000).toLocaleString() + 'k';
+    if (yoyTbody && yoyData.reporters) {
+      yoyData.reporters.forEach((r, idx) => {
+        const gVal = r.growth_views;
+        const gBadge = gVal !== null
+          ? (gVal >= 0 ? `<span class="badge badge-green">+${gVal}%</span>` : `<span class="badge badge-orange">${gVal}%</span>`)
+          : `<span class="badge badge-gray">N/A</span>`;
+        const diffStr = (r.diff_views >= 0 ? '+' : '') + Math.round(r.diff_views / 1000).toLocaleString() + 'k';
 
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td><strong>${idx + 1}</strong></td>
-        <td><strong>${r.name}</strong></td>
-        <td class="num">${r.views_2025.toLocaleString()}</td>
-        <td class="num"><strong>${r.views_2026.toLocaleString()}</strong></td>
-        <td class="num">${diffStr}</td>
-        <td class="num">${gBadge}</td>
-        <td class="num">${r.posts_2025.toLocaleString()}</td>
-        <td class="num">${r.posts_2026.toLocaleString()}</td>
-        <td class="num">${r.eff_2025.toLocaleString()}</td>
-        <td class="num"><strong>${r.eff_2026.toLocaleString()}</strong></td>
-      `;
-      yoyTbody.appendChild(tr);
-    });
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${idx + 1}</strong></td>
+          <td><strong>${r.name}</strong></td>
+          <td class="num">${r.views_2025.toLocaleString()}</td>
+          <td class="num">${r.views_2026.toLocaleString()}</td>
+          <td class="num">${gBadge} (${diffStr})</td>
+          <td class="num">${r.posts_2025.toLocaleString()}</td>
+          <td class="num">${r.posts_2026.toLocaleString()}</td>
+          <td class="num">${r.eff_2025.toLocaleString()}</td>
+          <td class="num"><strong>${r.eff_2026.toLocaleString()}</strong></td>
+          <td class="num">${r.share_2026}%</td>
+        `;
+        yoyTbody.appendChild(tr);
+      });
+    }
 
-    // Populate Reporters Tab
+    // Populate Reporters Table and Cards
     function renderReportersTable(list) {
       const tbody = document.getElementById('repTableBody');
       const grid = document.getElementById('repCardsGrid');
+      if (!tbody || !grid) return;
       tbody.innerHTML = '';
       grid.innerHTML = '';
 
@@ -854,37 +1069,11 @@
         const card = document.createElement('div');
         card.className = 'rep-card';
         card.innerHTML = `
-          <div class="rep-header">
-            <span class="rep-name">${r.name}</span>
-            <span class="rep-rank">Top ${idx + 1} (${r.share_9m}%)</span>
-          </div>
-          <div class="rep-metrics">
-            <div class="rep-metrics-item">
-              <span>Tổng Views (9T)</span>
-              <strong>${r.tot_views.toLocaleString()}</strong>
-            </div>
-            <div class="rep-metrics-item">
-              <span>Hiệu Suất (v/b)</span>
-              <strong>${r.tot_eff.toLocaleString()}</strong>
-            </div>
-            <div class="rep-metrics-item">
-              <span>Tổng Bài Đăng</span>
-              <strong>${r.tot_posts.toLocaleString()} bài</strong>
-            </div>
-            <div class="rep-metrics-item">
-              <span>Báo Chí Thị Giác</span>
-              <strong>${r.tot_video} clips | ${r.tot_photo} ảnh</strong>
-            </div>
-          </div>
-          <div class="rep-quarters-bar">
-            <div>Q1: <strong>${(r.q1.views/1000).toFixed(0)}k</strong></div>
-            <div>Q2: <strong>${(r.q2.views/1000).toFixed(0)}k</strong></div>
-            <div>Q3: <strong>${(r.q3.views/1000).toFixed(0)}k</strong> (${g31})</div>
-          </div>
-          <div class="rep-vp-compare">
-            ${diffVp >= 0 ? '📈 Vượt bình quân VP: +' + diffPct + '%' : '📉 Thấp hơn chuẩn VP: ' + diffPct + '%'} 
-            (${diffVp >= 0 ? '+' : ''}${Math.round(diffVp/1000).toLocaleString()}k views)
-          </div>
+          <div class="rep-name">${idx + 1}. ${r.name}</div>
+          <div class="rep-metric"><span>Tổng Views (9T):</span> <strong>${r.tot_views.toLocaleString()}</strong> (${r.share_9m}%)</div>
+          <div class="rep-metric"><span>Tổng Bài / Hiệu Suất:</span> <strong>${r.tot_posts.toLocaleString()} bài</strong> | ${r.tot_eff.toLocaleString()} v/b</div>
+          <div class="rep-metric"><span>Quý 1 / Quý 2 / Quý 3:</span> ${Math.round(r.q1.views/1e6 * 10)/10}M | ${Math.round(r.q2.views/1e6 * 10)/10}M | ${Math.round(r.q3.views/1e6 * 10)/10}M</div>
+          <div class="rep-metric"><span>So với TB VP (5.02M):</span> ${diffBadge}</div>
         `;
         grid.appendChild(card);
       });
@@ -896,32 +1085,6 @@
       renderReportersTable(filtered);
     }
 
-    // Populate Weekly Table
-    const weekTbody = document.getElementById('weekTableBody');
-    wLabels.forEach((w, i) => {
-      const v = wViews[i];
-      const p = wPosts[i];
-      const eff = Math.round((v * 1e6) / p);
-      const qBadge = i < 13 ? '<span class="badge badge-gray">Q1</span>' : (i < 26 ? '<span class="badge badge-blue">Q2</span>' : '<span class="badge badge-green">Q3</span>');
-      let note = 'Nhịp độ ổn định';
-      if (i === 5 || i === 6) note = 'Kỳ nghỉ Tết Nguyên đán';
-      if (i === 12) note = 'Tăng tốc chốt Quý 1';
-      if (i === 25) note = 'Đỉnh sản lượng bài Quý 2 (672 bài)';
-      if (i === 34) note = '⭐ ĐỈNH CAO KỶ LỤC NĂM 2026 (3.71M views)';
-      if (i === 32) note = 'Tuần sản lượng cao nhất Q3 (715 bài)';
-
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td><strong>${w}</strong></td>
-        <td>${qBadge}</td>
-        <td class="num"><strong>${v.toFixed(2)}M</strong></td>
-        <td class="num">${p.toLocaleString()} bài</td>
-        <td class="num"><strong>${eff.toLocaleString()}</strong></td>
-        <td>${note}</td>
-      `;
-      weekTbody.appendChild(tr);
-    });
-
     renderReportersTable(reportersData);
 
     Chart.defaults.color = '#94A3B8';
@@ -930,6 +1093,110 @@
     // Track initialized charts
     const charts = {};
 
+    // 1. HERO CHART THI ĐUA ĐẦU TRANG CHỦ (CANVAS: chartWeekRankingTop)
+    function initRankingHeroChart() {
+      if (charts['weekRankingTop']) return;
+      const ctx = document.getElementById('chartWeekRankingTop');
+      if (!ctx) return;
+
+      charts['weekRankingTop'] = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: wLabels,
+          datasets: [
+            {
+              label: 'Thứ hạng % Toàn Toà Soạn (Trục Trái - Hạng 1 trên cùng)',
+              data: wRankPct,
+              borderColor: '#F59E0B',
+              backgroundColor: '#F59E0B',
+              borderWidth: 3.5,
+              pointRadius: (ctx) => {
+                const r = wRankPct[ctx.dataIndex];
+                return r === 1 ? 8 : (r <= 3 ? 6.5 : 4);
+              },
+              pointBackgroundColor: (ctx) => {
+                const r = wRankPct[ctx.dataIndex];
+                return r === 1 ? '#FACC15' : (r <= 3 ? '#10B981' : (r <= 5 ? '#38BDF8' : '#94A3B8'));
+              },
+              pointBorderColor: '#0F172A',
+              pointBorderWidth: 2,
+              tension: 0.25,
+              yAxisID: 'yRank'
+            },
+            {
+              label: '% Tiến Độ Hoàn Thành Chỉ Tiêu (Trục Phải)',
+              data: wPcts,
+              borderColor: '#0284C7',
+              backgroundColor: 'rgba(2, 132, 199, 0.08)',
+              fill: true,
+              borderWidth: 2,
+              borderDash: [4, 4],
+              pointRadius: 3,
+              tension: 0.25,
+              yAxisID: 'yPct'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { position: 'top', labels: { font: { weight: 'bold', size: 12 } } },
+            tooltip: {
+              callbacks: {
+                title: (items) => `${wLabels[items[0].dataIndex]} (${wDates[items[0].dataIndex]})`,
+                label: function(ctx) {
+                  if (ctx.datasetIndex === 0) {
+                    const r = ctx.raw;
+                    const idx = ctx.dataIndex;
+                    const prefix = r === 1 ? '🥇 QUÁN QUÂN: ' : (r === 2 ? '🥈 Á QUÂN: ' : (r === 3 ? '🥉 TOP 3: ' : ''));
+                    return `${prefix}Xếp Hạng #${r} / 12 toà soạn (Top 1: ${wTop1Names[idx]} - ${wTop1Pcts[idx]}%)`;
+                  } else {
+                    return `📊 % Tiến Độ: ${ctx.raw}% (${wActuals[ctx.dataIndex].toLocaleString('vi-VN')} / 2.754.400 view)`;
+                  }
+                }
+              }
+            }
+          },
+          scales: {
+            yRank: {
+              type: 'linear',
+              position: 'left',
+              reverse: true,
+              min: 1,
+              max: 12,
+              ticks: {
+                stepSize: 1,
+                callback: (val) => {
+                  if (val === 1) return '🥇 Hạng #01';
+                  if (val === 2) return '🥈 Hạng #02';
+                  if (val === 3) return '🥉 Hạng #03';
+                  return 'Hạng #' + val;
+                }
+              },
+              title: { display: true, text: 'THỨ HẠNG % TIẾN ĐỘ (Hạng #1 ở đỉnh cao nhất)', font: { weight: 'bold', size: 12 } },
+              grid: { color: 'rgba(51, 65, 85, 0.5)' }
+            },
+            yPct: {
+              type: 'linear',
+              position: 'right',
+              min: 0,
+              max: 140,
+              ticks: { callback: (v) => v + '%' },
+              title: { display: true, text: '% Tiến Độ Hoàn Thành Tuần (Mốc 100%)', font: { weight: 'bold', size: 12 } },
+              grid: { drawOnChartArea: false }
+            },
+            x: {
+              ticks: { maxRotation: 45, minRotation: 45, font: { size: 10 } },
+              grid: { color: 'rgba(51, 65, 85, 0.2)' }
+            }
+          }
+        }
+      });
+    }
+
+    // 2. TAB 1: CẤP ĐỘ QUÝ (CANVAS: chartQuarterDetailed)
     function initQuarterChart() {
       if (charts['quarter']) return;
       const ctx = document.getElementById('chartQuarterDetailed');
@@ -942,14 +1209,18 @@
             {
               label: 'Lượt xem (Triệu views)',
               data: [34.62, 36.63, 39.28],
-              backgroundColor: ['#64748B', '#0284C7', '#16A34A'],
+              backgroundColor: ['rgba(14, 165, 233, 0.70)', 'rgba(14, 165, 233, 0.85)', 'rgba(14, 165, 233, 1.0)'],
+              borderColor: '#0284C7',
+              borderWidth: 1,
               borderRadius: 6,
               yAxisID: 'y'
             },
             {
               label: 'Số bài viết (Bài)',
               data: [6482, 7425, 7978],
-              backgroundColor: ['#CBD5E1', '#93C5FD', '#86EFAC'],
+              backgroundColor: ['rgba(249, 115, 22, 0.65)', 'rgba(249, 115, 22, 0.85)', 'rgba(249, 115, 22, 1.0)'],
+              borderColor: '#EA580C',
+              borderWidth: 1,
               borderRadius: 6,
               yAxisID: 'y1'
             },
@@ -957,10 +1228,10 @@
               label: 'Hiệu suất (View/Bài)',
               data: [5341, 4933, 4924],
               type: 'line',
-              borderColor: '#F59E0B',
-              backgroundColor: '#F59E0B',
-              borderWidth: 3,
-              pointRadius: 6,
+              borderColor: '#10B981',
+              backgroundColor: '#10B981',
+              borderWidth: 2.5,
+              pointRadius: 5,
               yAxisID: 'y2'
             }
           ]
@@ -970,14 +1241,15 @@
           maintainAspectRatio: false,
           plugins: { legend: { position: 'top' } },
           scales: {
-            y: { type: 'linear', position: 'left', min: 0, max: 50, title: { display: true, text: 'Triệu Views' } },
-            y1: { type: 'linear', position: 'right', min: 0, max: 10000, grid: { drawOnChartArea: false }, title: { display: true, text: 'Số Bài' } },
-            y2: { type: 'linear', position: 'right', min: 3000, max: 6000, display: false }
+            y: { min: 0, max: 48, title: { display: true, text: 'Triệu Views' } },
+            y1: { min: 0, max: 10000, position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Số Bài Viết' } },
+            y2: { min: 0, max: 7000, position: 'right', grid: { drawOnChartArea: false }, display: false }
           }
         }
       });
     }
 
+    // 3. TAB 2: CẤP ĐỘ THÁNG (CANVAS: chartMonthDetailed)
     function initMonthChart() {
       if (charts['month']) return;
       const ctx = document.getElementById('chartMonthDetailed');
@@ -990,8 +1262,15 @@
             {
               label: 'Lượt xem (Triệu views)',
               data: [12.34, 10.10, 12.18, 13.07, 12.97, 10.58, 11.27, 13.59, 14.41],
-              backgroundColor: (ctx) => ctx.dataIndex >= 7 ? '#16A34A' : (ctx.dataIndex >= 3 ? '#0284C7' : '#64748B'),
-              borderRadius: 5,
+              backgroundColor: (ctx) => {
+                const val = ctx.raw || 12;
+                const alpha = 0.45 + ((val - 10.0) / (14.5 - 10.0)) * 0.50;
+                return `rgba(14, 165, 233, ${Math.min(0.95, Math.max(0.45, alpha)).toFixed(2)})`;
+              },
+              borderColor: '#0284C7',
+              borderWidth: 1,
+              borderRadius: 6,
+              hoverBackgroundColor: '#0284C7',
               yAxisID: 'y'
             },
             {
@@ -1010,8 +1289,8 @@
               type: 'line',
               borderColor: '#10B981',
               backgroundColor: '#10B981',
-              borderDash: [5, 5],
               borderWidth: 2,
+              borderDash: [5, 5],
               pointRadius: 4,
               yAxisID: 'y2'
             }
@@ -1024,17 +1303,19 @@
           scales: {
             y: { min: 0, max: 18, title: { display: true, text: 'Triệu Views' } },
             y1: { min: 1000, max: 3200, position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Số Bài Viết' } },
-            y2: { min: 3500, max: 6000, display: false }
+            y2: { min: 3000, max: 6500, position: 'right', grid: { drawOnChartArea: false }, display: false }
           }
         }
       });
     }
 
+    // 4. TAB 3: CẤP ĐỘ TUẦN (CANVAS: chartWeekDetailed)
     function initWeekChart() {
-      if (charts['week']) return;
-      const ctx = document.getElementById('chartWeekDetailed');
-      if (!ctx) return;
-      charts['week'] = new Chart(ctx, {
+      if (charts['weekDetailed']) return;
+      const ctxD = document.getElementById('chartWeekDetailed');
+      if (!ctxD) return;
+
+      charts['weekDetailed'] = new Chart(ctxD, {
         type: 'bar',
         data: {
           labels: wLabels,
@@ -1043,10 +1324,14 @@
               label: 'Lượt xem (Triệu views)',
               data: wViews,
               backgroundColor: (ctx) => {
-                const i = ctx.dataIndex;
-                return i < 13 ? '#64748B' : (i < 26 ? '#38BDF8' : (i >= 30 ? '#15803D' : '#4ADE80'));
+                const val = ctx.raw || 2.5;
+                const alpha = 0.40 + ((val - 1.2) / (3.1 - 1.2)) * 0.55;
+                return `rgba(14, 165, 233, ${Math.min(0.95, Math.max(0.40, alpha)).toFixed(2)})`;
               },
+              borderColor: '#0284C7',
+              borderWidth: 1,
               borderRadius: 4,
+              hoverBackgroundColor: '#0284C7',
               yAxisID: 'y'
             },
             {
@@ -1065,12 +1350,7 @@
           responsive: true,
           maintainAspectRatio: false,
           plugins: {
-            legend: { position: 'top' },
-            tooltip: {
-              callbacks: {
-                afterLabel: (c) => `Hiệu suất: ${Math.round((wViews[c.dataIndex]*1e6)/wPosts[c.dataIndex]).toLocaleString()} view/bài`
-              }
-            }
+            legend: { position: 'top' }
           },
           scales: {
             y: { min: 0, max: 4.5, title: { display: true, text: 'Triệu Views/Tuần' } },
@@ -1080,6 +1360,7 @@
       });
     }
 
+    // 5. TAB 4: ĐỐI SOÁT CÙNG KỲ (CANVAS: chartYoYMonthly & chartYoYQuarterly)
     function initYoYCharts() {
       if (charts['yoyMonthly']) return;
       const ctxM = document.getElementById('chartYoYMonthly');
@@ -1107,7 +1388,9 @@
             responsive: true,
             maintainAspectRatio: false,
             plugins: { legend: { position: 'top' } },
-            scales: { y: { min: 0, max: 18, title: { display: true, text: 'Triệu Views' } } }
+            scales: {
+              y: { min: 0, max: 18, title: { display: true, text: 'Triệu Views' } }
+            }
           }
         });
       }
@@ -1117,7 +1400,7 @@
         charts['yoyQuarterly'] = new Chart(ctxQ, {
           type: 'bar',
           data: {
-            labels: ['Quý 1', 'Quý 2', 'Quý 3 (QĐ)'],
+            labels: yoyData.quarterly_totals.map(q => q.name),
             datasets: [
               {
                 label: 'Năm 2025 (Triệu views)',
@@ -1137,12 +1420,15 @@
             responsive: true,
             maintainAspectRatio: false,
             plugins: { legend: { position: 'top' } },
-            scales: { y: { min: 0, max: 48, title: { display: true, text: 'Triệu Views' } } }
+            scales: {
+              y: { min: 0, max: 48, title: { display: true, text: 'Triệu Views' } }
+            }
           }
         });
       }
     }
 
+    // 6. TAB 6: TOÀN CẢNH (CANVAS: chartOverviewQuarter, chartOverviewMonth, chartOverviewWeek)
     function initOverviewCharts() {
       if (charts['ovQuarter']) return;
       const ctxQ = document.getElementById('chartOverviewQuarter');
@@ -1155,7 +1441,9 @@
               {
                 label: 'Lượt xem (Triệu views)',
                 data: [34.62, 36.63, 39.28],
-                backgroundColor: ['#64748B', '#0284C7', '#16A34A'],
+                backgroundColor: ['rgba(14, 165, 233, 0.70)', 'rgba(14, 165, 233, 0.85)', 'rgba(14, 165, 233, 1.0)'],
+                borderColor: '#0284C7',
+                borderWidth: 1,
                 borderRadius: 6,
                 yAxisID: 'y'
               },
@@ -1177,7 +1465,7 @@
             plugins: { legend: { position: 'top' } },
             scales: {
               y: { type: 'linear', position: 'left', min: 0, max: 48, title: { display: true, text: 'Triệu Views' } },
-              y1: { type: 'linear', position: 'right', min: 0, max: 10000, grid: { drawOnChartArea: false }, title: { display: true, text: 'Số Bài' } }
+              y1: { type: 'linear', position: 'right', min: 0, max: 10000, grid: { drawOnChartArea: false }, title: { display: true, text: 'Số Bài Viết' } }
             }
           }
         });
@@ -1188,12 +1476,18 @@
         charts['ovMonth'] = new Chart(ctxM, {
           type: 'bar',
           data: {
-            labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9 (QĐ)'],
+            labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9'],
             datasets: [
               {
                 label: 'Lượt xem (Triệu views)',
                 data: [12.34, 10.10, 12.18, 13.07, 12.97, 10.58, 11.27, 13.59, 14.41],
-                backgroundColor: (ctx) => ctx.dataIndex < 3 ? '#64748B' : (ctx.dataIndex < 6 ? '#0284C7' : (ctx.dataIndex >= 7 ? '#16A34A' : '#38BDF8')),
+                backgroundColor: (ctx) => {
+                  const val = ctx.raw || 12;
+                  const alpha = 0.45 + ((val - 10.0) / (14.5 - 10.0)) * 0.50;
+                  return `rgba(14, 165, 233, ${Math.min(0.95, Math.max(0.45, alpha)).toFixed(2)})`;
+                },
+                borderColor: '#0284C7',
+                borderWidth: 1,
                 borderRadius: 4
               }
             ]
@@ -1201,8 +1495,10 @@
           options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: { y: { min: 0, max: 18, title: { display: true, text: 'Triệu Views' } } }
+            plugins: { legend: { position: 'top' } },
+            scales: {
+              y: { min: 0, max: 18, title: { display: true, text: 'Triệu Views' } }
+            }
           }
         });
       }
@@ -1217,13 +1513,11 @@
               {
                 label: 'Lượt xem tuần (Triệu views)',
                 data: wViews,
-                borderColor: '#38BDF8',
-                backgroundColor: 'rgba(56, 189, 248, 0.15)',
-                borderWidth: 2.5,
+                borderColor: '#0284C7',
+                backgroundColor: 'rgba(2, 132, 199, 0.1)',
                 fill: true,
-                tension: 0.35,
-                pointRadius: (ctx) => [5, 12, 25, 34, 38].includes(ctx.dataIndex) ? 6 : 2,
-                pointBackgroundColor: (ctx) => ctx.dataIndex === 34 ? '#EA580C' : '#38BDF8'
+                borderWidth: 2,
+                tension: 0.3
               }
             ]
           },
@@ -1231,13 +1525,42 @@
             responsive: true,
             maintainAspectRatio: false,
             plugins: { legend: { position: 'top' } },
-            scales: { y: { min: 1.5, max: 4.2, title: { display: true, text: 'Triệu Views/Tuần' } } }
+            scales: {
+              y: { min: 0, max: 4.5, title: { display: true, text: 'Triệu Views/Tuần' } }
+            }
           }
         });
       }
     }
 
-    // Tab Switching with Chart Trigger
+    // HÀM BẬT/TẮT KHỐI NHẬN ĐỊNH ĐIỀU HÀNH Ở CUỐI TRANG
+    function toggleExecutivePanel() {
+      const body = document.getElementById('executive-panel-body');
+      const header = document.getElementById('executive-panel-header');
+      const icon = document.getElementById('toggle-icon');
+      const text = document.getElementById('toggle-text');
+      if (!body) return;
+      if (body.style.display === 'none') {
+        body.style.display = 'block';
+        if (header) {
+          header.style.borderBottomLeftRadius = '0';
+          header.style.borderBottomRightRadius = '0';
+          header.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+        }
+        if (icon) icon.textContent = '▲';
+        if (text) text.textContent = 'Thu gọn nhận định';
+      } else {
+        body.style.display = 'none';
+        if (header) {
+          header.style.borderBottomLeftRadius = '12px';
+          header.style.borderBottomRightRadius = '12px';
+          header.style.borderBottom = '1px solid rgba(14, 165, 233, 0.45)';
+        }
+        if (icon) icon.textContent = '▼';
+        if (text) text.textContent = 'Mở rộng nhận định';
+      }
+    }
+
     function switchTab(e, tabId) {
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
@@ -1256,7 +1579,7 @@
         if (charts['month']) charts['month'].resize();
       } else if (tabId === 'tab-week') {
         initWeekChart();
-        if (charts['week']) charts['week'].resize();
+        if (charts['weekDetailed']) charts['weekDetailed'].resize();
       } else if (tabId === 'tab-yoy') {
         initYoYCharts();
         if (charts['yoyMonthly']) charts['yoyMonthly'].resize();
@@ -1269,8 +1592,23 @@
       }
     }
 
-    // Initial Load: Init the default active tab (tab-quarter)
-    initQuarterChart();
+    // SAFE CHART INITIALIZATION (Poller until Chart.js is ready)
+    function safeInitCharts() {
+      if (typeof Chart === 'undefined') {
+        setTimeout(safeInitCharts, 50);
+        return;
+      }
+      initRankingHeroChart();
+      initQuarterChart();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', safeInitCharts);
+    } else {
+      safeInitCharts();
+    }
+    window.addEventListener('load', safeInitCharts);
+
   </script>
 </body>
 </html>
