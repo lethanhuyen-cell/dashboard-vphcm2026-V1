@@ -1473,11 +1473,27 @@
           ? `<img src="${repAvatarMap[r.name]}" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-cyan); box-shadow: 0 0 10px rgba(14,165,233,0.35); flex-shrink: 0;">` 
           : `<div style="width: 48px; height: 48px; border-radius: 50%; background: #334155; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #94A3B8; flex-shrink: 0;">${r.name.charAt(0)}</div>`;
 
-        const effDiff = r.tot_eff - 5050;
-        const effDiffPct = Math.round((effDiff / 5050) * 100);
-        const effBadge = effDiff >= 0
-          ? `<span class="badge badge-green">▲ +${effDiffPct}%</span>`
-          : `<span class="badge badge-gray">▼ ${effDiffPct}%</span>`;
+        // Calculate Q3/2025 vs Q3/2026 Efficiency
+        const yoyRep = (yoyData.reporters || []).find(x => x.name === r.name);
+        let effQ3_2025 = 0;
+        let effQ3_2026 = (r.q3 && r.q3.eff) ? r.q3.eff : 0;
+        let effQ3_2025_str = 'N/A';
+        let effQ3Badge = '<span class="badge badge-gray">N/A</span>';
+
+        if (yoyRep && yoyRep.months_2025) {
+          const v25_q3 = (yoyRep.months_2025.T7 ? yoyRep.months_2025.T7.views : 0) + (yoyRep.months_2025.T8 ? yoyRep.months_2025.T8.views : 0) + (yoyRep.months_2025.T9 ? yoyRep.months_2025.T9.views : 0);
+          const p25_q3 = (yoyRep.months_2025.T7 ? yoyRep.months_2025.T7.posts : 0) + (yoyRep.months_2025.T8 ? yoyRep.months_2025.T8.posts : 0) + (yoyRep.months_2025.T9 ? yoyRep.months_2025.T9.posts : 0);
+          if (p25_q3 > 0) {
+            effQ3_2025 = Math.round(v25_q3 / p25_q3);
+            effQ3_2025_str = effQ3_2025.toLocaleString() + ' v/b';
+            const gQ3 = Math.round(((effQ3_2026 - effQ3_2025) / effQ3_2025) * 1000) / 10;
+            effQ3Badge = gQ3 >= 0
+              ? `<span class="badge badge-green">▲ +${gQ3}% YoY</span>`
+              : `<span class="badge badge-orange">▼ ${gQ3}% YoY</span>`;
+          } else {
+            effQ3Badge = '<span class="badge badge-blue">Nhân sự mới</span>';
+          }
+        }
 
         const card = document.createElement('div');
         card.className = 'rep-card';
@@ -1487,16 +1503,20 @@
             <div>
               <div class="rep-name" style="margin-bottom: 2px;">${idx + 1}. ${r.name}</div>
               <div style="font-size: 11px; color: var(--text-muted); font-weight: 500;">
-                Sản lượng: <b style="color: #FFFFFF;">${r.tot_posts.toLocaleString()}</b> bài
+                Sản lượng 9T: <b style="color: #FFFFFF;">${r.tot_posts.toLocaleString()}</b> bài • Hiệu suất 9T: <b>${r.tot_eff.toLocaleString()}</b> v/b
               </div>
             </div>
           </div>
-          <div class="rep-metric" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 6px 10px; margin-bottom: 8px;">
-            <span style="color: #A7F3D0; font-weight: 700;">🎯 Hiệu Suất (v/b):</span>
-            <span style="display: flex; align-items: center; gap: 6px;">
-              <strong style="color: #4ADE80; font-size: 14px;">${r.tot_eff.toLocaleString()}</strong>
-              ${effBadge}
-            </span>
+          <!-- HIỆU SUẤT QUÝ 3 (SO VỚI CÙNG KỲ Q3/2025) -->
+          <div class="rep-metric" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <span style="color: #A7F3D0; font-weight: 700; font-size: 11.5px;">🎯 Hiệu Suất Q3 (v/b):</span>
+              ${effQ3Badge}
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 11px; color: var(--text-muted);">Q3/2025: <b>${effQ3_2025_str}</b></span>
+              <span style="font-size: 12px; color: #FFFFFF;">➔ Q3/2026: <strong style="color: #4ADE80; font-size: 14.5px;">${effQ3_2026.toLocaleString()}</strong> <span style="font-size: 10.5px; color: #86EFAC;">v/b</span></span>
+            </div>
           </div>
           <div class="rep-metric"><span>Tổng Lượt Xem (9T):</span> <strong>${r.tot_views.toLocaleString()}</strong> (${r.share_9m}%)</div>
           <div class="rep-metric"><span>Quý 1 / Quý 2 / Quý 3:</span> ${Math.round(r.q1.views/1e6 * 10)/10}M | ${Math.round(r.q2.views/1e6 * 10)/10}M | ${Math.round(r.q3.views/1e6 * 10)/10}M</div>
