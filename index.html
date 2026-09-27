@@ -455,58 +455,113 @@
 <body>
 
   <div class="container">
-    <!-- HEADER -->
-    <div class="header">
-      <div>
-        <h1>📊 BẢN ĐỒ DIỄN BIẾN, ĐÁNH GIÁ & ĐỐI SOÁT SỐ LIỆU</h1>
-        <div class="subtitle">VPĐD BÁO LAO ĐỘNG TẠI TP.HCM | TOÀN DIỆN 3 CẤP ĐỘ (TUẦN - THÁNG - QUÝ) & ĐỐI SOÁT CÙNG KỲ (YoY)</div>
+        <!-- EXECUTIVE GLASSMORPHISM HEADER -->
+    <div style="position: relative; overflow: hidden; border-radius: 16px; border: 1px solid rgba(56, 189, 248, 0.3); background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.95)); padding: 24px 28px; margin-bottom: 24px; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45); backdrop-filter: blur(16px);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <!-- Cột Trái: Brand & Tiêu đề -->
+        <div style="flex: 1 1 500px;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 9999px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38BDF8; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 10px;">
+            <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+            TRUNG TÂM CHỈ HUY SỐ LIỆU ĐIỀU HÀNH 2026
+          </div>
+          <h1 style="font-size: 24px; font-weight: 900; color: #FFFFFF; letter-spacing: -0.3px; line-height: 1.25; margin-bottom: 6px;">
+            BÁO LAO ĐỘNG <span style="color: #38BDF8; font-weight: 300;">|</span> <span style="background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">VPĐD TẠI TP.HỒ CHÍ MINH</span>
+          </h1>
+          <div style="font-size: 12.5px; color: var(--text-muted); font-weight: 500;">
+            Bản đồ Diễn biến, Đánh giá & Đối soát Toàn diện 3 Cấp độ (Tuần – Tháng – Quý) & Cùng kỳ YoY (2025 vs 2026).
+          </div>
+        </div>
+
+        <!-- Cột Phải: Mega KPI Khối Tổng Lực -->
+        <div style="display: flex; align-items: center; gap: 16px; background: rgba(11, 17, 32, 0.65); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 14px; padding: 14px 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.35);">
+          <div style="text-align: right;">
+            <div style="font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #F59E0B;">TỔNG LƯỢT XEM (9T/2026)</div>
+            <div style="font-size: 26px; font-weight: 900; color: #FFFFFF; line-height: 1.1; margin-top: 2px;">110,528,337</div>
+            <div style="font-size: 11px; font-weight: 700; color: #4ADE80; margin-top: 2px;">
+              ▲ +33.41% YoY <span style="color: #94A3B8; font-weight: 500;">(+27.68M)</span>
+            </div>
+          </div>
+          <div style="height: 42px; width: 1px; background: rgba(255,255,255,0.15);"></div>
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <span style="font-size: 22px;">🥉</span>
+            <span style="font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 4px; background: rgba(245, 158, 11, 0.2); color: #FDE68A; border: 1px solid rgba(245, 158, 11, 0.4); margin-top: 2px;">TOP 3</span>
+          </div>
+        </div>
       </div>
-      <div style="display: flex; gap: 10px; align-items: center;">
-        <span class="badge-official">22 PHÓNG VIÊN CHÍNH THỨC</span>
-        <button class="btn btn-primary" onclick="window.print()">🖨️ In / Xuất PDF</button>
+
+      <!-- DẢI TICKER KỶ LỤC NỔI BẬT -->
+      <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px;">
+        <div style="display: flex; align-items: center; gap: 8px; color: #CBD5E1; font-weight: 500; overflow-x: auto; flex-wrap: wrap;">
+          <span style="padding: 2px 8px; border-radius: 5px; background: rgba(56, 189, 248, 0.2); color: #38BDF8; font-weight: 800; font-size: 10.5px;">⚡ NỔI BẬT</span>
+          <span>🏆 Quý 3 đỉnh cao: <b style="color: #FFFFFF;">39.28M</b> (+22.7% YoY)</span>
+          <span style="color: #64748B;">•</span>
+          <span>🔥 Tuần 35 kỷ lục: <b style="color: #FFFFFF;">3.71M</b></span>
+          <span style="color: #64748B;">•</span>
+          <span>🥇 Lý Thanh Vũ: <b style="color: #FACC15;">9.40M</b> views</span>
+          <span style="color: #64748B;">•</span>
+          <span>✍️ Lê Ngọc Dủ: <b style="color: #38BDF8;">2,425</b> bài</span>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <span class="badge-official" style="font-size: 11px; padding: 5px 10px;">22 PHÓNG VIÊN CHÍNH THỨC</span>
+          <button class="btn btn-primary" onclick="window.print()" style="padding: 6px 14px; font-size: 12px;">🖨️ In / Xuất PDF</button>
+        </div>
       </div>
     </div>
 
-    <!-- 6 KPI CARDS -->
-        <!-- CỤM I: NHỮNG CON SỐ NỔI BẬT & THI ĐUA TOÀN TÒA SOẠN -->
+    <!-- CỤM I: NHỮNG CON SỐ NỔI BẬT & THI ĐUA TOÀN TÒA SOẠN -->
     <div class="section-title-bar"><span>📌</span> I. NHỮNG CON SỐ NỔI BẬT & THI ĐUA TOÀN TÒA SOẠN (2026)</div>
+
+    <!-- 6 KPI CARDS (LƯỚI 3x2 CÂN ĐỐI CÓ PROGRESS BAR) -->
     <div class="kpi-grid">
       <div class="kpi-card blue">
         <div class="kpi-title">Tổng Lượt Xem (9T/2026)</div>
         <div class="kpi-value">110,528,337</div>
         <div class="kpi-sub">Tăng <span>+33.41% YoY</span> (+27.68M views vs 2025)</div>
+        <div style="width: 100%; height: 5px; background: rgba(255,255,255,0.1); border-radius: 999px; margin-top: 10px; overflow: hidden;">
+          <div style="width: 85.67%; height: 100%; background: #38BDF8; border-radius: 999px;"></div>
+        </div>
       </div>
 
       <div class="kpi-card orange">
         <div class="kpi-title">Tổng Sản Lượng Bài Đăng</div>
-        <div class="kpi-value">21,885</div>
+        <div class="kpi-value">21,885 <span style="font-size: 13px; font-weight: 500; color: #CBD5E1;">bài</span></div>
         <div class="kpi-sub">Tăng <span>+8.42% YoY</span> (+1,699 bài vs 2025)</div>
+        <div style="width: 100%; height: 5px; background: rgba(255,255,255,0.1); border-radius: 999px; margin-top: 10px; overflow: hidden;">
+          <div style="width: 78%; height: 100%; background: #FB923C; border-radius: 999px;"></div>
+        </div>
       </div>
 
       <div class="kpi-card green">
-        <div class="kpi-title">Hiệu Suất Toàn VP</div>
-        <div class="kpi-value">5,050</div>
+        <div class="kpi-title">Hiệu Suất Lan Tỏa Toàn VP</div>
+        <div class="kpi-value">5,050 <span style="font-size: 13px; font-weight: 500; color: #CBD5E1;">v/b</span></div>
         <div class="kpi-sub">Tăng <span>+23.05% YoY</span> (2025: 4,104 v/b)</div>
+        <div style="width: 100%; height: 5px; background: rgba(255,255,255,0.1); border-radius: 999px; margin-top: 10px; overflow: hidden;">
+          <div style="width: 92%; height: 100%; background: #4ADE80; border-radius: 999px;"></div>
+        </div>
       </div>
 
       <div class="kpi-card green">
         <div class="kpi-title">Quý Đỉnh Cao (Quý 3)</div>
-        <div class="kpi-value">39.28M</div>
+        <div class="kpi-value">39.28M <span style="font-size: 13px; font-weight: 500; color: #CBD5E1;">views</span></div>
         <div class="kpi-sub">Tăng <span>+7.24%</span> vs Q2 | <span>+22.72%</span> YoY</div>
+        <div style="font-size: 11px; color: var(--text-muted); margin-top: 8px;">Đạt <b>93.3%</b> định mức Quý 3</div>
       </div>
 
       <div class="kpi-card purple">
         <div class="kpi-title">Tháng Đỉnh Cao (T9)</div>
-        <div class="kpi-value">14.41M</div>
+        <div class="kpi-value">14.41M <span style="font-size: 13px; font-weight: 500; color: #CBD5E1;">views</span></div>
         <div class="kpi-sub">Tăng <span>+35.1% YoY</span> (Sản lượng 2,702 bài)</div>
+        <div style="font-size: 11px; color: var(--text-muted); margin-top: 8px;">Tháng có sản lượng bài cao nhất năm</div>
       </div>
 
       <div class="kpi-card amber">
         <div class="kpi-title">Tuần Kỷ Lục (W35)</div>
-        <div class="kpi-value">3.71M</div>
+        <div class="kpi-value">3.71M <span style="font-size: 13px; font-weight: 500; color: #CBD5E1;">views</span></div>
         <div class="kpi-sub">Sản lượng: <span>700</span> bài | <span>5,300</span> v/b</div>
+        <div style="font-size: 11px; color: var(--text-muted); margin-top: 8px;">Đạt <b>134.7%</b> định mức tuần</div>
       </div>
     </div>
+
 
         <!-- BẢNG VÀNG THÀNH TÍCH: 4 GƯƠNG MẶT TIÊU BIỂU (9 THÁNG 2026) -->
     <div class="card" style="margin-bottom: 24px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95)); border: 1px solid rgba(245, 158, 11, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.35);">
