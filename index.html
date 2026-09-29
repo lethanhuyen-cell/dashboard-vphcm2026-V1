@@ -141,6 +141,54 @@
     }
 
     /* TABS */
+    /* PV PROGRESS COMPONENT STYLES */
+    .pv-btn-group {
+      display: flex;
+      background: rgba(30, 41, 59, 0.8);
+      padding: 4px;
+      border-radius: 10px;
+      gap: 4px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .pv-btn-toggle {
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pv-btn-toggle:hover {
+      color: #F8FAFC;
+      background: rgba(255,255,255,0.05);
+    }
+    .pv-btn-toggle.active {
+      background: #F59E0B;
+      color: #0F172A;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+    }
+    .tag-growth-up {
+      color: #4ADE80;
+      font-weight: 700;
+      background: rgba(74, 222, 128, 0.12);
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      font-size: 12px;
+    }
+    .tag-growth-down {
+      color: #F87171;
+      font-weight: 700;
+      background: rgba(248, 113, 113, 0.12);
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      font-size: 12px;
+    }
+
     /* GRID 4 COLUMNS (HALL OF FAME) */
     .grid-4 {
       display: grid;
@@ -1208,6 +1256,97 @@
 
     <!-- TAB 5: ĐÁNH GIÁ 22 PHÓNG VIÊN -->
     <div id="tab-reporters" class="tab-content">
+
+      <!-- COMPONENT: SO SÁNH TIẾN BỘ 22 PHÓNG VIÊN & CTV (T6-T7 VS T8-T9) -->
+      <div class="card" style="border: 1.5px solid rgba(245, 158, 11, 0.4); background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)); margin-bottom: 24px; box-shadow: 0 12px 32px rgba(0,0,0,0.5);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #FDE68A; font-size: 11px; font-weight: 800; text-transform: uppercase; margin-bottom: 8px;">
+              ⚡ PHÂN TÍCH TIẾN BỘ & BỨT PHÁ GIAI ĐOẠN
+            </div>
+            <div class="card-title" style="font-size: 20px; font-weight: 800; color: #F8FAFC;">
+              🚀 ĐỐI SOÁT CHUYỂN ĐỘNG 22 PHÓNG VIÊN & CTV: THÁNG 6–7 VS THÁNG 8–9
+            </div>
+            <div class="card-desc" style="margin-bottom: 0; color: #94A3B8; font-size: 13.5px;">
+              Giai đoạn chuẩn bị nền tảng (T6–T7: 2 tháng trước kỷ niệm 95 năm) vs Giai đoạn bứt phá cao điểm (T8–T9). Toàn VP tăng trưởng <strong>+27.0% Lượt xem</strong> và <strong>+14.1% Hiệu suất</strong>.
+            </div>
+          </div>
+          
+          <!-- Mode Switcher -->
+          <div class="pv-btn-group">
+            <button id="pvBtnViews" class="pv-btn-toggle active" onclick="switchPvProgressMode('views')">📊 Tổng Lượt Xem</button>
+            <button id="pvBtnEff" class="pv-btn-toggle" onclick="switchPvProgressMode('eff')">🎯 Hiệu Suất (v/b)</button>
+            <button id="pvBtnTable" class="pv-btn-toggle" onclick="switchPvProgressMode('table')">📋 Ma Trận Số Liệu</button>
+          </div>
+        </div>
+
+        <!-- 3 Macro KPI Cards -->
+        <div class="kpi-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 20px;">
+          <div class="kpi-card" style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 14px 16px;">
+            <div style="font-size: 11px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.5px;">Tổng Lượt Xem Toàn VP</div>
+            <div style="font-size: 22px; font-weight: 900; color: #FDE68A; margin-top: 4px;">28.01M <span style="font-size: 14px; font-weight: 700; color: #94A3B8;">vs 22.06M</span></div>
+            <div style="font-size: 12px; color: #4ADE80; font-weight: 700; margin-top: 4px;">▲ Tăng +27.0% (+5.95M views)</div>
+          </div>
+          <div class="kpi-card" style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 12px; padding: 14px 16px;">
+            <div style="font-size: 11px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.5px;">Hiệu Suất Bình Quân VP</div>
+            <div style="font-size: 22px; font-weight: 900; color: #38BDF8; margin-top: 4px;">5,167 <span style="font-size: 14px; font-weight: 700; color: #94A3B8;">vs 4,528 v/b</span></div>
+            <div style="font-size: 12px; color: #4ADE80; font-weight: 700; margin-top: 4px;">▲ Tăng +14.1% (+639 views/bài)</div>
+          </div>
+          <div class="kpi-card" style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 12px; padding: 14px 16px;">
+            <div style="font-size: 11px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.5px;">Tỷ Lệ Tăng Trưởng Dương</div>
+            <div style="font-size: 22px; font-weight: 900; color: #4ADE80; margin-top: 4px;">18 / 22 Nhân Sự</div>
+            <div style="font-size: 12px; color: #FDE68A; font-weight: 700; margin-top: 4px;">🔥 81.8% Đội ngũ bứt phá mạnh</div>
+          </div>
+        </div>
+
+        <!-- Chart Container -->
+        <div id="pvChartWrapper">
+          <div id="pvChartTitle" style="font-size: 13.5px; font-weight: 800; color: #FDE68A; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.3px;">
+            📈 BIỂU ĐỒ SO SÁNH TỔNG LƯỢT XEM CỦA 22 PHÓNG VIÊN (T6–T7 VS T8–T9)
+          </div>
+          <div style="position: relative; height: 720px; width: 100%;">
+            <canvas id="progressPvChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Table Container (Hidden by default) -->
+        <div id="pvTableWrapper" style="display: none;">
+          <div style="font-size: 13.5px; font-weight: 800; color: #FDE68A; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.3px;">
+            📋 BẢNG ĐỐI SOÁT CHI TIẾT SỰ TIẾN BỘ 22 PHÓNG VIÊN & CTV
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 50px;">STT</th>
+                  <th>Họ và Tên Phóng Viên / CTV</th>
+                  <th class="num">Views T6–T7</th>
+                  <th class="num" style="color: #FACC15;">Views T8–T9</th>
+                  <th class="num">Tăng Trưởng View</th>
+                  <th class="num">Hiệu Suất T6–T7 (v/b)</th>
+                  <th class="num" style="color: #38BDF8;">Hiệu Suất T8–T9 (v/b)</th>
+                  <th class="num">Tăng Trưởng Hiệu Suất</th>
+                </tr>
+              </thead>
+              <tbody id="pvProgressTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Strategic Takeaways -->
+        <div style="margin-top: 20px; padding: 14px 18px; background: rgba(2, 6, 23, 0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; font-size: 13px; line-height: 1.6; color: #CBD5E1;">
+          <div style="font-weight: 800; color: #FDE68A; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+            💡 ĐÁNH GIÁ QUẢN TRỊ TRỌNG TÂM:
+          </div>
+          <ul style="margin-left: 20px; margin-bottom: 0;">
+            <li><strong>Nhóm Bứt Phá Trụ Cột:</strong> <strong>Hà Anh Chiến</strong> bứt phá vượt bậc (+112.1% view, hiệu suất vọt lên 7,138 v/b), <strong>Lê Ngọc Dủ</strong> (+50.9% view, 3,333 v/b), <strong>Đinh Văn Trọng</strong> (+69.5% view), <strong>Nguyễn Trí Độ</strong> (+64.1% view, 7,770 v/b), <strong>Nguyễn Phúc Bảo Chương</strong> tiếp tục dẫn đầu toàn VP về chất lượng lan tỏa (8,655 v/b).</li>
+            <li><strong>Nhóm Mầm Non CTV Bứt Tốc:</strong> <strong>Nguyễn Như Quỳnh</strong> (+193.1%), <strong>Lê Thanh Ngọc Ánh</strong> (+127.0%), <strong>Nguyễn Thái Bảo</strong> (+68.5%), <strong>Nguyễn Lê Mai Anh</strong> (+242.5%) — minh chứng cho hiệu quả kèm cặp, chuyển giao nhịp độ làm báo số tại VPHCM.</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
           <div>
@@ -2357,6 +2496,182 @@
       }
     }
 
+    
+    // ==========================================
+    // SO SÁNH TIẾN BỘ 22 PHÓNG VIÊN & CTV (T6-T7 VS T8-T9)
+    // ==========================================
+    const progressPvData = [
+      { name: "Hà Anh Chiến", v67: 1530510, v89: 3246193, eff67: 4921, eff89: 7138, v_growth: 112.1, eff_growth: 45.1 },
+      { name: "Lý Thanh Vũ", v67: 2364761, v89: 2470783, eff67: 6498, eff89: 6714, v_growth: 4.5, eff_growth: 3.3 },
+      { name: "Đào Thị Ngọc Lê", v67: 1588250, v89: 1903831, eff67: 3800, eff89: 4428, v_growth: 19.9, eff_growth: 16.5 },
+      { name: "Nguyễn Đăng Văn", v67: 1912412, v89: 1822036, eff67: 6710, eff89: 8245, v_growth: -4.7, eff_growth: 22.9 },
+      { name: "Nguyễn Thị Minh Tâm", v67: 1588142, v89: 1789395, eff67: 6016, eff89: 5645, v_growth: 12.7, eff_growth: -6.2 },
+      { name: "Lê Ngọc Dủ", v67: 1098208, v89: 1656699, eff67: 2162, eff89: 3333, v_growth: 50.9, eff_growth: 54.2 },
+      { name: "Nguyễn Chân Phúc", v67: 1800274, v89: 1555763, eff67: 4763, eff89: 5186, v_growth: -13.6, eff_growth: 8.9 },
+      { name: "Trịnh Văn Quân", v67: 1135145, v89: 1485762, eff67: 5405, eff89: 6911, v_growth: 30.9, eff_growth: 27.8 },
+      { name: "Đặng Ngọc Thanh Chân", v67: 1451181, v89: 1444795, eff67: 3592, eff89: 4116, v_growth: -0.4, eff_growth: 14.6 },
+      { name: "Đinh Văn Trọng", v67: 805730, v89: 1365826, eff67: 4527, eff89: 6017, v_growth: 69.5, eff_growth: 32.9 },
+      { name: "Nguyễn Thị Ly", v67: 1283484, v89: 1336314, eff67: 4634, eff89: 4163, v_growth: 4.1, eff_growth: -10.2 },
+      { name: "Nguyễn Trí Độ", v67: 804948, v89: 1320923, eff67: 6007, eff89: 7770, v_growth: 64.1, eff_growth: 29.3 },
+      { name: "Nguyễn Phúc Bảo Chương", v67: 1055370, v89: 1281004, eff67: 8580, eff89: 8655, v_growth: 21.4, eff_growth: 0.9 },
+      { name: "Hồ Anh Tú", v67: 995908, v89: 1158195, eff67: 3470, eff89: 4578, v_growth: 16.3, eff_growth: 31.9 },
+      { name: "Nguyễn Như Quỳnh (CTV)", v67: 335220, v89: 982680, eff67: 4789, eff89: 5199, v_growth: 193.1, eff_growth: 8.6 },
+      { name: "Lê Thanh Ngọc Ánh (CTV)", v67: 431757, v89: 980265, eff67: 3659, eff89: 3380, v_growth: 127.0, eff_growth: -7.6 },
+      { name: "Trần Nam Dương", v67: 928369, v89: 972229, eff67: 4596, eff89: 4608, v_growth: 4.7, eff_growth: 0.3 },
+      { name: "Lê Thanh Phong", v67: 691695, v89: 959332, eff67: 5446, eff89: 7495, v_growth: 38.7, eff_growth: 37.6 },
+      { name: "Nguyễn Thái Bảo (CTV)", v67: 318681, v89: 537095, eff67: 3581, eff89: 4973, v_growth: 68.5, eff_growth: 38.9 },
+      { name: "Huỳnh Ngọc Du (CTV)", v67: 0, v89: 427820, eff67: 0, eff89: 4456, v_growth: 0, eff_growth: 0 },
+      { name: "Nguyễn Lê Mai Anh (CTV)", v67: 121917, v89: 417529, eff67: 2709, eff89: 3116, v_growth: 242.5, eff_growth: 15.0 },
+      { name: "Phương Thảo (CTV)", v67: 214365, v89: 96095, eff67: 3152, eff89: 4004, v_growth: -55.2, eff_growth: 27.0 }
+    ];
+
+    let currentPvProgressMode = 'views';
+
+    function initProgressPvChart() {
+      const ctx = document.getElementById('progressPvChart');
+      if (!ctx) return;
+
+      if (charts['progressPv']) {
+        charts['progressPv'].destroy();
+      }
+
+      const labels = progressPvData.map(d => d.name);
+      let ds1, ds2, label1, label2;
+
+      if (currentPvProgressMode === 'views') {
+        ds1 = progressPvData.map(d => Number((d.v67 / 1e6).toFixed(2)));
+        ds2 = progressPvData.map(d => Number((d.v89 / 1e6).toFixed(2)));
+        label1 = 'T6–T7 (Triệu views)';
+        label2 = 'T8–T9 (Triệu views)';
+      } else {
+        ds1 = progressPvData.map(d => d.eff67);
+        ds2 = progressPvData.map(d => d.eff89);
+        label1 = 'T6–T7 (Views/Bài)';
+        label2 = 'T8–T9 (Views/Bài)';
+      }
+
+      charts['progressPv'] = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: label1,
+              data: ds1,
+              backgroundColor: 'rgba(56, 189, 248, 0.45)',
+              borderColor: 'rgba(56, 189, 248, 0.9)',
+              borderWidth: 1,
+              borderRadius: 4
+            },
+            {
+              label: label2,
+              data: ds2,
+              backgroundColor: 'rgba(245, 158, 11, 0.85)',
+              borderColor: '#FDE68A',
+              borderWidth: 1.5,
+              borderRadius: 4
+            }
+          ]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: {
+                color: '#E2E8F0',
+                font: { size: 12, weight: '700' }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                afterBody: function(items) {
+                  const idx = items[0].dataIndex;
+                  const item = progressPvData[idx];
+                  if (currentPvProgressMode === 'views') {
+                    const tag = item.v_growth >= 0 ? '+' + item.v_growth + '%' : item.v_growth + '%';
+                    return '
+📈 Tăng trưởng View: ' + tag + '
+📊 T6-T7: ' + item.v67.toLocaleString() + ' views
+🔥 T8-T9: ' + item.v89.toLocaleString() + ' views';
+                  } else {
+                    const tag = item.eff_growth >= 0 ? '+' + item.eff_growth + '%' : item.eff_growth + '%';
+                    return '
+🎯 Tăng trưởng V/B: ' + tag + '
+📊 T6-T7: ' + item.eff67.toLocaleString() + ' v/b
+🔥 T8-T9: ' + item.eff89.toLocaleString() + ' v/b';
+                  }
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(255, 255, 255, 0.08)' },
+              ticks: { color: '#94A3B8', font: { size: 11 } }
+            },
+            y: {
+              grid: { display: false },
+              ticks: { color: '#F8FAFC', font: { size: 12, weight: '600' } }
+            }
+          }
+        }
+      });
+    }
+
+    function renderProgressPvTable() {
+      const tbody = document.getElementById('pvProgressTableBody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+      progressPvData.forEach((d, idx) => {
+        const vTag = d.v_growth >= 0 ? `<span class="tag-growth-up">▲ +${d.v_growth}%</span>` : `<span class="tag-growth-down">▼ ${d.v_growth}%</span>`;
+        const effTag = d.eff_growth >= 0 ? `<span class="tag-growth-up">▲ +${d.eff_growth}%</span>` : `<span class="tag-growth-down">▼ ${d.eff_growth}%</span>`;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="color: var(--text-muted);">${idx + 1}</td>
+          <td><strong>${d.name}</strong></td>
+          <td class="num">${d.v67.toLocaleString()}</td>
+          <td class="num" style="color: #FACC15; font-weight: 700;">${d.v89.toLocaleString()}</td>
+          <td class="num">${vTag}</td>
+          <td class="num">${d.eff67.toLocaleString()}</td>
+          <td class="num" style="color: #38BDF8; font-weight: 700;">${d.eff89.toLocaleString()}</td>
+          <td class="num">${effTag}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function switchPvProgressMode(mode) {
+      currentPvProgressMode = mode;
+      document.querySelectorAll('.pv-btn-toggle').forEach(b => b.classList.remove('active'));
+      const chartWrapper = document.getElementById('pvChartWrapper');
+      const tableWrapper = document.getElementById('pvTableWrapper');
+      const titleEl = document.getElementById('pvChartTitle');
+
+      if (mode === 'views') {
+        const btn = document.getElementById('pvBtnViews');
+        if (btn) btn.classList.add('active');
+        if (chartWrapper) chartWrapper.style.display = 'block';
+        if (tableWrapper) tableWrapper.style.display = 'none';
+        if (titleEl) titleEl.innerText = '📈 BIỂU ĐỒ SO SÁNH TỔNG LƯỢT XEM CỦA 22 PHÓNG VIÊN (T6–T7 VS T8–T9)';
+        initProgressPvChart();
+      } else if (mode === 'eff') {
+        const btn = document.getElementById('pvBtnEff');
+        if (btn) btn.classList.add('active');
+        if (chartWrapper) chartWrapper.style.display = 'block';
+        if (tableWrapper) tableWrapper.style.display = 'none';
+        if (titleEl) titleEl.innerText = '🎯 BIỂU ĐỒ SO SÁNH HIỆU SUẤT VIEW/BÀI CỦA 22 PHÓNG VIÊN (T6–T7 VS T8–T9)';
+        initProgressPvChart();
+      } else if (mode === 'table') {
+        const btn = document.getElementById('pvBtnTable');
+        if (btn) btn.classList.add('active');
+        if (chartWrapper) chartWrapper.style.display = 'none';
+        if (tableWrapper) tableWrapper.style.display = 'block';
+        renderProgressPvTable();
+      }
+    }
+
     // 6. TAB 6: TOÀN CẢNH (CANVAS: chartOverviewQuarter, chartOverviewMonth, chartOverviewWeek)
     function initOverviewCharts() {
       if (charts['ovQuarter']) return;
@@ -2691,6 +3006,7 @@
       }
       initRankingHeroChart();
       initQuarterChart();
+      renderProgressPvTable();
       startTeamSlideshow();
     }
 
