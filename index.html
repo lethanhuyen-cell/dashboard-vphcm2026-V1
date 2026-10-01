@@ -494,12 +494,12 @@
       <div style="text-align: left;">
         <label style="display: block; font-size: 12px; font-weight: 700; color: #CBD5E1; margin-bottom: 6px;">1. Địa chỉ Email lãnh đạo của bạn:</label>
         <div style="position: relative; margin-bottom: 14px;">
-          <input type="email" id="authEmailInput" value="lethanhuyen@gmail.com" placeholder="Nhập email được cấp quyền..." style="width: 100%; padding: 13px 14px; background: rgba(15, 23, 42, 0.85); border: 1.5px solid rgba(56, 189, 248, 0.4); border-radius: 10px; color: #38BDF8; font-size: 14.5px; font-weight: 700; outline: none; box-sizing: border-box;">
+          <input type="email" id="authEmailInput" placeholder="Nhập email được cấp quyền (VD: lethanhuyen@gmail.com)" style="width: 100%; padding: 13px 14px; background: rgba(15, 23, 42, 0.85); border: 1.5px solid rgba(56, 189, 248, 0.4); border-radius: 10px; color: #38BDF8; font-size: 14px; font-weight: 600; outline: none; box-sizing: border-box;">
         </div>
 
-        <label style="display: block; font-size: 12px; font-weight: 700; color: #CBD5E1; margin-bottom: 6px;">2. Mã Passkey Bảo Mật Lãnh Đạo:</label>
+        <label style="display: block; font-size: 12px; font-weight: 700; color: #CBD5E1; margin-bottom: 6px;">2. Mật khẩu xác thực lãnh đạo:</label>
         <div style="position: relative; margin-bottom: 16px;">
-          <input type="password" id="authPinInput" value="2026" placeholder="Nhập mã Passkey (Mặc định: 2026)" style="width: 100%; padding: 13px 14px; background: rgba(15, 23, 42, 0.85); border: 1.5px solid rgba(245, 158, 11, 0.4); border-radius: 10px; color: #FDE68A; font-size: 18px; font-weight: 800; letter-spacing: 4px; outline: none; box-sizing: border-box;">
+          <input type="password" id="authPinInput" placeholder="Nhập mật khẩu..." style="width: 100%; padding: 13px 14px; background: rgba(15, 23, 42, 0.85); border: 1.5px solid rgba(245, 158, 11, 0.4); border-radius: 10px; color: #FDE68A; font-size: 16px; font-weight: 700; outline: none; box-sizing: border-box;">
         </div>
 
         <div id="authErrorMsg" style="display: none; color: #F87171; font-size: 12.5px; font-weight: 700; margin-bottom: 12px; text-align: center;"></div>
@@ -512,9 +512,8 @@
       <div style="margin-top: 20px; padding: 12px; background: rgba(2, 6, 23, 0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; font-size: 11.5px; color: #94A3B8; text-align: left; line-height: 1.6;">
         <strong style="color: #FDE68A;">👥 Danh sách 3 email lãnh đạo được cấp quyền:</strong><br>
         • Trưởng VP: <span style="color: #38BDF8;">lethanhuyen@gmail.com</span><br>
-        • Phó Trưởng VP: <span style="color: #38BDF8;">tranphanbld2002@yahoo.com</span><br>
-        • Phó Trưởng VP: <span style="color: #38BDF8;">truongbaoktdt@gmail.com</span><br>
-        <span style="color: #4ADE80;">🔑 Mã Passkey dùng chung: <strong>2026</strong></span>
+        • Phó Trưởng VP (Đức Tài): <span style="color: #38BDF8;">tranphanbld2002@yahoo.com</span><br>
+        • Phó Trưởng VP (Bá Trường): <span style="color: #38BDF8;">truongbaoktdt@gmail.com</span>
       </div>
 
       <div style="margin-top: 16px; font-size: 11px; color: #64748B;">
@@ -536,14 +535,14 @@
       'tranphanbld2002@yahoo.com',
       'truongbaoktdt@gmail.com'
     ];
-    const MASTER_PASSKEY = '2026';
+    const MASTER_PASSKEY = '198@ntmkhcm';
 
     function checkExistingAuth() {
       const savedEmail = (localStorage.getItem('vphcm_auth_email') || '').trim().toLowerCase();
       const savedToken = localStorage.getItem('vphcm_auth_otp_token');
       const savedExpiry = localStorage.getItem('vphcm_auth_expiry');
 
-      if (ALLOWED_EMAILS.includes(savedEmail) && savedToken && savedExpiry && Number(savedExpiry) > Date.now()) {
+      if (ALLOWED_EMAILS.includes(savedEmail) && savedToken === 'AUTH_VALID_198NTMK' && savedExpiry && Number(savedExpiry) > Date.now()) {
         const overlay = document.getElementById('authOverlay');
         if (overlay) overlay.style.display = 'none';
         const badge = document.getElementById('authLogoutBadge');
@@ -568,14 +567,14 @@
 
       if (pin !== MASTER_PASSKEY) {
         errEl.style.display = 'block';
-        errEl.innerText = '❌ Mã Passkey bảo mật không chính xác!';
+        errEl.innerText = '❌ Mật khẩu bảo mật không chính xác!';
         return;
       }
 
       // Success -> Save session 30 days
       errEl.style.display = 'none';
       localStorage.setItem('vphcm_auth_email', email);
-      localStorage.setItem('vphcm_auth_otp_token', 'AUTH_VALID_' + Date.now());
+      localStorage.setItem('vphcm_auth_otp_token', 'AUTH_VALID_198NTMK');
       localStorage.setItem('vphcm_auth_expiry', (Date.now() + 30 * 24 * 60 * 60 * 1000).toString());
 
       const overlay = document.getElementById('authOverlay');
