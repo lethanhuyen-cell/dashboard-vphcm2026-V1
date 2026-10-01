@@ -478,23 +478,23 @@
 </head>
 <body>
 
-  <!-- EMAIL OTP AUTH LOCK SCREEN OVERLAY (LETHANHUYEN@GMAIL.COM) -->
+  <!-- EMAIL OTP AUTH LOCK SCREEN OVERLAY (LEADERSHIP TEAM VPHCM) -->
   <div id="authOverlay" style="position: fixed; inset: 0; z-index: 999999; background: #070D1E; display: flex; align-items: center; justify-content: center; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-    <div style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.96)); border: 1.5px solid rgba(245, 158, 11, 0.45); border-radius: 20px; padding: 36px 32px; max-width: 450px; width: 100%; box-shadow: 0 25px 60px rgba(0,0,0,0.8); text-align: center; backdrop-filter: blur(20px);">
+    <div style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.96)); border: 1.5px solid rgba(245, 158, 11, 0.45); border-radius: 20px; padding: 36px 32px; max-width: 460px; width: 100%; box-shadow: 0 25px 60px rgba(0,0,0,0.8); text-align: center; backdrop-filter: blur(20px);">
       
       <!-- Top Badge -->
       <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 14px; border-radius: 999px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #FDE68A; font-size: 11px; font-weight: 800; text-transform: uppercase; margin-bottom: 16px;">
-        🛡️ BẢO MẬT 2 LỚP: XÁC THỰC EMAIL OTP
+        🛡️ BẢO MẬT 2 LỚP: PHÂN QUYỀN BAN LÃNH ĐẠO
       </div>
 
       <h2 style="color: #F8FAFC; font-size: 20px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.3px;">BÁO LAO ĐỘNG | VPHCM</h2>
-      <p style="color: #94A3B8; font-size: 13.5px; margin-bottom: 22px; line-height: 1.5;">Hệ thống phân quyền truy cập nội bộ. Chỉ tài khoản email được ủy quyền mới có thể mở khóa dữ liệu.</p>
+      <p style="color: #94A3B8; font-size: 13.5px; margin-bottom: 20px; line-height: 1.5;">Hệ thống phân quyền truy cập nội bộ dành riêng cho Ban Lãnh đạo Văn phòng đại diện.</p>
       
       <!-- STEP 1: ENTER EMAIL & REQUEST OTP -->
       <div id="otpStep1" style="display: block; text-align: left;">
-        <label style="display: block; font-size: 12px; font-weight: 700; color: #CBD5E1; margin-bottom: 6px;">Địa chỉ Email được cấp quyền:</label>
+        <label style="display: block; font-size: 12px; font-weight: 700; color: #CBD5E1; margin-bottom: 6px;">Nhập địa chỉ Email lãnh đạo của bạn:</label>
         <div style="position: relative; margin-bottom: 14px;">
-          <input type="email" id="authEmailInput" value="lethanhuyen@gmail.com" placeholder="Nhập email của bạn..." style="width: 100%; padding: 13px 14px; background: rgba(15, 23, 42, 0.85); border: 1.5px solid rgba(56, 189, 248, 0.4); border-radius: 10px; color: #38BDF8; font-size: 14.5px; font-weight: 700; outline: none; box-sizing: border-box;">
+          <input type="email" id="authEmailInput" placeholder="Nhập email được cấp quyền..." style="width: 100%; padding: 13px 14px; background: rgba(15, 23, 42, 0.85); border: 1.5px solid rgba(56, 189, 248, 0.4); border-radius: 10px; color: #38BDF8; font-size: 14.5px; font-weight: 700; outline: none; box-sizing: border-box;">
         </div>
 
         <div id="step1ErrorMsg" style="display: none; color: #F87171; font-size: 12.5px; font-weight: 700; margin-bottom: 12px;"></div>
@@ -514,7 +514,7 @@
       <div id="otpStep2" style="display: none; text-align: left;">
         <div style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px;">
           <div style="font-size: 11.5px; color: #94A3B8;">Mã xác thực đã được gửi tới hòm thư:</div>
-          <div style="font-size: 13.5px; font-weight: 800; color: #38BDF8; margin-top: 2px;">lethanhuyen@gmail.com</div>
+          <div id="targetEmailDisplay" style="font-size: 13.5px; font-weight: 800; color: #38BDF8; margin-top: 2px;"></div>
         </div>
 
         <label style="display: block; font-size: 12px; font-weight: 700; color: #CBD5E1; margin-bottom: 8px;">Nhập mã xác thực (OTP / Passkey):</label>
@@ -548,30 +548,51 @@
   <!-- AUTH LOGOUT BUTTON IN TOP BAR -->
   <div id="authLogoutBadge" style="position: fixed; top: 12px; right: 16px; z-index: 9999; display: none; align-items: center; gap: 8px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 999px; padding: 4px 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); font-size: 11.5px; color: #CBD5E1;">
     <span style="width: 7px; height: 7px; border-radius: 50%; background: #4ADE80;"></span>
-    <span>lethanhuyen@gmail.com</span>
+    <span id="loggedInEmailText">lethanhuyen@gmail.com</span>
     <button onclick="logoutDashboard()" style="background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); color: #FCA5A5; font-size: 10px; font-weight: 700; border-radius: 999px; padding: 2px 8px; cursor: pointer; margin-left: 4px;">Đăng xuất</button>
   </div>
 
   <script>
-    const ALLOWED_EMAIL = 'lethanhuyen@gmail.com';
+    const ALLOWED_EMAILS = [
+      'lethanhuyen@gmail.com',
+      'tranphanbld2002@yahoo.com',
+      'truongbaoktdt@gmail.com'
+    ];
     const MASTER_PASSKEY = '2026';
     let currentGeneratedOtp = '';
+    let currentTargetEmail = '';
     let otpExpiryTimestamp = 0;
 
     function checkExistingAuth() {
-      const savedEmail = localStorage.getItem('vphcm_auth_email');
+      const savedEmail = (localStorage.getItem('vphcm_auth_email') || '').trim().toLowerCase();
       const savedToken = localStorage.getItem('vphcm_auth_otp_token');
       const savedExpiry = localStorage.getItem('vphcm_auth_expiry');
 
-      if (savedEmail === ALLOWED_EMAIL && savedToken && savedExpiry && Number(savedExpiry) > Date.now()) {
+      if (ALLOWED_EMAILS.includes(savedEmail) && savedToken && savedExpiry && Number(savedExpiry) > Date.now()) {
         const overlay = document.getElementById('authOverlay');
         if (overlay) overlay.style.display = 'none';
         const badge = document.getElementById('authLogoutBadge');
-        if (badge) badge.style.display = 'flex';
+        if (badge) {
+          badge.style.display = 'flex';
+          const emailText = document.getElementById('loggedInEmailText');
+          if (emailText) emailText.innerText = savedEmail;
+        }
       }
     }
 
     function togglePasskeyDirect() {
+      const email = (document.getElementById('authEmailInput').value || '').trim().toLowerCase();
+      const errEl = document.getElementById('step1ErrorMsg');
+
+      if (!email || !ALLOWED_EMAILS.includes(email)) {
+        errEl.style.display = 'block';
+        errEl.innerText = '❌ Vui lòng nhập đúng địa chỉ email lãnh đạo được cấp quyền!';
+        return;
+      }
+
+      errEl.style.display = 'none';
+      currentTargetEmail = email;
+      document.getElementById('targetEmailDisplay').innerText = email;
       document.getElementById('otpStep1').style.display = 'none';
       document.getElementById('otpStep2').style.display = 'block';
       const otpBox = document.getElementById('otpInputBox');
@@ -581,17 +602,19 @@
     }
 
     function handleSendOtp() {
-      const email = document.getElementById('authEmailInput').value.trim().toLowerCase();
+      const email = (document.getElementById('authEmailInput').value || '').trim().toLowerCase();
       const errEl = document.getElementById('step1ErrorMsg');
       const btnSend = document.getElementById('btnSendOtp');
 
-      if (email !== ALLOWED_EMAIL) {
+      if (!ALLOWED_EMAILS.includes(email)) {
         errEl.style.display = 'block';
         errEl.innerText = '❌ Email này không có quyền truy cập hệ thống!';
         return;
       }
 
       errEl.style.display = 'none';
+      currentTargetEmail = email;
+      document.getElementById('targetEmailDisplay').innerText = email;
       btnSend.innerText = '⏳ Đang gửi mã OTP...';
       btnSend.disabled = true;
 
@@ -604,9 +627,9 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          recipient: ALLOWED_EMAIL,
+          recipient: currentTargetEmail,
           subject: '[BÁO LAO ĐỘNG VPHCM] Mã Xác Thực OTP Đăng Nhập Dashboard',
-          message: 'Mã xác thực OTP đăng nhập của bạn là: ' + currentGeneratedOtp + ' (Hiệu lực trong 5 phút).'
+          message: 'Mã xác thực OTP đăng nhập của bạn (' + currentTargetEmail + ') là: ' + currentGeneratedOtp + ' (Hiệu lực trong 5 phút).'
         })
       }).catch(err => console.log('Mail notify:', err));
 
@@ -616,13 +639,14 @@
         document.getElementById('otpStep1').style.display = 'none';
         document.getElementById('otpStep2').style.display = 'block';
         const otpBox = document.getElementById('otpInputBox');
+        otpBox.placeholder = '• • • • • •';
         otpBox.value = '';
         otpBox.focus();
       }, 600);
     }
 
     function handleVerifyOtp() {
-      const inputOtp = document.getElementById('otpInputBox').value.trim();
+      const inputOtp = (document.getElementById('otpInputBox').value || '').trim();
       const errEl = document.getElementById('step2ErrorMsg');
 
       if (!inputOtp) {
@@ -642,7 +666,8 @@
 
       // Success -> Save session 30 days
       errEl.style.display = 'none';
-      localStorage.setItem('vphcm_auth_email', ALLOWED_EMAIL);
+      const authenticatedEmail = currentTargetEmail || (document.getElementById('authEmailInput').value || '').trim().toLowerCase();
+      localStorage.setItem('vphcm_auth_email', authenticatedEmail);
       localStorage.setItem('vphcm_auth_otp_token', 'AUTH_' + Date.now());
       localStorage.setItem('vphcm_auth_expiry', (Date.now() + 30 * 24 * 60 * 60 * 1000).toString());
 
@@ -653,7 +678,11 @@
         setTimeout(() => {
           overlay.style.display = 'none';
           const badge = document.getElementById('authLogoutBadge');
-          if (badge) badge.style.display = 'flex';
+          if (badge) {
+            badge.style.display = 'flex';
+            const emailText = document.getElementById('loggedInEmailText');
+            if (emailText) emailText.innerText = authenticatedEmail;
+          }
           if (typeof safeInitCharts === 'function') {
             safeInitCharts();
           }
