@@ -478,69 +478,47 @@
 </head>
 <body>
 
-  <!-- EMAIL OTP AUTH LOCK SCREEN OVERLAY (LEADERSHIP TEAM VPHCM) -->
+  <!-- EXECUTIVE AUTH LOCK SCREEN OVERLAY (LEADERSHIP TEAM VPHCM) -->
   <div id="authOverlay" style="position: fixed; inset: 0; z-index: 999999; background: #070D1E; display: flex; align-items: center; justify-content: center; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-    <div style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.96)); border: 1.5px solid rgba(245, 158, 11, 0.45); border-radius: 20px; padding: 36px 32px; max-width: 460px; width: 100%; box-shadow: 0 25px 60px rgba(0,0,0,0.8); text-align: center; backdrop-filter: blur(20px);">
+    <div style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.98)); border: 1.5px solid rgba(245, 158, 11, 0.45); border-radius: 20px; padding: 36px 32px; max-width: 460px; width: 100%; box-shadow: 0 25px 60px rgba(0,0,0,0.85); text-align: center; backdrop-filter: blur(20px);">
       
       <!-- Top Badge -->
       <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 14px; border-radius: 999px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #FDE68A; font-size: 11px; font-weight: 800; text-transform: uppercase; margin-bottom: 16px;">
-        🛡️ BẢO MẬT 2 LỚP: PHÂN QUYỀN BAN LÃNH ĐẠO
+        🛡️ BẢO MẬT PHÂN QUYỀN BAN LÃNH ĐẠO VPHCM
       </div>
 
       <h2 style="color: #F8FAFC; font-size: 20px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.3px;">BÁO LAO ĐỘNG | VPHCM</h2>
       <p style="color: #94A3B8; font-size: 13.5px; margin-bottom: 20px; line-height: 1.5;">Hệ thống phân quyền truy cập nội bộ dành riêng cho Ban Lãnh đạo Văn phòng đại diện.</p>
       
-      <!-- STEP 1: ENTER EMAIL & REQUEST OTP -->
-      <div id="otpStep1" style="display: block; text-align: left;">
-        <label style="display: block; font-size: 12px; font-weight: 700; color: #CBD5E1; margin-bottom: 6px;">Nhập địa chỉ Email lãnh đạo của bạn:</label>
+      <!-- LOGIN FORM -->
+      <div style="text-align: left;">
+        <label style="display: block; font-size: 12px; font-weight: 700; color: #CBD5E1; margin-bottom: 6px;">1. Địa chỉ Email lãnh đạo của bạn:</label>
         <div style="position: relative; margin-bottom: 14px;">
-          <input type="email" id="authEmailInput" placeholder="Nhập email được cấp quyền..." style="width: 100%; padding: 13px 14px; background: rgba(15, 23, 42, 0.85); border: 1.5px solid rgba(56, 189, 248, 0.4); border-radius: 10px; color: #38BDF8; font-size: 14.5px; font-weight: 700; outline: none; box-sizing: border-box;">
+          <input type="email" id="authEmailInput" value="lethanhuyen@gmail.com" placeholder="Nhập email được cấp quyền..." style="width: 100%; padding: 13px 14px; background: rgba(15, 23, 42, 0.85); border: 1.5px solid rgba(56, 189, 248, 0.4); border-radius: 10px; color: #38BDF8; font-size: 14.5px; font-weight: 700; outline: none; box-sizing: border-box;">
         </div>
 
-        <div id="step1ErrorMsg" style="display: none; color: #F87171; font-size: 12.5px; font-weight: 700; margin-bottom: 12px;"></div>
+        <label style="display: block; font-size: 12px; font-weight: 700; color: #CBD5E1; margin-bottom: 6px;">2. Mã Passkey Bảo Mật Lãnh Đạo:</label>
+        <div style="position: relative; margin-bottom: 16px;">
+          <input type="password" id="authPinInput" value="2026" placeholder="Nhập mã Passkey (Mặc định: 2026)" style="width: 100%; padding: 13px 14px; background: rgba(15, 23, 42, 0.85); border: 1.5px solid rgba(245, 158, 11, 0.4); border-radius: 10px; color: #FDE68A; font-size: 18px; font-weight: 800; letter-spacing: 4px; outline: none; box-sizing: border-box;">
+        </div>
 
-        <button onclick="handleSendOtp()" id="btnSendOtp" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #F59E0B, #D97706); color: #0F172A; font-weight: 900; font-size: 14px; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4); text-transform: uppercase; transition: all 0.2s ease;">
-          📩 Gửi Mã OTP 6 Số Về Email
+        <div id="authErrorMsg" style="display: none; color: #F87171; font-size: 12.5px; font-weight: 700; margin-bottom: 12px; text-align: center;"></div>
+
+        <button onclick="handleExecutiveLogin()" id="btnLogin" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #F59E0B, #D97706); color: #0F172A; font-weight: 900; font-size: 14px; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4); text-transform: uppercase; transition: all 0.2s ease;">
+          🔓 Mở Khóa & Vào Dashboard
         </button>
-
-        <div style="margin-top: 14px; text-align: center;">
-          <a href="javascript:void(0)" onclick="togglePasskeyDirect()" style="color: #64748B; font-size: 11.5px; text-decoration: none;">
-            🔑 Đăng nhập nhanh bằng Mã Passkey Lãnh Đạo
-          </a>
-        </div>
       </div>
 
-      <!-- STEP 2: ENTER 6-DIGIT OTP -->
-      <div id="otpStep2" style="display: none; text-align: left;">
-        <div style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px;">
-          <div style="font-size: 11.5px; color: #94A3B8;">Mã xác thực đã được gửi tới hòm thư:</div>
-          <div id="targetEmailDisplay" style="font-size: 13.5px; font-weight: 800; color: #38BDF8; margin-top: 2px;"></div>
-        </div>
-
-        <label style="display: block; font-size: 12px; font-weight: 700; color: #CBD5E1; margin-bottom: 8px;">Nhập mã xác thực (OTP / Passkey):</label>
-        
-        <div style="display: flex; gap: 8px; justify-content: center; margin-bottom: 16px;">
-          <input type="password" id="otpInputBox" placeholder="• • • • • •" style="width: 100%; text-align: center; letter-spacing: 8px; font-size: 24px; font-weight: 900; padding: 12px; background: rgba(15, 23, 42, 0.9); border: 2px solid #F59E0B; border-radius: 10px; color: #FDE68A; outline: none; box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);">
-        </div>
-
-        <div id="step2ErrorMsg" style="display: none; color: #F87171; font-size: 12.5px; font-weight: 700; margin-bottom: 12px; text-align: center;"></div>
-
-        <button onclick="handleVerifyOtp()" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #10B981, #059669); color: #FFFFFF; font-weight: 900; font-size: 14px; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); text-transform: uppercase; margin-bottom: 12px;">
-          🔓 Xác Nhận & Mở Khóa Dashboard
-        </button>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px;">
-          <button onclick="resendOtp()" id="btnResendOtp" style="background: none; border: none; color: #38BDF8; font-weight: 700; cursor: pointer; padding: 0;">
-            🔄 Gửi lại mã
-          </button>
-          <button onclick="backToStep1()" style="background: none; border: none; color: #94A3B8; cursor: pointer; padding: 0;">
-            ← Quay lại
-          </button>
-        </div>
+      <div style="margin-top: 20px; padding: 12px; background: rgba(2, 6, 23, 0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; font-size: 11.5px; color: #94A3B8; text-align: left; line-height: 1.6;">
+        <strong style="color: #FDE68A;">👥 Danh sách 3 email lãnh đạo được cấp quyền:</strong><br>
+        • Trưởng VP: <span style="color: #38BDF8;">lethanhuyen@gmail.com</span><br>
+        • Phó Trưởng VP: <span style="color: #38BDF8;">tranphanbld2002@yahoo.com</span><br>
+        • Phó Trưởng VP: <span style="color: #38BDF8;">truongbaoktdt@gmail.com</span><br>
+        <span style="color: #4ADE80;">🔑 Mã Passkey dùng chung: <strong>2026</strong></span>
       </div>
 
-      <div style="margin-top: 22px; font-size: 11.5px; color: #64748B; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 14px;">
-        🔒 Thiết bị tin cậy sẽ được tự động lưu phiên xác thực an toàn trong 30 ngày.
+      <div style="margin-top: 16px; font-size: 11px; color: #64748B;">
+        🔒 Thiết bị tin cậy sẽ được tự động lưu phiên làm việc trong 30 ngày.
       </div>
     </div>
   </div>
@@ -559,9 +537,6 @@
       'truongbaoktdt@gmail.com'
     ];
     const MASTER_PASSKEY = '2026';
-    let currentGeneratedOtp = '';
-    let currentTargetEmail = '';
-    let otpExpiryTimestamp = 0;
 
     function checkExistingAuth() {
       const savedEmail = (localStorage.getItem('vphcm_auth_email') || '').trim().toLowerCase();
@@ -580,95 +555,27 @@
       }
     }
 
-    function togglePasskeyDirect() {
+    function handleExecutiveLogin() {
       const email = (document.getElementById('authEmailInput').value || '').trim().toLowerCase();
-      const errEl = document.getElementById('step1ErrorMsg');
-
-      if (!email || !ALLOWED_EMAILS.includes(email)) {
-        errEl.style.display = 'block';
-        errEl.innerText = '❌ Vui lòng nhập đúng địa chỉ email lãnh đạo được cấp quyền!';
-        return;
-      }
-
-      errEl.style.display = 'none';
-      currentTargetEmail = email;
-      document.getElementById('targetEmailDisplay').innerText = email;
-      document.getElementById('otpStep1').style.display = 'none';
-      document.getElementById('otpStep2').style.display = 'block';
-      const otpBox = document.getElementById('otpInputBox');
-      otpBox.placeholder = 'Nhập Passkey';
-      otpBox.value = '';
-      otpBox.focus();
-    }
-
-    function handleSendOtp() {
-      const email = (document.getElementById('authEmailInput').value || '').trim().toLowerCase();
-      const errEl = document.getElementById('step1ErrorMsg');
-      const btnSend = document.getElementById('btnSendOtp');
+      const pin = (document.getElementById('authPinInput').value || '').trim();
+      const errEl = document.getElementById('authErrorMsg');
 
       if (!ALLOWED_EMAILS.includes(email)) {
         errEl.style.display = 'block';
-        errEl.innerText = '❌ Email này không có quyền truy cập hệ thống!';
+        errEl.innerText = '❌ Email này không nằm trong danh sách lãnh đạo được cấp quyền!';
         return;
       }
 
-      errEl.style.display = 'none';
-      currentTargetEmail = email;
-      document.getElementById('targetEmailDisplay').innerText = email;
-      btnSend.innerText = '⏳ Đang gửi mã OTP...';
-      btnSend.disabled = true;
-
-      // Generate 6-digit random OTP
-      currentGeneratedOtp = Math.floor(100000 + Math.random() * 900000).toString();
-      otpExpiryTimestamp = Date.now() + 5 * 60 * 1000; // 5 minutes
-
-      // Trigger Email dispatch via formspree/mail API
-      fetch('https://formspree.io/f/xbjnvpzw', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          recipient: currentTargetEmail,
-          subject: '[BÁO LAO ĐỘNG VPHCM] Mã Xác Thực OTP Đăng Nhập Dashboard',
-          message: 'Mã xác thực OTP đăng nhập của bạn (' + currentTargetEmail + ') là: ' + currentGeneratedOtp + ' (Hiệu lực trong 5 phút).'
-        })
-      }).catch(err => console.log('Mail notify:', err));
-
-      setTimeout(() => {
-        btnSend.innerText = '📩 Gửi Mã OTP 6 Số Về Email';
-        btnSend.disabled = false;
-        document.getElementById('otpStep1').style.display = 'none';
-        document.getElementById('otpStep2').style.display = 'block';
-        const otpBox = document.getElementById('otpInputBox');
-        otpBox.placeholder = '• • • • • •';
-        otpBox.value = '';
-        otpBox.focus();
-      }, 600);
-    }
-
-    function handleVerifyOtp() {
-      const inputOtp = (document.getElementById('otpInputBox').value || '').trim();
-      const errEl = document.getElementById('step2ErrorMsg');
-
-      if (!inputOtp) {
+      if (pin !== MASTER_PASSKEY) {
         errEl.style.display = 'block';
-        errEl.innerText = '❌ Vui lòng nhập mã xác thực!';
-        return;
-      }
-
-      const isValidOtp = (currentGeneratedOtp && inputOtp === currentGeneratedOtp && Date.now() <= otpExpiryTimestamp);
-      const isMasterKey = (inputOtp === MASTER_PASSKEY);
-
-      if (!isValidOtp && !isMasterKey) {
-        errEl.style.display = 'block';
-        errEl.innerText = '❌ Mã xác thực không chính xác hoặc đã hết hạn!';
+        errEl.innerText = '❌ Mã Passkey bảo mật không chính xác!';
         return;
       }
 
       // Success -> Save session 30 days
       errEl.style.display = 'none';
-      const authenticatedEmail = currentTargetEmail || (document.getElementById('authEmailInput').value || '').trim().toLowerCase();
-      localStorage.setItem('vphcm_auth_email', authenticatedEmail);
-      localStorage.setItem('vphcm_auth_otp_token', 'AUTH_' + Date.now());
+      localStorage.setItem('vphcm_auth_email', email);
+      localStorage.setItem('vphcm_auth_otp_token', 'AUTH_VALID_' + Date.now());
       localStorage.setItem('vphcm_auth_expiry', (Date.now() + 30 * 24 * 60 * 60 * 1000).toString());
 
       const overlay = document.getElementById('authOverlay');
@@ -681,24 +588,13 @@
           if (badge) {
             badge.style.display = 'flex';
             const emailText = document.getElementById('loggedInEmailText');
-            if (emailText) emailText.innerText = authenticatedEmail;
+            if (emailText) emailText.innerText = email;
           }
           if (typeof safeInitCharts === 'function') {
             safeInitCharts();
           }
         }, 400);
       }
-    }
-
-    function resendOtp() {
-      handleSendOtp();
-    }
-
-    function backToStep1() {
-      document.getElementById('otpStep1').style.display = 'block';
-      document.getElementById('otpStep2').style.display = 'none';
-      document.getElementById('step1ErrorMsg').style.display = 'none';
-      document.getElementById('step2ErrorMsg').style.display = 'none';
     }
 
     function logoutDashboard() {
